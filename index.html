@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YourName | GitHub 个人主页</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #0d1117; color: #c9d1d9; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+        .card { background-color: #161b22; border: 1px solid #30363d; border-radius: 6px; transition: 0.2s; }
+        .card:hover { border-color: #8b949e; }
+        .tag { background-color: #1f6feb; color: #ffffff; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; }
+    </style>
+</head>
+<body class="p-6 md:p-12">
+
+    <div class="max-w-4xl mx-auto">
+        <header class="flex flex-col md:flex-row items-center gap-6 mb-12">
+            <img src="https://github.com/identicons/jason.png" alt="Avatar" class="w-32 h-32 rounded-full border-2 border-[#30363d]">
+            <div class="text-center md:text-left">
+                <h1 class="text-3xl font-bold text-[#f0f6fc]">Your Name</h1>
+                <p class="text-xl text-[#8b949e] mt-2">Full-stack Developer / Coffee Lover / Open Source Contributor</p>
+                <div class="mt-4 flex justify-center md:justify-start gap-4 text-sm">
+                    <a href="#" class="text-[#58a6ff] hover:underline">GitHub</a>
+                    <a href="#" class="text-[#58a6ff] hover:underline">Blog</a>
+                    <a href="mailto:email@example.com" class="text-[#58a6ff] hover:underline">Email</a>
+                </div>
+            </div>
+        </header>
+
+        <hr class="border-[#30363d] mb-12">
+
+        <section class="mb-12">
+            <h2 class="text-2xl font-semibold mb-4 text-[#f0f6fc]">About Me</h2>
+            <p class="leading-relaxed text-[#8b949e]">
+                你好！我是一名热衷于构建高效、简洁应用的开发者。我喜欢探索新技术，并将其应用到实际项目中。
+                目前专注于 **React**, **Node.js** 和 **Cloud Native** 领域。
+            </p>
+        </section>
+
+        <section>
+            <h2 class="text-2xl font-semibold mb-6 text-[#f0f6fc]">Featured Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                
+                <div class="card p-5">
+                    <div class="flex justify-between items-start mb-2">
+                        <a href="#" class="text-[#58a6ff] font-bold text-lg hover:underline">Awesome-Project</a>
+                        <span class="tag">TypeScript</span>
+                    </div>
+                    <p class="text-sm text-[#8b949e] mb-4">这是一个自动化的生产力工具，旨在帮助开发者更快速地部署代码到 GitHub Pages。</p>
+                    <div class="text-xs text-[#8b949e] flex items-center gap-3">
+                        <span>⭐ 1.2k</span>
+                        <span>🍴 150</span>
+                    </div>
+                </div>
+
+                <div class="card p-5">
+                    <div class="flex justify-between items-start mb-2">
+                        <a href="#" class="text-[#58a6ff] font-bold text-lg hover:underline">Personal-Portfolio</a>
+                        <span class="tag">HTML/CSS</span>
+                    </div>
+                    <p class="text-sm text-[#8b949e] mb-4">极简风格的个人主页模板，基于 GitHub 官方设计语言。即插即用。</p>
+                    <div class="text-xs text-[#8b949e] flex items-center gap-3">
+                        <span>⭐ 89</span>
+                        <span>🍴 12</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <footer class="mt-20 pt-8 border-t border-[#30363d] text-center text-[#8b949e] text-sm">
+            <p>© 2026 Your Name. Powered by GitHub Pages.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
