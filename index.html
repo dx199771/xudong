@@ -3,74 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YourName | GitHub 个人主页</title>
+    <title>董昀 - 个人主页 | CV</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { background-color: #0d1117; color: #c9d1d9; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
-        .card { background-color: #161b22; border: 1px solid #30363d; border-radius: 6px; transition: 0.2s; }
-        .card:hover { border-color: #8b949e; }
-        .tag { background-color: #1f6feb; color: #ffffff; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; }
+        body { 
+            background-color: #ffffff; 
+            color: #1f2328; 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; 
+            line-height: 1.5;
+        }
+        .section-title { border-bottom: 1px solid #d0d7de; padding-bottom: 8px; margin-bottom: 16px; font-weight: 600; }
+        .card { border: 1px solid #d0d7de; border-radius: 6px; padding: 16px; transition: all 0.2s; background: #fff; }
+        .card:hover { border-color: #0969da; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .tag { background-color: #ddf4ff; color: #0969da; padding: 2px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 500; }
+        .link-text { color: #0969da; text-decoration: none; }
+        .link-text:hover { text-decoration: underline; }
     </style>
 </head>
-<body class="p-6 md:p-12">
+<body class="p-6 md:p-16">
 
     <div class="max-w-4xl mx-auto">
-        <header class="flex flex-col md:flex-row items-center gap-6 mb-12">
-            <img src="https://github.com/identicons/jason.png" alt="Avatar" class="w-32 h-32 rounded-full border-2 border-[#30363d]">
+        <header class="flex flex-col md:flex-row items-center gap-8 mb-12">
+            <div class="w-32 h-32 rounded-full overflow-hidden border border-[#d0d7de]">
+                <img src="https://github.com/identicons/jason.png" alt="董昀" class="w-full h-full object-cover">
+            </div>
             <div class="text-center md:text-left">
-                <h1 class="text-3xl font-bold text-[#f0f6fc]">Your Name</h1>
-                <p class="text-xl text-[#8b949e] mt-2">Full-stack Developer / Coffee Lover / Open Source Contributor</p>
-                <div class="mt-4 flex justify-center md:justify-start gap-4 text-sm">
-                    <a href="#" class="text-[#58a6ff] hover:underline">GitHub</a>
-                    <a href="#" class="text-[#58a6ff] hover:underline">Blog</a>
-                    <a href="mailto:email@example.com" class="text-[#58a6ff] hover:underline">Email</a>
+                <h1 class="text-3xl font-bold mb-2">董昀 (X. Dong)</h1>
+                <p class="text-lg text-[#636c76] mb-4">深度学习 / 计算机视觉 / 大语言模型 / 动作视频理解 [cite: 9]</p>
+                <div class="flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-2 text-sm">
+                    <span class="flex items-center gap-1">📧 <a href="mailto:xudong9771@163.com" class="link-text">xudong9771@163.com [cite: 4]</a></span>
+                    <span class="flex items-center gap-1">📱 18601244976 [cite: 8]</span>
+                    <span class="flex items-center gap-1">📍 英国萨里大学 [cite: 10]</span>
                 </div>
             </div>
         </header>
 
-        <hr class="border-[#30363d] mb-12">
-
         <section class="mb-12">
-            <h2 class="text-2xl font-semibold mb-4 text-[#f0f6fc]">About Me</h2>
-            <p class="leading-relaxed text-[#8b949e]">
-                你好！我是一名热衷于构建高效、简洁应用的开发者。我喜欢探索新技术，并将其应用到实际项目中。
-                目前专注于 **React**, **Node.js** 和 **Cloud Native** 领域。
-            </p>
-        </section>
-
-        <section>
-            <h2 class="text-2xl font-semibold mb-6 text-[#f0f6fc]">Featured Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                
-                <div class="card p-5">
-                    <div class="flex justify-between items-start mb-2">
-                        <a href="#" class="text-[#58a6ff] font-bold text-lg hover:underline">Awesome-Project</a>
-                        <span class="tag">TypeScript</span>
+            <h2 class="text-xl section-title">🎓 教育背景</h2>
+            <div class="space-y-6">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="font-bold">英国萨里大学 (University of Surrey)</h3>
+                        <p class="text-sm text-[#636c76]">计算机创新媒体技术 · 博士 [cite: 7, 10]</p>
+                        <p class="text-xs mt-1 text-[#636c76]">获得全额博士奖学金；研究领域涵盖视频理解、大模型及创新媒体应用。 [cite: 12]</p>
                     </div>
-                    <p class="text-sm text-[#8b949e] mb-4">这是一个自动化的生产力工具，旨在帮助开发者更快速地部署代码到 GitHub Pages。</p>
-                    <div class="text-xs text-[#8b949e] flex items-center gap-3">
-                        <span>⭐ 1.2k</span>
-                        <span>🍴 150</span>
-                    </div>
+                    <span class="text-sm text-[#636c76] font-mono">2023.09 - 2027.03 [cite: 11]</span>
                 </div>
-
-                <div class="card p-5">
-                    <div class="flex justify-between items-start mb-2">
-                        <a href="#" class="text-[#58a6ff] font-bold text-lg hover:underline">Personal-Portfolio</a>
-                        <span class="tag">HTML/CSS</span>
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="font-bold">英国伦敦玛丽女王大学 (QMUL)</h3>
+                        <p class="text-sm text-[#636c76]">媒体与艺术科技 · 硕士 (GPA 3.9/4.0, 前3%) [cite: 13, 16]</p>
                     </div>
-                    <p class="text-sm text-[#8b949e] mb-4">极简风格的个人主页模板，基于 GitHub 官方设计语言。即插即用。</p>
-                    <div class="text-xs text-[#8b949e] flex items-center gap-3">
-                        <span>⭐ 89</span>
-                        <span>🍴 12</span>
-                    </div>
+                    <span class="text-sm text-[#636c76] font-mono">2020.09 - 2021.09 [cite: 15]</span>
                 </div>
-
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="font-bold">英国谢菲尔德大学 (University of Sheffield)</h3>
+                        <p class="text-sm text-[#636c76]">计算机科学与人工智能 · 本科 (GPA 3.7/4.0, 前10%) [cite: 17, 20]</p>
+                    </div>
+                    <span class="text-sm text-[#636c76] font-mono">2017.09 - 2020.07 [cite: 19]</span>
+                </div>
             </div>
         </section>
 
-        <footer class="mt-20 pt-8 border-t border-[#30363d] text-center text-[#8b949e] text-sm">
-            <p>© 2026 Your Name. Powered by GitHub Pages.</p>
+        <section class="mb-12">
+            <h2 class="text-xl section-title">📝 科研成果</h2>
+            <ul class="space-y-4 text-sm leading-relaxed">
+                <li class="flex gap-2">
+                    <span class="font-bold text-[#cf222e] shrink-0">[CVPR 2025]</span>
+                    <span><strong>X. Dong</strong>, W. Li, et al. "Moving Beyond More Views: Redundancy-Aware Ego-Exo Fusion for Proficiency Estimation." (Under Review) [cite: 31, 32]</span>
+                </li>
+                <li class="flex gap-2">
+                    <span class="font-bold text-[#0969da] shrink-0">[IJCV 2025]</span>
+                    <span><strong>X. Dong</strong>, X. Liu, et al. "UIL-AQA: Uncertainty-aware Clip-level Interpretable Action Quality Assessment." (CCF-A类顶刊) [cite: 33, 34]</span>
+                </li>
+                <li class="flex gap-2">
+                    <span class="font-bold text-[#0969da] shrink-0">[BMVC 2024]</span>
+                    <span><strong>X. Dong</strong>, et al. "Interpretable Long-term Action Quality Assessment." (Oral, Top 3%) [cite: 38, 39]</span>
+                </li>
+                <li class="flex gap-2">
+                    <span class="font-bold text-[#636c76] shrink-0">[More]</span>
+                    <span class="text-[#636c76]">包含 FG 2025, TMM 2025, CVPRW '25 等多篇会议/期刊发表。 [cite: 40, 42, 44]</span>
+                </li>
+            </ul>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-xl section-title">💻 精选项目</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                <div class="card">
+                    <div class="flex justify-between mb-2">
+                        <span class="font-bold">大规模多模态运动数据集</span>
+                        <span class="tag">LLM + CV [cite: 53]</span>
+                    </div>
+                    <p class="text-[#636c76]">研发基于LLM的自动化标注工作流，引入运动学约束缓解语义幻觉，提升复杂运动分析能力。 [cite: 53]</p>
+                </div>
+                <div class="card">
+                    <div class="flex justify-between mb-2">
+                        <span class="font-bold">Ego-Exo 视频理解系统</span>
+                        <span class="tag">AdaMVS / COT [cite: 56]</span>
+                    </div>
+                    <p class="text-[#636c76]">结合自适应视图选择与思维链推理，评估准确度相较基准模型提升约15%。 [cite: 56]</p>
+                </div>
+                <div class="card">
+                    <div class="flex justify-between mb-2">
+                        <span class="font-bold">GCDance 3D舞蹈生成</span>
+                        <span class="tag">Diffusion Model [cite: 62]</span>
+                    </div>
+                    <p class="text-[#636c76]">融合音频特征与人体动力学约束，解决滑步及节奏错位，显著提升动作真实感。 [cite: 62]</p>
+                </div>
+                <div class="card">
+                    <div class="flex justify-between mb-2">
+                        <span class="font-bold">智慧交通车辆跟踪系统</span>
+                        <span class="tag">部署落地 [cite: 25]</span>
+                    </div>
+                    <p class="text-[#636c76]">在 Aibee 期间主导路侧停车多相机跟踪，实现 98% 召回率，支持城市级自动化管理。 [cite: 24, 25]</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-xl section-title">🛠️ 职业技能</h2>
+            <div class="space-y-3 text-sm">
+                <p><strong>编程语言:</strong> Python (熟练), C++/C (工程部署), Java, Shell [cite: 82]</p>
+                <p><strong>框架与工具:</strong> PyTorch, TensorFlow, OpenCV, Linux, Docker, Unity [cite: 83, 84]</p>
+                <p><strong>多媒体:</strong> 摄影/剪辑 (Adobe Ps/Pr), 优秀的中英文文献读写能力 [cite: 86]</p>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-xl section-title">🏆 荣誉奖项</h2>
+            <ul class="list-disc list-inside text-sm space-y-2 text-[#636c76]">
+                <li>全额双博士研究生奖学金 (3.5年) [cite: 77]</li>
+                <li>ACM MM 2021 淘宝直播商品识别大赛 (前3%) [cite: 78]</li>
+                <li>谢菲尔德大学 Global Engineering Challenge 突出团队奖 [cite: 79]</li>
+            </ul>
+        </section>
+
+        <footer class="mt-20 pt-8 border-t border-[#d0d7de] text-center text-[#636c76] text-xs">
+            <p>© 2026 董昀. 基于 GitHub 风格构建.</p>
         </footer>
     </div>
 
