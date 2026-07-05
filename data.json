@@ -1,0 +1,111 @@
+{
+  "study_title": "BoT-Feedback User Study",
+  "study_description": "Please watch the teacher-student video pair, then rate the three feedback options below.",
+  "rater_info": {
+    "collect_name": true,
+    "collect_expertise": true,
+    "expertise_options": ["Basketball Coach", "Soccer Coach", "Bouldering Coach", "Sports Scientist", "Physical Therapist", "Other"]
+  },
+  "metrics": [
+    {
+      "id": "CU",
+      "name": "Corrective Utility",
+      "description": "How actionable are the physical corrections? Does this feedback help the student improve?",
+      "scale": [1, 5],
+      "labels": { "1": "Vague / not actionable", "5": "Precise / immediately actionable" }
+    },
+    {
+      "id": "EA",
+      "name": "Expert Alignment",
+      "description": "How consistent is this feedback with what you, as an expert, would say?",
+      "scale": [1, 5],
+      "labels": { "1": "Completely off", "5": "Matches expert judgment" }
+    },
+    {
+      "id": "HC",
+      "name": "Hallucination Check",
+      "description": "Does the feedback contain any physically impossible or biomechanically incorrect statements?",
+      "scale": [1, 5],
+      "labels": { "1": "Physically impossible", "5": "Fully correct" }
+    },
+    {
+      "id": "ID",
+      "name": "Information Density",
+      "description": "How much professional/technical insight does the feedback contain vs filler words?",
+      "scale": [1, 5],
+      "labels": { "1": "High filler, low insight", "5": "Dense technical insight" }
+    }
+  ],
+  "preference_question": "Overall, which feedback would you most recommend to a student?",
+  "samples": [
+    {
+      "id": "sample_001",
+      "action": "Basketball Jump Shot",
+      "teacher_video": "https://www.w3schools.com/html/mov_bbb.mp4",
+      "student_video": "https://www.w3schools.com/html/mov_bbb.mp4",
+      "feedbacks": [
+        {
+          "id": "A",
+          "label": "Feedback A",
+          "text": "The most critical improvement needed is to improve their coordination and teamwork. The student needs to work on their overall form and technique to become a more effective player."
+        },
+        {
+          "id": "B",
+          "label": "Feedback B",
+          "text": "Dip deeper by bending your knees more before your jump shot to generate more power. Your knee angle at take-off is approximately 105° compared to the expert's 145°, resulting in significantly less explosive force transfer through the kinetic chain."
+        },
+        {
+          "id": "GT",
+          "label": "Feedback C",
+          "text": "The shooter is not using their legs effectively and has poor form and flow in the shot. The shooter needs to power the shot by bending the knees deeper before jumping."
+        }
+      ]
+    },
+    {
+      "id": "sample_002",
+      "action": "Soccer Penalty Kick",
+      "teacher_video": "https://www.w3schools.com/html/mov_bbb.mp4",
+      "student_video": "https://www.w3schools.com/html/mov_bbb.mp4",
+      "feedbacks": [
+        {
+          "id": "A",
+          "label": "Feedback A",
+          "text": "The player needs to improve their overall technique and focus on striking the ball with more precision. They should practice more to build consistency."
+        },
+        {
+          "id": "B",
+          "label": "Feedback B",
+          "text": "Bend your kicking knee deeper during the backswing to generate more power and keep your torso stable through the strike. Your trunk acceleration is 3.2 m/s² below the expert level, which directly reduces shot velocity."
+        },
+        {
+          "id": "GT",
+          "label": "Feedback C",
+          "text": "The player's body posture needs improvement, specifically their upright stance and foot positioning, to achieve a more technical stroke."
+        }
+      ]
+    },
+    {
+      "id": "sample_003",
+      "action": "Bouldering",
+      "teacher_video": "https://www.w3schools.com/html/mov_bbb.mp4",
+      "student_video": "https://www.w3schools.com/html/mov_bbb.mp4",
+      "feedbacks": [
+        {
+          "id": "A",
+          "label": "Feedback A",
+          "text": "You need to keep your arms straight and close to the wall to save your energy. Focus on efficiency."
+        },
+        {
+          "id": "B",
+          "label": "Feedback B",
+          "text": "Tighten your core to keep your hips close to the wall and prevent your body from twisting when you reach for the next hold. Your torso yaw deviation of 10° compared to the expert's 2° is causing unnecessary energy expenditure."
+        },
+        {
+          "id": "GT",
+          "label": "Feedback C",
+          "text": "The climber needs to adjust their footwork and engage their hips to gain height and successfully place the hand in the hold."
+        }
+      ]
+    }
+  ]
+}
