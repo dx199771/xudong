@@ -1,111 +1,896 @@
-{
-  "study_title": "BoT-Feedback User Study",
-  "study_description": "Please watch the teacher-student video pair, then rate the three feedback options below.",
-  "rater_info": {
-    "collect_name": true,
-    "collect_expertise": true,
-    "expertise_options": ["Basketball Coach", "Soccer Coach", "Bouldering Coach", "Sports Scientist", "Physical Therapist", "Other"]
-  },
-  "metrics": [
-    {
-      "id": "CU",
-      "name": "Corrective Utility",
-      "description": "How actionable are the physical corrections? Does this feedback help the student improve?",
-      "scale": [1, 5],
-      "labels": { "1": "Vague / not actionable", "5": "Precise / immediately actionable" }
-    },
-    {
-      "id": "EA",
-      "name": "Expert Alignment",
-      "description": "How consistent is this feedback with what you, as an expert, would say?",
-      "scale": [1, 5],
-      "labels": { "1": "Completely off", "5": "Matches expert judgment" }
-    },
-    {
-      "id": "HC",
-      "name": "Hallucination Check",
-      "description": "Does the feedback contain any physically impossible or biomechanically incorrect statements?",
-      "scale": [1, 5],
-      "labels": { "1": "Physically impossible", "5": "Fully correct" }
-    },
-    {
-      "id": "ID",
-      "name": "Information Density",
-      "description": "How much professional/technical insight does the feedback contain vs filler words?",
-      "scale": [1, 5],
-      "labels": { "1": "High filler, low insight", "5": "Dense technical insight" }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BoT-Feedback — User Study</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #f7f6f2;
+    --surface: #ffffff;
+    --surface-alt: #f2f1ed;
+    --border: #e2e0d8;
+    --border-strong: #c8c6bc;
+    --text-primary: #1a1916;
+    --text-secondary: #5a5852;
+    --text-muted: #8a8880;
+    --accent: #2c5f8a;
+    --accent-bg: #e8f0f7;
+    --accent-border: #b8cfe0;
+    --success: #1d6b45;
+    --success-bg: #e6f4ed;
+    --warning: #8a5a0a;
+    --warning-bg: #fef3dc;
+    --radius: 8px;
+    --radius-lg: 12px;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text-primary);
+    font-size: 15px;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* ── Header ── */
+  .site-header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .header-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+  }
+  .logo {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+    letter-spacing: -0.01em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .logo-badge {
+    font-size: 11px;
+    font-weight: 500;
+    background: var(--accent-bg);
+    color: var(--accent);
+    border: 1px solid var(--accent-border);
+    border-radius: 4px;
+    padding: 2px 7px;
+    letter-spacing: 0.02em;
+  }
+  .progress-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+  .progress-bar-outer {
+    width: 100px;
+    height: 4px;
+    background: var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .progress-bar-inner {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 2px;
+    transition: width 0.4s ease;
+  }
+
+  /* ── Layout ── */
+  .page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 2rem 4rem;
+  }
+  .hidden { display: none !important; }
+
+  /* ── Welcome screen ── */
+  .welcome-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    margin-top: 2rem;
+  }
+  .welcome-card h1 {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+  }
+  .welcome-card p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    max-width: 560px;
+  }
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .info-item {
+    background: var(--surface-alt);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem;
+  }
+  .info-item .info-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 4px;
+  }
+  .info-item .info-val {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary);
+  }
+
+  /* ── Form elements ── */
+  label {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+  }
+  input[type="text"], select {
+    width: 100%;
+    padding: 9px 12px;
+    font-size: 14px;
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius);
+    background: var(--surface);
+    color: var(--text-primary);
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  input[type="text"]:focus, select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(44,95,138,0.12);
+  }
+  .form-row { margin-bottom: 1.25rem; }
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* ── Buttons ── */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 20px;
+    border-radius: var(--radius);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all 0.15s;
+    text-decoration: none;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+  }
+  .btn-primary:hover { background: #245079; border-color: #245079; }
+  .btn-secondary {
+    background: var(--surface);
+    color: var(--text-primary);
+    border-color: var(--border-strong);
+  }
+  .btn-secondary:hover { background: var(--surface-alt); }
+  .btn:disabled { opacity: 0.45; cursor: not-allowed; }
+  .btn-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2rem;
+    gap: 1rem;
+  }
+
+  /* ── Sample header ── */
+  .sample-header {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .sample-number {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .sample-action {
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .action-pill {
+    font-size: 12px;
+    font-weight: 500;
+    background: var(--accent-bg);
+    color: var(--accent);
+    border: 1px solid var(--accent-border);
+    border-radius: 20px;
+    padding: 4px 12px;
+  }
+
+  /* ── Video section ── */
+  .video-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .video-section-title {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 1rem;
+  }
+  .video-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .video-wrap {
+    position: relative;
+  }
+  .video-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .vid-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .vid-dot-teacher { background: #2c5f8a; }
+  .vid-dot-student { background: #8a5a0a; }
+  video {
+    width: 100%;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background: #000;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+  }
+
+  /* ── Feedback rating section ── */
+  .feedback-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .feedback-section-title {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 1rem;
+  }
+  .feedback-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: 1rem;
+  }
+  .feedback-card:last-child { margin-bottom: 0; }
+  .feedback-card-header {
+    background: var(--surface-alt);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .feedback-id {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    letter-spacing: 0.04em;
+  }
+  .feedback-body {
+    padding: 14px;
+  }
+  .feedback-text {
+    font-size: 14px;
+    color: var(--text-primary);
+    line-height: 1.65;
+    margin-bottom: 14px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* ── Star rating ── */
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .metric-item {}
+  .metric-name {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+  }
+  .metric-desc {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+    line-height: 1.4;
+  }
+  .star-row {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+  }
+  .star {
+    width: 26px;
+    height: 26px;
+    border-radius: 4px;
+    border: 1px solid var(--border-strong);
+    background: var(--surface);
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.12s;
+    color: var(--text-muted);
+    user-select: none;
+  }
+  .star:hover { border-color: #e6a800; background: #fffbf0; color: #c88800; }
+  .star.active { border-color: #e6a800; background: #fff3cc; color: #c88800; }
+  .star-hint {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-left: 6px;
+  }
+
+  /* ── Preference question ── */
+  .preference-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .preference-section h3 {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+  }
+  .pref-options {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .pref-btn {
+    padding: 8px 18px;
+    border-radius: 20px;
+    border: 1px solid var(--border-strong);
+    background: var(--surface);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    color: var(--text-secondary);
+    transition: all 0.12s;
+  }
+  .pref-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-bg); }
+  .pref-btn.selected { border-color: var(--accent); color: var(--accent); background: var(--accent-bg); }
+
+  /* ── Completion screen ── */
+  .complete-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 3rem 2.5rem;
+    margin-top: 2rem;
+    text-align: center;
+  }
+  .complete-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--success-bg);
+    border: 1px solid #9ed4b8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.25rem;
+    font-size: 22px;
+  }
+  .complete-card h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  .complete-card p {
+    color: var(--text-secondary);
+    max-width: 440px;
+    margin: 0 auto 2rem;
+  }
+  .response-preview {
+    background: var(--surface-alt);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    text-align: left;
+    margin-bottom: 1.5rem;
+  }
+  .response-preview h4 {
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+  }
+  .response-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    padding: 4px 0;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-secondary);
+  }
+  .response-row:last-child { border-bottom: none; }
+  .response-row span { font-weight: 500; color: var(--text-primary); }
+  .download-btn {
+    background: var(--surface);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius);
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    color: var(--text-primary);
+    transition: all 0.15s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .download-btn:hover { background: var(--surface-alt); border-color: var(--accent); color: var(--accent); }
+
+  /* ── Validation message ── */
+  .validation-msg {
+    font-size: 13px;
+    color: #c0392b;
+    background: #fdf0ee;
+    border: 1px solid #f5c0b8;
+    border-radius: var(--radius);
+    padding: 10px 14px;
+    margin-top: 1rem;
+    display: none;
+  }
+  .validation-msg.show { display: block; }
+
+  @media (max-width: 640px) {
+    .page { padding: 1rem 1rem 3rem; }
+    .info-grid, .form-grid, .video-grid, .metrics-grid { grid-template-columns: 1fr; }
+    .btn-row { flex-direction: column; }
+    .pref-options { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo">
+      BoT-Feedback
+      <span class="logo-badge">User Study</span>
+    </div>
+    <div class="progress-wrap" id="progress-wrap" style="display:none">
+      <span id="progress-text">1 / 3</span>
+      <div class="progress-bar-outer">
+        <div class="progress-bar-inner" id="progress-bar" style="width: 33%"></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="page">
+
+  <!-- Welcome / rater info -->
+  <div id="screen-welcome">
+    <div class="welcome-card">
+      <h1 id="study-title">BoT-Feedback User Study</h1>
+      <p id="study-desc">Loading…</p>
+      <div class="info-grid" id="info-grid"></div>
+      <div class="form-grid">
+        <div class="form-row">
+          <label for="rater-name">Your name</label>
+          <input type="text" id="rater-name" placeholder="e.g. Alex Chen">
+        </div>
+        <div class="form-row">
+          <label for="rater-expertise">Area of expertise</label>
+          <select id="rater-expertise">
+            <option value="">Select…</option>
+          </select>
+        </div>
+      </div>
+      <div class="btn-row" style="margin-top:0; justify-content:flex-end">
+        <button class="btn btn-primary" id="btn-start">Start rating →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sample rating screen -->
+  <div id="screen-sample" class="hidden">
+
+    <div class="sample-header">
+      <div>
+        <div class="sample-number" id="sample-number">Sample 1 of 3</div>
+        <div class="sample-action" id="sample-action">—</div>
+      </div>
+      <div class="action-pill" id="action-pill">—</div>
+    </div>
+
+    <div class="video-section">
+      <div class="video-section-title">Video pair</div>
+      <div class="video-grid">
+        <div class="video-wrap">
+          <div class="video-label">
+            <span class="vid-dot vid-dot-teacher"></span> Teacher (expert)
+          </div>
+          <video id="video-teacher" controls muted playsinline></video>
+        </div>
+        <div class="video-wrap">
+          <div class="video-label">
+            <span class="vid-dot vid-dot-student"></span> Student
+          </div>
+          <video id="video-student" controls muted playsinline></video>
+        </div>
+      </div>
+    </div>
+
+    <div class="feedback-section">
+      <div class="feedback-section-title">Rate each feedback (blinded)</div>
+      <div id="feedback-cards"></div>
+    </div>
+
+    <div class="preference-section" id="pref-section">
+      <h3 id="pref-question">Overall, which feedback would you most recommend to a student?</h3>
+      <div class="pref-options" id="pref-options"></div>
+    </div>
+
+    <div class="validation-msg" id="validation-msg">
+      Please complete all ratings and select your overall preference before continuing.
+    </div>
+
+    <div class="btn-row">
+      <button class="btn btn-secondary" id="btn-prev">← Previous</button>
+      <button class="btn btn-primary" id="btn-next">Next sample →</button>
+    </div>
+  </div>
+
+  <!-- Completion screen -->
+  <div id="screen-complete" class="hidden">
+    <div class="complete-card">
+      <div class="complete-icon">✓</div>
+      <h2>Thank you!</h2>
+      <p>Your ratings have been recorded. Your expert feedback is invaluable for evaluating our biomechanical reasoning framework.</p>
+      <div class="response-preview" id="response-preview">
+        <h4>Your responses</h4>
+        <div id="response-rows"></div>
+      </div>
+      <button class="download-btn" id="btn-download">↓ Download responses (JSON)</button>
+    </div>
+  </div>
+
+</main>
+
+<script>
+  let DATA = null;
+  let currentSample = 0;
+  let raterName = '';
+  let raterExpertise = '';
+  let responses = [];
+  let shuffledFeedbackOrders = [];
+
+  async function loadData() {
+    try {
+      const res = await fetch('data.json');
+      DATA = await res.json();
+    } catch(e) {
+      DATA = null;
     }
-  ],
-  "preference_question": "Overall, which feedback would you most recommend to a student?",
-  "samples": [
-    {
-      "id": "sample_001",
-      "action": "Basketball Jump Shot",
-      "teacher_video": "https://www.w3schools.com/html/mov_bbb.mp4",
-      "student_video": "https://www.w3schools.com/html/mov_bbb.mp4",
-      "feedbacks": [
-        {
-          "id": "A",
-          "label": "Feedback A",
-          "text": "The most critical improvement needed is to improve their coordination and teamwork. The student needs to work on their overall form and technique to become a more effective player."
-        },
-        {
-          "id": "B",
-          "label": "Feedback B",
-          "text": "Dip deeper by bending your knees more before your jump shot to generate more power. Your knee angle at take-off is approximately 105° compared to the expert's 145°, resulting in significantly less explosive force transfer through the kinetic chain."
-        },
-        {
-          "id": "GT",
-          "label": "Feedback C",
-          "text": "The shooter is not using their legs effectively and has poor form and flow in the shot. The shooter needs to power the shot by bending the knees deeper before jumping."
-        }
-      ]
-    },
-    {
-      "id": "sample_002",
-      "action": "Soccer Penalty Kick",
-      "teacher_video": "https://www.w3schools.com/html/mov_bbb.mp4",
-      "student_video": "https://www.w3schools.com/html/mov_bbb.mp4",
-      "feedbacks": [
-        {
-          "id": "A",
-          "label": "Feedback A",
-          "text": "The player needs to improve their overall technique and focus on striking the ball with more precision. They should practice more to build consistency."
-        },
-        {
-          "id": "B",
-          "label": "Feedback B",
-          "text": "Bend your kicking knee deeper during the backswing to generate more power and keep your torso stable through the strike. Your trunk acceleration is 3.2 m/s² below the expert level, which directly reduces shot velocity."
-        },
-        {
-          "id": "GT",
-          "label": "Feedback C",
-          "text": "The player's body posture needs improvement, specifically their upright stance and foot positioning, to achieve a more technical stroke."
-        }
-      ]
-    },
-    {
-      "id": "sample_003",
-      "action": "Bouldering",
-      "teacher_video": "https://www.w3schools.com/html/mov_bbb.mp4",
-      "student_video": "https://www.w3schools.com/html/mov_bbb.mp4",
-      "feedbacks": [
-        {
-          "id": "A",
-          "label": "Feedback A",
-          "text": "You need to keep your arms straight and close to the wall to save your energy. Focus on efficiency."
-        },
-        {
-          "id": "B",
-          "label": "Feedback B",
-          "text": "Tighten your core to keep your hips close to the wall and prevent your body from twisting when you reach for the next hold. Your torso yaw deviation of 10° compared to the expert's 2° is causing unnecessary energy expenditure."
-        },
-        {
-          "id": "GT",
-          "label": "Feedback C",
-          "text": "The climber needs to adjust their footwork and engage their hips to gain height and successfully place the hand in the hold."
-        }
-      ]
+    if (!DATA) {
+      document.getElementById('study-desc').textContent = 'Failed to load study data. Please check data.json.';
+      return;
     }
-  ]
-}
+    initWelcome();
+  }
+
+  function initWelcome() {
+    document.getElementById('study-title').textContent = DATA.study_title;
+    document.getElementById('study-desc').textContent = DATA.study_description;
+
+    const infoGrid = document.getElementById('info-grid');
+    infoGrid.innerHTML = `
+      <div class="info-item">
+        <div class="info-label">Samples to rate</div>
+        <div class="info-val">${DATA.samples.length} video pairs</div>
+      </div>
+      <div class="info-item">
+        <div class="info-label">Metrics per feedback</div>
+        <div class="info-val">${DATA.metrics.length} dimensions</div>
+      </div>
+      <div class="info-item">
+        <div class="info-label">Estimated time</div>
+        <div class="info-val">${Math.ceil(DATA.samples.length * 3)} – ${DATA.samples.length * 5} minutes</div>
+      </div>
+      <div class="info-item">
+        <div class="info-label">Feedback labels</div>
+        <div class="info-val">Fully blinded (A / B / C)</div>
+      </div>
+    `;
+
+    const sel = document.getElementById('rater-expertise');
+    DATA.rater_info.expertise_options.forEach(opt => {
+      const el = document.createElement('option');
+      el.value = opt; el.textContent = opt;
+      sel.appendChild(el);
+    });
+
+    document.getElementById('btn-start').addEventListener('click', startStudy);
+
+    // Pre-compute shuffled feedback orders (blind randomisation)
+    shuffledFeedbackOrders = DATA.samples.map(s => {
+      const order = s.feedbacks.map((_, i) => i);
+      for (let i = order.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [order[i], order[j]] = [order[j], order[i]];
+      }
+      return order;
+    });
+
+    responses = DATA.samples.map(s => ({
+      sampleId: s.id,
+      action: s.action,
+      feedbackRatings: {},
+      preference: null
+    }));
+  }
+
+  function startStudy() {
+    const name = document.getElementById('rater-name').value.trim();
+    const exp = document.getElementById('rater-expertise').value;
+    if (!name || !exp) {
+      alert('Please enter your name and area of expertise.');
+      return;
+    }
+    raterName = name;
+    raterExpertise = exp;
+
+    document.getElementById('screen-welcome').classList.add('hidden');
+    document.getElementById('progress-wrap').style.display = 'flex';
+    renderSample(0);
+  }
+
+  function renderSample(idx) {
+    currentSample = idx;
+    const s = DATA.samples[idx];
+    const order = shuffledFeedbackOrders[idx];
+    const total = DATA.samples.length;
+
+    document.getElementById('sample-number').textContent = `Sample ${idx + 1} of ${total}`;
+    document.getElementById('sample-action').textContent = s.action;
+    document.getElementById('action-pill').textContent = s.action;
+    document.getElementById('progress-text').textContent = `${idx + 1} / ${total}`;
+    document.getElementById('progress-bar').style.width = `${((idx + 1) / total) * 100}%`;
+
+    document.getElementById('video-teacher').src = s.teacher_video;
+    document.getElementById('video-student').src = s.student_video;
+
+    // Render feedback cards in shuffled order
+    const container = document.getElementById('feedback-cards');
+    container.innerHTML = '';
+    const labels = ['A', 'B', 'C', 'D', 'E'];
+
+    order.forEach((fbIdx, displayIdx) => {
+      const fb = s.feedbacks[fbIdx];
+      const displayLabel = labels[displayIdx];
+
+      const card = document.createElement('div');
+      card.className = 'feedback-card';
+      card.dataset.fbId = fb.id;
+
+      let metricsHtml = '<div class="metrics-grid">';
+      DATA.metrics.forEach(m => {
+        const savedRating = responses[idx].feedbackRatings[fb.id]?.[m.id] || 0;
+        let starsHtml = '';
+        for (let v = 1; v <= 5; v++) {
+          starsHtml += `<div class="star ${savedRating >= v ? 'active' : ''}" 
+            data-fb="${fb.id}" data-metric="${m.id}" data-val="${v}" title="${v} — ${v === 1 ? m.labels['1'] : v === 5 ? m.labels['5'] : ''}">
+            ${v}
+          </div>`;
+        }
+        const hintText = savedRating ? `${savedRating}/5` : 'not rated';
+        metricsHtml += `
+          <div class="metric-item">
+            <div class="metric-name">${m.name}</div>
+            <div class="metric-desc">${m.description}</div>
+            <div class="star-row" data-fb="${fb.id}" data-metric="${m.id}">
+              ${starsHtml}
+              <span class="star-hint" id="hint-${fb.id}-${m.id}">${hintText}</span>
+            </div>
+          </div>`;
+      });
+      metricsHtml += '</div>';
+
+      card.innerHTML = `
+        <div class="feedback-card-header">
+          <span class="feedback-id">Feedback ${displayLabel}</span>
+        </div>
+        <div class="feedback-body">
+          <div class="feedback-text">${fb.text}</div>
+          ${metricsHtml}
+        </div>`;
+      container.appendChild(card);
+    });
+
+    // Star click handlers
+    container.querySelectorAll('.star').forEach(star => {
+      star.addEventListener('click', () => {
+        const fbId = star.dataset.fb;
+        const metric = star.dataset.metric;
+        const val = parseInt(star.dataset.val);
+
+        if (!responses[idx].feedbackRatings[fbId]) responses[idx].feedbackRatings[fbId] = {};
+        responses[idx].feedbackRatings[fbId][metric] = val;
+
+        // Update stars in row
+        const row = container.querySelector(`.star-row[data-fb="${fbId}"][data-metric="${metric}"]`);
+        row.querySelectorAll('.star').forEach(s => {
+          s.classList.toggle('active', parseInt(s.dataset.val) <= val);
+        });
+
+        // Update label hints
+        const m = DATA.metrics.find(m => m.id === metric);
+        const hintEl = document.getElementById(`hint-${fbId}-${metric}`);
+        if (hintEl) hintEl.textContent = `${val}/5`;
+      });
+    });
+
+    // Preference options
+    const prefOptions = document.getElementById('pref-options');
+    prefOptions.innerHTML = '';
+    order.forEach((fbIdx, displayIdx) => {
+      const fb = s.feedbacks[fbIdx];
+      const displayLabel = labels[displayIdx];
+      const btn = document.createElement('button');
+      btn.className = 'pref-btn' + (responses[idx].preference === fb.id ? ' selected' : '');
+      btn.textContent = `Feedback ${displayLabel}`;
+      btn.dataset.fbId = fb.id;
+      btn.addEventListener('click', () => {
+        responses[idx].preference = fb.id;
+        prefOptions.querySelectorAll('.pref-btn').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+      });
+      prefOptions.appendChild(btn);
+    });
+
+    document.getElementById('pref-question').textContent = DATA.preference_question;
+
+    document.getElementById('screen-sample').classList.remove('hidden');
+    document.getElementById('btn-prev').style.visibility = idx === 0 ? 'hidden' : 'visible';
+    document.getElementById('btn-next').textContent = idx === total - 1 ? 'Finish →' : 'Next sample →';
+
+    document.getElementById('validation-msg').classList.remove('show');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function validateCurrentSample() {
+    const r = responses[currentSample];
+    const s = DATA.samples[currentSample];
+
+    for (const fb of s.feedbacks) {
+      for (const m of DATA.metrics) {
+        if (!r.feedbackRatings[fb.id]?.[m.id]) return false;
+      }
+    }
+    if (!r.preference) return false;
+    return true;
+  }
+
+  document.getElementById('btn-next').addEventListener('click', () => {
+    if (!validateCurrentSample()) {
+      document.getElementById('validation-msg').classList.add('show');
+      return;
+    }
+    if (currentSample < DATA.samples.length - 1) {
+      document.getElementById('screen-sample').classList.add('hidden');
+      renderSample(currentSample + 1);
+    } else {
+      showComplete();
+    }
+  });
+
+  document.getElementById('btn-prev').addEventListener('click', () => {
+    if (currentSample > 0) {
+      document.getElementById('screen-sample').classList.add('hidden');
+      renderSample(currentSample - 1);
+    }
+  });
+
+  function showComplete() {
+    document.getElementById('screen-sample').classList.add('hidden');
+    document.getElementById('progress-wrap').style.display = 'none';
+    document.getElementById('screen-complete').classList.remove('hidden');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    const rows = document.getElementById('response-rows');
+    rows.innerHTML = `
+      <div class="response-row">Rater <span>${raterName}</span></div>
+      <div class="response-row">Expertise <span>${raterExpertise}</span></div>
+      <div class="response-row">Samples rated <span>${DATA.samples.length}</span></div>
+      <div class="response-row">Total ratings <span>${DATA.samples.length * DATA.feedbacks?.length || DATA.samples.reduce((a,s) => a + s.feedbacks.length, 0)} feedback cards</span></div>
+    `;
+  }
+
+  document.getElementById('btn-download').addEventListener('click', () => {
+    const output = {
+      rater: { name: raterName, expertise: raterExpertise },
+      timestamp: new Date().toISOString(),
+      responses
+    };
+    const blob = new Blob([JSON.stringify(output, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `userstudy_${raterName.replace(/\s+/g,'_')}_${Date.now()}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+  });
+
+  loadData();
+</script>
+</body>
+</html>
