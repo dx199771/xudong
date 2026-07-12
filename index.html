@@ -8,250 +8,121 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg:           #F0F2F5;
-  --surface:      #FFFFFF;
-  --surface-alt:  #F6F7F9;
-  --border:       #DDE1E7;
-  --border-hi:    #B8BFC9;
-  --text:         #111827;
-  --text-2:       #4B5563;
-  --text-3:       #9CA3AF;
-  --blue:         #1864AB;
-  --blue-lt:      #E8F0FB;
-  --blue-bd:      #BFCFE8;
-  --green:        #166534;
-  --green-lt:     #DCFCE7;
-  --r:            6px;
-  --r-lg:         10px;
-  --mono:         'JetBrains Mono', 'Fira Mono', 'Menlo', monospace;
+  --bg:        #F0F2F5;
+  --surface:   #FFFFFF;
+  --surface-alt:#F6F7F9;
+  --border:    #DDE1E7;
+  --border-hi: #B8BFC9;
+  --text:      #111827;
+  --text-2:    #4B5563;
+  --text-3:    #9CA3AF;
+  --blue:      #1864AB;
+  --blue-lt:   #E8F0FB;
+  --blue-bd:   #BFCFE8;
+  --green-lt:  #DCFCE7;
+  --r:         6px;
+  --r-lg:      10px;
+  --mono:      'JetBrains Mono','Fira Mono','Menlo',monospace;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  font-size: 14px;
-  line-height: 1.6;
-  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'PingFang SC', 'Segoe UI', sans-serif;
+  background: var(--bg); color: var(--text);
+  font-size: 14px; line-height: 1.6; min-height: 100vh;
 }
 
 /* ── Header ── */
-.hdr {
-  background: var(--surface);
-  border-bottom: 1px solid var(--border);
-  position: sticky; top: 0; z-index: 50;
-  padding: 0 1.5rem;
-}
-.hdr-inner {
-  max-width: 860px; margin: 0 auto;
-  display: flex; align-items: center;
-  justify-content: space-between;
-  height: 52px;
-}
-.hdr-logo {
-  font-size: 13px; font-weight: 600;
-  letter-spacing: -0.01em;
-  display: flex; align-items: center; gap: 8px;
-}
-.hdr-badge {
-  font-size: 10px; font-weight: 500;
-  background: var(--blue-lt); color: var(--blue);
-  border: 1px solid var(--blue-bd);
-  border-radius: 3px; padding: 2px 6px;
-  letter-spacing: 0.04em; text-transform: uppercase;
-}
-.hdr-prog {
-  display: flex; align-items: center; gap: 8px;
-  font-size: 12px; color: var(--text-3);
-}
-.prog-track {
-  width: 90px; height: 3px;
-  background: var(--border); border-radius: 2px; overflow: hidden;
-}
-.prog-fill {
-  height: 100%; background: var(--blue);
-  border-radius: 2px; transition: width .35s ease;
-}
+.hdr { background: var(--surface); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 50; padding: 0 1.5rem; }
+.hdr-inner { max-width: 860px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 52px; }
+.hdr-logo { font-size: 13px; font-weight: 600; letter-spacing: -0.01em; display: flex; align-items: center; gap: 8px; }
+.hdr-badge { font-size: 10px; font-weight: 500; background: var(--blue-lt); color: var(--blue); border: 1px solid var(--blue-bd); border-radius: 3px; padding: 2px 6px; letter-spacing: .04em; text-transform: uppercase; }
+.hdr-right { display: flex; align-items: center; gap: 14px; }
+.hdr-prog { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--text-3); }
+.prog-track { width: 90px; height: 3px; background: var(--border); border-radius: 2px; overflow: hidden; }
+.prog-fill { height: 100%; background: var(--blue); border-radius: 2px; transition: width .35s ease; }
 
-/* ── Page wrapper ── */
-.page {
-  max-width: 860px; margin: 0 auto;
-  padding: 1.75rem 1.5rem 5rem;
-}
+/* ── Lang toggle ── */
+.lang-toggle { display: flex; border: 1px solid var(--border-hi); border-radius: var(--r); overflow: hidden; }
+.lang-btn { padding: 4px 10px; font-size: 12px; font-weight: 500; cursor: pointer; background: var(--surface); color: var(--text-3); border: none; transition: all .12s; }
+.lang-btn.active { background: var(--blue); color: #fff; }
+
+/* ── Page ── */
+.page { max-width: 860px; margin: 0 auto; padding: 1.75rem 1.5rem 5rem; }
 .hidden { display: none !important; }
 
 /* ── Card ── */
-.card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--r-lg);
-  padding: 1.5rem;
-  margin-bottom: 1rem;
-}
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 1.5rem; margin-bottom: 1rem; }
 
 /* ── Welcome ── */
 .welcome-title { font-size: 20px; font-weight: 600; letter-spacing: -.02em; margin-bottom: .4rem; }
 .welcome-sub { color: var(--text-2); margin-bottom: 1.5rem; max-width: 540px; }
-.info-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: .75rem; margin-bottom: 1.5rem;
-}
-.info-cell {
-  background: var(--surface-alt); border: 1px solid var(--border);
-  border-radius: var(--r); padding: .85rem 1rem;
-}
+.info-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: .75rem; margin-bottom: 1.5rem; }
+.info-cell { background: var(--surface-alt); border: 1px solid var(--border); border-radius: var(--r); padding: .85rem 1rem; }
 .info-label { font-size: 10px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--text-3); margin-bottom: 3px; }
 .info-val { font-size: 13px; font-weight: 500; }
 .field label { display: block; font-size: 12px; font-weight: 500; color: var(--text-2); margin-bottom: 5px; }
-.field input {
-  width: 100%; max-width: 320px;
-  padding: 8px 11px; font-size: 13px;
-  border: 1px solid var(--border-hi); border-radius: var(--r);
-  background: var(--surface); color: var(--text); outline: none;
-  transition: border-color .15s, box-shadow .15s;
-}
-.field input:focus {
-  border-color: var(--blue);
-  box-shadow: 0 0 0 3px rgba(24,100,171,.1);
-}
+.field input { width: 100%; max-width: 320px; padding: 8px 11px; font-size: 13px; border: 1px solid var(--border-hi); border-radius: var(--r); background: var(--surface); color: var(--text); outline: none; transition: border-color .15s, box-shadow .15s; }
+.field input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(24,100,171,.1); }
 
 /* ── Buttons ── */
-.btn {
-  display: inline-flex; align-items: center; gap: 5px;
-  padding: 8px 18px; border-radius: var(--r);
-  font-size: 13px; font-weight: 500; cursor: pointer;
-  border: 1px solid transparent; transition: all .13s;
-}
+.btn { display: inline-flex; align-items: center; gap: 5px; padding: 8px 18px; border-radius: var(--r); font-size: 13px; font-weight: 500; cursor: pointer; border: 1px solid transparent; transition: all .13s; }
 .btn-primary { background: var(--blue); color: #fff; border-color: var(--blue); }
 .btn-primary:hover { background: #155EA0; }
 .btn-ghost { background: var(--surface); color: var(--text); border-color: var(--border-hi); }
 .btn-ghost:hover { background: var(--surface-alt); }
-.btn:disabled { opacity: .4; cursor: not-allowed; }
 .btn-row { display: flex; align-items: center; justify-content: space-between; margin-top: 1.5rem; }
 
 /* ── Sample header ── */
-.smp-hdr {
-  display: flex; align-items: center; justify-content: space-between;
-  flex-wrap: wrap; gap: .5rem;
-}
+.smp-hdr { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .5rem; }
 .smp-meta { font-size: 11px; font-weight: 500; color: var(--text-3); text-transform: uppercase; letter-spacing: .07em; margin-bottom: 3px; }
 .smp-title { font-size: 18px; font-weight: 600; letter-spacing: -.01em; }
-.smp-pill {
-  font-size: 11px; font-weight: 500;
-  background: var(--blue-lt); color: var(--blue);
-  border: 1px solid var(--blue-bd);
-  border-radius: 20px; padding: 4px 12px;
-  white-space: nowrap;
-}
+.smp-pill { font-size: 11px; font-weight: 500; background: var(--blue-lt); color: var(--blue); border: 1px solid var(--blue-bd); border-radius: 20px; padding: 4px 12px; white-space: nowrap; }
+.sec-label { font-size: 10px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--text-3); margin-bottom: .85rem; }
 
-/* ── Section label ── */
-.sec-label {
-  font-size: 10px; font-weight: 600; letter-spacing: .1em;
-  text-transform: uppercase; color: var(--text-3);
-  margin-bottom: .85rem;
-}
-
-/* ── Single video ── */
-.vid-note {
-  font-size: 12px; color: var(--text-3);
-  margin-top: 8px; text-align: center;
-}
-video {
-  width: 100%; border-radius: var(--r);
-  border: 1px solid var(--border); background: #000;
-  display: block; max-height: 480px; object-fit: contain;
-}
+/* ── Video ── */
+video { width: 100%; border-radius: var(--r); border: 1px solid var(--border); background: #000; display: block; max-height: 480px; object-fit: contain; }
+.vid-note { font-size: 12px; color: var(--text-3); margin-top: 8px; text-align: center; }
 
 /* ── Feedback cards ── */
-.fb-card {
-  border: 1px solid var(--border);
-  border-radius: var(--r); overflow: hidden;
-  margin-bottom: .75rem;
-}
+.fb-card { border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; margin-bottom: .75rem; }
 .fb-card:last-child { margin-bottom: 0; }
-.fb-card-hdr {
-  background: var(--surface-alt); border-bottom: 1px solid var(--border);
-  padding: 8px 14px;
-}
-.fb-label {
-  font-size: 11px; font-weight: 700; letter-spacing: .06em;
-  font-family: var(--mono); color: var(--text-2);
-}
+.fb-card-hdr { background: var(--surface-alt); border-bottom: 1px solid var(--border); padding: 8px 14px; }
+.fb-label { font-size: 11px; font-weight: 700; letter-spacing: .06em; font-family: var(--mono); color: var(--text-2); }
 .fb-body { padding: 14px; }
-.fb-text {
-  font-size: 14px; color: var(--text); line-height: 1.65;
-  padding-bottom: 14px; margin-bottom: 14px;
-  border-bottom: 1px solid var(--border);
-}
+.fb-text { font-size: 14px; color: var(--text); line-height: 1.65; padding-bottom: 14px; margin-bottom: 14px; border-bottom: 1px solid var(--border); }
 
-/* ── Likert scale ── */
+/* ── Likert ── */
 .likert-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 .lk-name { font-size: 12px; font-weight: 600; margin-bottom: 2px; }
 .lk-desc { font-size: 11px; color: var(--text-3); line-height: 1.4; margin-bottom: 5px; }
 .lk-anchors { display: flex; justify-content: space-between; font-size: 10px; color: var(--text-3); margin-bottom: 4px; }
 .lk-row { display: flex; gap: 4px; }
-.lk-btn {
-  flex: 1; height: 30px; border-radius: var(--r);
-  border: 1px solid var(--border-hi);
-  background: var(--surface); cursor: pointer;
-  font-size: 11px; font-weight: 600; font-family: var(--mono);
-  color: var(--text-3); transition: all .12s;
-  display: flex; align-items: center; justify-content: center;
-}
+.lk-btn { flex: 1; height: 30px; border-radius: var(--r); border: 1px solid var(--border-hi); background: var(--surface); cursor: pointer; font-size: 11px; font-weight: 600; font-family: var(--mono); color: var(--text-3); transition: all .12s; display: flex; align-items: center; justify-content: center; }
 .lk-btn:hover { border-color: var(--blue); color: var(--blue); background: var(--blue-lt); }
 .lk-btn.sel { border-color: var(--blue); color: #fff; background: var(--blue); }
 
 /* ── Preference ── */
 .pref-q { font-size: 13px; font-weight: 500; margin-bottom: .85rem; }
 .pref-opts { display: flex; gap: 8px; flex-wrap: wrap; }
-.pref-btn {
-  padding: 7px 22px; border-radius: 20px;
-  border: 1px solid var(--border-hi); background: var(--surface);
-  font-size: 13px; font-weight: 700; font-family: var(--mono);
-  cursor: pointer; color: var(--text-2); transition: all .12s;
-}
+.pref-btn { padding: 7px 22px; border-radius: 20px; border: 1px solid var(--border-hi); background: var(--surface); font-size: 13px; font-weight: 700; font-family: var(--mono); cursor: pointer; color: var(--text-2); transition: all .12s; }
 .pref-btn:hover { border-color: var(--blue); color: var(--blue); background: var(--blue-lt); }
 .pref-btn.sel { border-color: var(--blue); color: #fff; background: var(--blue); }
 
 /* ── Validation ── */
-.val-msg {
-  font-size: 12px; color: #991B1B;
-  background: #FEF2F2; border: 1px solid #FECACA;
-  border-radius: var(--r); padding: 9px 13px;
-  margin-top: .85rem; display: none;
-}
+.val-msg { font-size: 12px; color: #991B1B; background: #FEF2F2; border: 1px solid #FECACA; border-radius: var(--r); padding: 9px 13px; margin-top: .85rem; display: none; }
 .val-msg.show { display: block; }
 
 /* ── Complete ── */
 .complete-wrap { text-align: center; padding: 2.5rem 1.5rem; }
-.check-circle {
-  width: 48px; height: 48px; border-radius: 50%;
-  background: var(--green-lt); border: 1px solid #86EFAC;
-  display: flex; align-items: center; justify-content: center;
-  margin: 0 auto 1.25rem; font-size: 20px;
-}
+.check-circle { width: 48px; height: 48px; border-radius: 50%; background: var(--green-lt); border: 1px solid #86EFAC; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem; font-size: 20px; }
 .complete-h { font-size: 19px; font-weight: 600; margin-bottom: .4rem; }
 .complete-sub { color: var(--text-2); max-width: 420px; margin: 0 auto 1.75rem; }
-.resp-preview {
-  background: var(--surface-alt); border: 1px solid var(--border);
-  border-radius: var(--r); padding: 1rem 1.25rem;
-  text-align: left; margin: 0 auto 1.25rem; max-width: 380px;
-}
+.resp-preview { background: var(--surface-alt); border: 1px solid var(--border); border-radius: var(--r); padding: 1rem 1.25rem; text-align: left; margin: 0 auto 1.25rem; max-width: 380px; }
 .resp-preview h4 { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--text-3); margin-bottom: .6rem; }
-.resp-row {
-  display: flex; justify-content: space-between;
-  font-size: 12px; padding: 4px 0;
-  border-bottom: 1px solid var(--border); color: var(--text-2);
-}
+.resp-row { display: flex; justify-content: space-between; font-size: 12px; padding: 4px 0; border-bottom: 1px solid var(--border); color: var(--text-2); }
 .resp-row:last-child { border-bottom: none; }
 .resp-row strong { color: var(--text); }
-.dl-btn {
-  background: var(--surface); border: 1px solid var(--border-hi);
-  border-radius: var(--r); padding: 9px 18px;
-  font-size: 13px; font-weight: 500; cursor: pointer;
-  color: var(--text); transition: all .13s;
-  display: inline-flex; align-items: center; gap: 5px;
-}
+.dl-btn { background: var(--surface); border: 1px solid var(--border-hi); border-radius: var(--r); padding: 9px 18px; font-size: 13px; font-weight: 500; cursor: pointer; color: var(--text); transition: all .13s; display: inline-flex; align-items: center; gap: 5px; }
 .dl-btn:hover { background: var(--blue-lt); border-color: var(--blue); color: var(--blue); }
 
 @media (max-width: 600px) {
@@ -268,86 +139,85 @@ video {
     <div class="hdr-logo">
       BoT-Feedback <span class="hdr-badge">Human Eval</span>
     </div>
-    <div class="hdr-prog hidden" id="hdr-prog">
-      <span id="prog-text">1 / 8</span>
-      <div class="prog-track"><div class="prog-fill" id="prog-fill" style="width:12.5%"></div></div>
+    <div class="hdr-right">
+      <div class="lang-toggle">
+        <button class="lang-btn active" id="lang-en" onclick="setLang('en')">EN</button>
+        <button class="lang-btn"        id="lang-zh" onclick="setLang('zh')">中文</button>
+      </div>
+      <div class="hdr-prog hidden" id="hdr-prog">
+        <span id="prog-text">1 / 8</span>
+        <div class="prog-track"><div class="prog-fill" id="prog-fill" style="width:12.5%"></div></div>
+      </div>
     </div>
   </div>
 </header>
 
 <main class="page">
 
-  <!-- ── Welcome ── -->
+  <!-- Welcome -->
   <div id="scr-welcome">
     <div class="card">
-      <div class="welcome-title" id="w-title">BoT-Feedback — Human Evaluation</div>
-      <div class="welcome-sub" id="w-desc">Loading…</div>
-      <div class="info-grid" id="w-info"></div>
-
+      <div class="welcome-title" id="w-title"></div>
+      <div class="welcome-sub"   id="w-desc"></div>
+      <div class="info-grid"     id="w-info"></div>
       <div class="field" style="margin-bottom:1.5rem">
-        <label for="inp-name">Your name</label>
-        <input type="text" id="inp-name" placeholder="e.g. Alex Chen" autocomplete="off">
+        <label for="inp-name" id="lbl-name"></label>
+        <input type="text" id="inp-name" autocomplete="off">
       </div>
-
       <div style="display:flex;justify-content:flex-end">
-        <button class="btn btn-primary" id="btn-start">Begin evaluation →</button>
+        <button class="btn btn-primary" id="btn-start"></button>
       </div>
     </div>
   </div>
 
-  <!-- ── Sample ── -->
+  <!-- Sample -->
   <div id="scr-sample" class="hidden">
-
     <div class="card" style="margin-bottom:.85rem">
       <div class="smp-hdr">
         <div>
-          <div class="smp-meta" id="smp-num">Sample 1 of 8</div>
-          <div class="smp-title" id="smp-action">—</div>
+          <div class="smp-meta"  id="smp-num"></div>
+          <div class="smp-title" id="smp-action"></div>
         </div>
-        <div class="smp-pill" id="smp-pill">—</div>
+        <div class="smp-pill" id="smp-pill"></div>
       </div>
     </div>
 
-    <!-- Single combined video -->
     <div class="card">
-      <div class="sec-label">Video — left: expert (reference) · right: student</div>
+      <div class="sec-label" id="sec-video"></div>
       <video id="vid-main" controls playsinline preload="metadata"></video>
-      <div class="vid-note">The video shows expert on the left and student on the right.</div>
+      <div class="vid-note" id="vid-note"></div>
     </div>
 
     <div class="card">
-      <div class="sec-label">Rate each feedback (blinded — A / B / C)</div>
+      <div class="sec-label" id="sec-rate"></div>
       <div id="fb-container"></div>
     </div>
 
     <div class="card">
-      <div class="pref-q" id="pref-q">Overall, which feedback would you most recommend to the student?</div>
+      <div class="pref-q"   id="pref-q"></div>
       <div class="pref-opts" id="pref-opts"></div>
     </div>
 
-    <div class="val-msg" id="val-msg">
-      Please complete all ratings and select an overall preference before continuing.
-    </div>
+    <div class="val-msg" id="val-msg"></div>
 
     <div class="btn-row">
-      <button class="btn btn-ghost" id="btn-prev" style="visibility:hidden">← Back</button>
-      <button class="btn btn-primary" id="btn-next">Next →</button>
+      <button class="btn btn-ghost"   id="btn-prev" style="visibility:hidden"></button>
+      <button class="btn btn-primary" id="btn-next"></button>
     </div>
-
   </div>
 
-  <!-- ── Complete ── -->
+  <!-- Complete -->
   <div id="scr-complete" class="hidden">
     <div class="card">
       <div class="complete-wrap">
         <div class="check-circle">✓</div>
-        <div class="complete-h">All done — thank you!</div>
-        <div class="complete-sub">Your ratings have been saved. Please download the JSON file and send it to the study coordinator.</div>
+        <div class="complete-h"   id="done-h"></div>
+        <div class="complete-sub" id="done-sub"></div>
         <div class="resp-preview">
-          <h4>Summary</h4>
+          <h4 id="done-summary"></h4>
           <div id="resp-rows"></div>
         </div>
-        <button class="dl-btn" id="btn-dl">↓ Download responses (JSON)</button>
+        <button class="dl-btn" id="btn-dl"></button>
       </div>
     </div>
   </div>
@@ -355,35 +225,113 @@ video {
 </main>
 
 <script>
-let DATA = null;
-let idx = 0;
+/* ── i18n ── */
+const T = {
+  en: {
+    badge:        'Human Eval',
+    title:        'BoT-Feedback — Human Evaluation',
+    desc:         'You will watch 8 pairs of sports videos (student vs. expert) and rate three coaching feedback variants on four dimensions. Variants are labelled A / B / C and presented in randomised order. Please do not discuss your ratings with other participants.',
+    info_pairs:   'Video pairs',
+    info_metrics: 'Metrics per feedback',
+    info_time:    'Est. time',
+    info_blind:   'Blinded — A / B / C',
+    lbl_name:     'Your name',
+    name_ph:      'e.g. Alex Chen',
+    btn_start:    'Begin evaluation →',
+    sec_video:    'Video — left: expert (reference) · right: student',
+    vid_note:     'The video shows expert on the left and student on the right.',
+    sec_rate:     'Rate each feedback (blinded — A / B / C)',
+    pref_q:       'Overall, which feedback would you most recommend to the student?',
+    feedback:     'Feedback',
+    val_msg:      'Please complete all ratings and select an overall preference before continuing.',
+    btn_prev:     '← Back',
+    btn_next:     'Next →',
+    btn_finish:   'Finish ✓',
+    sample_of:    (i,n) => `Sample ${i} of ${n}`,
+    done_h:       'All done — thank you!',
+    done_sub:     'Your ratings have been saved. Please download the JSON file and send it to the study coordinator.',
+    done_summary: 'Summary',
+    resp_rater:   'Rater',
+    resp_samples: 'Samples rated',
+    resp_total:   'Total scores given',
+    btn_dl:       '↓ Download responses (JSON)',
+    alert_name:   'Please enter your name.',
+  },
+  zh: {
+    badge:        '人工评估',
+    title:        'BoT-Feedback — 人工评估',
+    desc:         '您将观看 8 对运动视频（学生 vs. 专家），并从四个维度对三条运动反馈进行评分。反馈以 A / B / C 随机顺序呈现，评估过程为盲评。请勿与其他参与者讨论您的评分。',
+    info_pairs:   '视频对数',
+    info_metrics: '每条反馈指标数',
+    info_time:    '预计时长',
+    info_blind:   '盲评 — A / B / C',
+    lbl_name:     '您的姓名',
+    name_ph:      '例：张三',
+    btn_start:    '开始评估 →',
+    sec_video:    '视频 — 左：专家（参考）· 右：学生',
+    vid_note:     '视频左侧为专家示范，右侧为学生动作。',
+    sec_rate:     '对每条反馈评分（盲评 — A / B / C）',
+    pref_q:       '综合来看，您最推荐将哪条反馈提供给学生？',
+    feedback:     '反馈',
+    val_msg:      '请完成所有评分并选择总体偏好后再继续。',
+    btn_prev:     '← 上一条',
+    btn_next:     '下一条 →',
+    btn_finish:   '完成 ✓',
+    sample_of:    (i,n) => `第 ${i} / ${n} 组`,
+    done_h:       '全部完成，感谢您的参与！',
+    done_sub:     '您的评分已记录。请下载 JSON 文件并发送给研究负责人。',
+    done_summary: '评估摘要',
+    resp_rater:   '评估者',
+    resp_samples: '已评估组数',
+    resp_total:   '总评分数',
+    btn_dl:       '↓ 下载评分结果 (JSON)',
+    alert_name:   '请输入您的姓名。',
+  }
+};
+
+/* ── Metrics i18n ── */
+const METRICS = {
+  en: [
+    { id:'CU', name:'Corrective Utility',  description:'Does the feedback give a specific, actionable physical correction (not generic advice)?', anchor_lo:'Completely generic', anchor_hi:'Precise & actionable' },
+    { id:'EA', name:'Expert Alignment',    description:'Does the feedback align with what an expert would say? (Biomechanically sound tips should not be penalised even if GT is vague.)', anchor_lo:'Contradicts expert intent', anchor_hi:'Fully aligned' },
+    { id:'HC', name:'Hallucination Check', description:'Does the feedback contradict observable evidence or suggest physically impossible movements? (5 = no error; 1 = clear biomechanical error.)', anchor_lo:'Clear biomechanical error', anchor_hi:'Fully consistent' },
+    { id:'ID', name:'Information Density', description:'Does the feedback contain high-value technical insight vs. filler? (1 = high fluff; 5 = professional insights.)', anchor_lo:'Mostly filler', anchor_hi:'Dense professional insight' },
+  ],
+  zh: [
+    { id:'CU', name:'纠正实用性',   description:'该反馈是否提供了具体、可操作的身体纠正建议（而非泛泛而谈）？', anchor_lo:'完全泛泛', anchor_hi:'精准且可操作' },
+    { id:'EA', name:'专家一致性',   description:'该反馈是否与专家意见一致？（生物力学合理的建议不应因参考答案模糊而被扣分。）', anchor_lo:'与专家意图相悖', anchor_hi:'完全一致' },
+    { id:'HC', name:'幻觉检测',     description:'该反馈是否与可观察证据相悖，或提出了物理上不可能的动作？（5 = 无错误；1 = 明显生物力学错误。）', anchor_lo:'明显生物力学错误', anchor_hi:'完全一致' },
+    { id:'ID', name:'信息密度',     description:'该反馈是否包含高价值专业洞见（而非冗余内容）？（1 = 大量废话；5 = 专业洞见密集。）', anchor_lo:'大量冗余', anchor_hi:'专业洞见密集' },
+  ]
+};
+
+/* ── State ── */
+let DATA  = null;
+let lang  = 'en';
+let idx   = 0;
 let raterName = '';
 let responses = [];
-let orders = [];
+let orders    = [];
+let studyStarted = false;
 
+/* ── Lang switch ── */
+function setLang(l) {
+  lang = l;
+  document.getElementById('lang-en').classList.toggle('active', l==='en');
+  document.getElementById('lang-zh').classList.toggle('active', l==='zh');
+  if (!studyStarted) renderWelcome();
+  else renderSample(idx);
+}
+
+/* ── Load ── */
 async function init() {
   try {
     const r = await fetch('data.json');
     DATA = await r.json();
   } catch(e) {
-    document.getElementById('w-desc').textContent = 'Could not load data.json. Please check the file path.';
+    document.getElementById('w-desc').textContent = 'Could not load data.json.';
     return;
   }
-  buildWelcome();
-}
-
-function buildWelcome() {
-  document.getElementById('w-title').textContent = DATA.study_title;
-  document.getElementById('w-desc').textContent  = DATA.study_description;
-
-  const n = DATA.samples.length;
-  document.getElementById('w-info').innerHTML = `
-    <div class="info-cell"><div class="info-label">Video pairs</div><div class="info-val">${n}</div></div>
-    <div class="info-cell"><div class="info-label">Metrics per feedback</div><div class="info-val">${DATA.metrics.length}</div></div>
-    <div class="info-cell"><div class="info-label">Est. time</div><div class="info-val">${Math.ceil(n*2.5)}–${n*5} min</div></div>
-  `;
-
-  document.getElementById('btn-start').onclick = startStudy;
 
   orders = DATA.samples.map(s => {
     const arr = s.feedbacks.map((_,i) => i);
@@ -395,37 +343,66 @@ function buildWelcome() {
   });
 
   responses = DATA.samples.map(s => ({
-    sampleId:   s.id,
-    action:     s.action,
-    ratings:    {},
-    preference: null
+    sampleId: s.id, action: s.action,
+    ratings: {}, preference: null
   }));
+
+  renderWelcome();
+}
+
+function renderWelcome() {
+  const t = T[lang];
+  const n = DATA.samples.length;
+  const minT = Math.ceil(n*2.5), maxT = n*5;
+
+  document.getElementById('w-title').textContent  = t.title;
+  document.getElementById('w-desc').textContent   = t.desc;
+  document.getElementById('lbl-name').textContent = t.lbl_name;
+  document.getElementById('inp-name').placeholder = t.name_ph;
+  document.getElementById('btn-start').textContent = t.btn_start;
+
+  document.getElementById('w-info').innerHTML = `
+    <div class="info-cell"><div class="info-label">${t.info_pairs}</div><div class="info-val">${n}</div></div>
+    <div class="info-cell"><div class="info-label">${t.info_metrics}</div><div class="info-val">${METRICS[lang].length}</div></div>
+    <div class="info-cell"><div class="info-label">${t.info_time}</div><div class="info-val">${minT}–${maxT} min</div></div>
+  `;
+
+  document.getElementById('btn-start').onclick = startStudy;
 }
 
 function startStudy() {
   const name = document.getElementById('inp-name').value.trim();
-  if (!name) { alert('Please enter your name.'); return; }
+  if (!name) { alert(T[lang].alert_name); return; }
   raterName = name;
+  studyStarted = true;
   document.getElementById('scr-welcome').classList.add('hidden');
   document.getElementById('hdr-prog').classList.remove('hidden');
   renderSample(0);
 }
 
+/* ── Render sample ── */
 function renderSample(i) {
   idx = i;
+  const t = T[lang];
+  const metrics = METRICS[lang];
   const s = DATA.samples[i];
   const order = orders[i];
   const n = DATA.samples.length;
   const labels = ['A','B','C','D','E'];
 
-  document.getElementById('smp-num').textContent    = `Sample ${i+1} of ${n}`;
+  document.getElementById('smp-num').textContent    = t.sample_of(i+1, n);
   document.getElementById('smp-action').textContent = s.action;
   document.getElementById('smp-pill').textContent   = s.action;
   document.getElementById('prog-text').textContent  = `${i+1} / ${n}`;
   document.getElementById('prog-fill').style.width  = `${((i+1)/n)*100}%`;
-  document.getElementById('pref-q').textContent     = DATA.preference_question;
+  document.getElementById('sec-video').textContent  = t.sec_video;
+  document.getElementById('vid-note').textContent   = t.vid_note;
+  document.getElementById('sec-rate').textContent   = t.sec_rate;
+  document.getElementById('pref-q').textContent     = t.pref_q;
+  document.getElementById('val-msg').textContent    = t.val_msg;
+  document.getElementById('btn-prev').textContent   = t.btn_prev;
+  document.getElementById('btn-next').textContent   = i === n-1 ? t.btn_finish : t.btn_next;
 
-  // Single combined video
   document.getElementById('vid-main').src = s.video;
 
   /* Feedback cards */
@@ -435,12 +412,11 @@ function renderSample(i) {
   order.forEach((fbIdx, dispIdx) => {
     const fb    = s.feedbacks[fbIdx];
     const label = labels[dispIdx];
-
-    const card = document.createElement('div');
+    const card  = document.createElement('div');
     card.className = 'fb-card';
 
     let likertHtml = '<div class="likert-grid">';
-    DATA.metrics.forEach(m => {
+    metrics.forEach(m => {
       const saved = responses[i].ratings[fb.id]?.[m.id] || 0;
       let btns = '';
       for (let v = 1; v <= 5; v++) {
@@ -457,9 +433,7 @@ function renderSample(i) {
     likertHtml += '</div>';
 
     card.innerHTML = `
-      <div class="fb-card-hdr">
-        <span class="fb-label">Feedback ${label}</span>
-      </div>
+      <div class="fb-card-hdr"><span class="fb-label">${t.feedback} ${label}</span></div>
       <div class="fb-body">
         <div class="fb-text">${fb.text}</div>
         ${likertHtml}
@@ -469,9 +443,7 @@ function renderSample(i) {
 
   fc.querySelectorAll('.lk-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-      const fbId = btn.dataset.fb;
-      const mId  = btn.dataset.m;
-      const v    = parseInt(btn.dataset.v);
+      const fbId = btn.dataset.fb, mId = btn.dataset.m, v = parseInt(btn.dataset.v);
       if (!responses[idx].ratings[fbId]) responses[idx].ratings[fbId] = {};
       responses[idx].ratings[fbId][mId] = v;
       const row = fc.querySelector(`.lk-row[data-fb="${fbId}"][data-m="${mId}"]`);
@@ -483,11 +455,11 @@ function renderSample(i) {
   const po = document.getElementById('pref-opts');
   po.innerHTML = '';
   order.forEach((fbIdx, dispIdx) => {
-    const fb    = s.feedbacks[fbIdx];
-    const label = labels[dispIdx];
-    const btn   = document.createElement('button');
-    btn.className = 'pref-btn' + (responses[i].preference === fb.id ? ' sel' : '');
-    btn.textContent = `Feedback ${label}`;
+    const fb  = s.feedbacks[fbIdx];
+    const lbl = labels[dispIdx];
+    const btn = document.createElement('button');
+    btn.className = 'pref-btn' + (responses[i].preference===fb.id?' sel':'');
+    btn.textContent = `${t.feedback} ${lbl}`;
     btn.addEventListener('click', () => {
       responses[idx].preference = fb.id;
       po.querySelectorAll('.pref-btn').forEach(b => b.classList.remove('sel'));
@@ -496,21 +468,18 @@ function renderSample(i) {
     po.appendChild(btn);
   });
 
-  document.getElementById('btn-prev').style.visibility = i === 0 ? 'hidden' : 'visible';
-  document.getElementById('btn-next').textContent = i === n-1 ? 'Finish ✓' : 'Next →';
+  document.getElementById('btn-prev').style.visibility = i===0 ? 'hidden' : 'visible';
   document.getElementById('val-msg').classList.remove('show');
   document.getElementById('scr-sample').classList.remove('hidden');
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+/* ── Validate ── */
 function validate() {
-  const r = responses[idx];
-  const s = DATA.samples[idx];
-  for (const fb of s.feedbacks) {
-    for (const m of DATA.metrics) {
+  const r = responses[idx], s = DATA.samples[idx];
+  for (const fb of s.feedbacks)
+    for (const m of METRICS[lang])
       if (!r.ratings[fb.id]?.[m.id]) return false;
-    }
-  }
   return !!r.preference;
 }
 
@@ -519,38 +488,40 @@ document.getElementById('btn-next').addEventListener('click', () => {
   const n = DATA.samples.length;
   if (idx < n-1) {
     document.getElementById('scr-sample').classList.add('hidden');
-    renderSample(idx + 1);
-  } else {
-    showComplete();
-  }
+    renderSample(idx+1);
+  } else showComplete();
 });
 
 document.getElementById('btn-prev').addEventListener('click', () => {
   if (idx > 0) {
     document.getElementById('scr-sample').classList.add('hidden');
-    renderSample(idx - 1);
+    renderSample(idx-1);
   }
 });
 
+/* ── Complete ── */
 function showComplete() {
+  const t = T[lang];
   document.getElementById('scr-sample').classList.add('hidden');
   document.getElementById('hdr-prog').classList.add('hidden');
   document.getElementById('scr-complete').classList.remove('hidden');
   window.scrollTo({ top: 0, behavior: 'smooth' });
-  const totalRatings = responses.reduce((a, r) => a + Object.keys(r.ratings).length * DATA.metrics.length, 0);
+
+  document.getElementById('done-h').textContent       = t.done_h;
+  document.getElementById('done-sub').textContent     = t.done_sub;
+  document.getElementById('done-summary').textContent = t.done_summary;
+  document.getElementById('btn-dl').textContent       = t.btn_dl;
+
+  const totalRatings = responses.reduce((a,r) => a + Object.keys(r.ratings).length * METRICS[lang].length, 0);
   document.getElementById('resp-rows').innerHTML = `
-    <div class="resp-row">Rater <strong>${raterName}</strong></div>
-    <div class="resp-row">Samples rated <strong>${DATA.samples.length}</strong></div>
-    <div class="resp-row">Total scores given <strong>${totalRatings}</strong></div>
+    <div class="resp-row">${t.resp_rater}  <strong>${raterName}</strong></div>
+    <div class="resp-row">${t.resp_samples} <strong>${DATA.samples.length}</strong></div>
+    <div class="resp-row">${t.resp_total}   <strong>${totalRatings}</strong></div>
   `;
 }
 
 document.getElementById('btn-dl').addEventListener('click', () => {
-  const out = {
-    rater:     { name: raterName },
-    timestamp: new Date().toISOString(),
-    responses
-  };
+  const out = { rater: { name: raterName }, lang, timestamp: new Date().toISOString(), responses };
   const blob = new Blob([JSON.stringify(out, null, 2)], { type: 'application/json' });
   const url  = URL.createObjectURL(blob);
   const a    = document.createElement('a');
