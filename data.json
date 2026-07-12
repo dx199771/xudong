@@ -1,14 +1,7 @@
 {
   "study_title": "BoT-Feedback — Human Evaluation",
   "study_description": "You will watch 8 pairs of sports videos (student vs. expert) and rate three coaching feedback variants on four dimensions. Variants are labelled A / B / C and presented in randomised order. Please do not discuss your ratings with other participants.",
-  "rater_info": {
-    "expertise_options": [
-      "Sports Science / Biomechanics",
-      "Physical Education / Coaching",
-      "Computer Vision / AI",
-      "Other"
-    ]
-  },
+  "rater_info": {},
   "metrics": [
     {
       "id": "CU",
@@ -44,8 +37,6 @@
     {
       "id": "sample_01",
       "action": "Basketball Drills — Reverse Layup",
-      "teacher_video": "videos/sample_01_teacher.mp4",
-      "student_video": "videos/sample_01_student.mp4",
       "gt": "The player's release point and direction do not qualify as a reverse layup.",
       "feedbacks": [
         {
@@ -60,13 +51,12 @@
           "id": "C",
           "text": "Drive your lead knee higher during the approach and release the ball at the peak of your jump, extending your wrist fully for a proper reverse layup finish."
         }
-      ]
+      ],
+      "video": "videos/sample_01_combined.mp4"
     },
     {
       "id": "sample_02",
       "action": "Soccer Drills — Penalty Kick",
-      "teacher_video": "videos/sample_02_teacher.mp4",
-      "student_video": "videos/sample_02_student.mp4",
       "gt": "The student's hip rotation is insufficient and the plant foot is too far from the ball.",
       "feedbacks": [
         {
@@ -81,13 +71,12 @@
           "id": "C",
           "text": "Increase your hip rotation during the kick to improve the force transmission from your trunk to your foot."
         }
-      ]
+      ],
+      "video": "videos/sample_02_combined.mp4"
     },
     {
       "id": "sample_03",
       "action": "Bouldering",
-      "teacher_video": "videos/sample_03_teacher.mp4",
-      "student_video": "videos/sample_03_student.mp4",
       "gt": "The climber needs to improve their route-reading skills by glancing ahead to plan their next moves.",
       "feedbacks": [
         {
@@ -102,13 +91,12 @@
           "id": "C",
           "text": "Try to climb more efficiently by planning your movements in advance."
         }
-      ]
+      ],
+      "video": "videos/sample_03_combined.mp4"
     },
     {
       "id": "sample_04",
       "action": "Basketball Drills — Mikan Layup",
-      "teacher_video": "videos/sample_04_teacher.mp4",
-      "student_video": "videos/sample_04_student.mp4",
       "gt": "The student lacks a consistent alternating footwork pattern and releases too early.",
       "feedbacks": [
         {
@@ -124,13 +112,12 @@
           "id": "C",
           "text": "Increase your knee drive on each step and release the ball at the top of your jump arc to establish a rhythmic left-right pattern."
         }
-      ]
+      ],
+      "video": "videos/sample_04_combined.mp4"
     },
     {
       "id": "sample_05",
       "action": "Soccer Drills — Dribbling",
-      "teacher_video": "videos/sample_05_teacher.mp4",
-      "student_video": "videos/sample_05_student.mp4",
       "gt": "The student's touch is too heavy and body posture is too upright, reducing close control.",
       "feedbacks": [
         {
@@ -145,13 +132,12 @@
           "id": "C",
           "text": "Improve your dribbling technique by keeping the ball under control at all times."
         }
-      ]
+      ],
+      "video": "videos/sample_05_combined.mp4"
     },
     {
       "id": "sample_06",
       "action": "Basketball Drills — Mid-Range Jump Shooting",
-      "teacher_video": "videos/sample_06_teacher.mp4",
-      "student_video": "videos/sample_06_student.mp4",
       "gt": "The student's elbow flares out and the follow-through is incomplete.",
       "feedbacks": [
         {
@@ -166,13 +152,12 @@
           "id": "C",
           "text": "Focus on your shooting form and try to be more consistent with your release."
         }
-      ]
+      ],
+      "video": "videos/sample_06_combined.mp4"
     },
     {
       "id": "sample_07",
       "action": "Bouldering",
-      "teacher_video": "videos/sample_07_teacher.mp4",
-      "student_video": "videos/sample_07_student.mp4",
       "gt": "The student over-grips and fails to use footholds effectively, causing early muscle fatigue.",
       "feedbacks": [
         {
@@ -187,13 +172,12 @@
           "id": "C",
           "text": "Engage your lower body more actively by pressing through your feet on each move, which will reduce the load on your fingers and forearms."
         }
-      ]
+      ],
+      "video": "videos/sample_07_combined.mp4"
     },
     {
       "id": "sample_08",
       "action": "Basketball Drills — Reverse Layup",
-      "teacher_video": "videos/sample_08_teacher.mp4",
-      "student_video": "videos/sample_08_student.mp4",
       "gt": "The student approaches from the wrong angle and uses the wrong hand for the reverse finish.",
       "feedbacks": [
         {
@@ -208,7 +192,8 @@
           "id": "C",
           "text": "On a reverse layup, attack the baseline, keep your body between the defender and the ball, and release with your outside hand at the peak of your jump."
         }
-      ]
+      ],
+      "video": "videos/sample_08_combined.mp4"
     }
   ]
 }
