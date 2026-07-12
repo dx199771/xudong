@@ -93,7 +93,7 @@ body {
 .welcome-title { font-size: 20px; font-weight: 600; letter-spacing: -.02em; margin-bottom: .4rem; }
 .welcome-sub { color: var(--text-2); margin-bottom: 1.5rem; max-width: 540px; }
 .info-grid {
-  display: grid; grid-template-columns: repeat(2, 1fr);
+  display: grid; grid-template-columns: repeat(3, 1fr);
   gap: .75rem; margin-bottom: 1.5rem;
 }
 .info-cell {
@@ -102,15 +102,15 @@ body {
 }
 .info-label { font-size: 10px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--text-3); margin-bottom: 3px; }
 .info-val { font-size: 13px; font-weight: 500; }
-.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem; }
 .field label { display: block; font-size: 12px; font-weight: 500; color: var(--text-2); margin-bottom: 5px; }
-.field input, .field select {
-  width: 100%; padding: 8px 11px; font-size: 13px;
+.field input {
+  width: 100%; max-width: 320px;
+  padding: 8px 11px; font-size: 13px;
   border: 1px solid var(--border-hi); border-radius: var(--r);
   background: var(--surface); color: var(--text); outline: none;
   transition: border-color .15s, box-shadow .15s;
 }
-.field input:focus, .field select:focus {
+.field input:focus {
   border-color: var(--blue);
   box-shadow: 0 0 0 3px rgba(24,100,171,.1);
 }
@@ -151,19 +151,15 @@ body {
   margin-bottom: .85rem;
 }
 
-/* ── Video grid ── */
-.vid-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .85rem; }
-.vid-tag {
-  font-size: 11px; font-weight: 500; color: var(--text-2);
-  margin-bottom: 5px; display: flex; align-items: center; gap: 5px;
+/* ── Single video ── */
+.vid-note {
+  font-size: 12px; color: var(--text-3);
+  margin-top: 8px; text-align: center;
 }
-.dot { width: 7px; height: 7px; border-radius: 50%; }
-.dot-exp { background: var(--blue); }
-.dot-stu { background: #B45309; }
 video {
   width: 100%; border-radius: var(--r);
   border: 1px solid var(--border); background: #000;
-  aspect-ratio: 16/9; object-fit: cover; display: block;
+  display: block; max-height: 480px; object-fit: contain;
 }
 
 /* ── Feedback cards ── */
@@ -175,7 +171,7 @@ video {
 .fb-card:last-child { margin-bottom: 0; }
 .fb-card-hdr {
   background: var(--surface-alt); border-bottom: 1px solid var(--border);
-  padding: 8px 14px; display: flex; align-items: center; justify-content: space-between;
+  padding: 8px 14px;
 }
 .fb-label {
   font-size: 11px; font-weight: 700; letter-spacing: .06em;
@@ -190,11 +186,10 @@ video {
 
 /* ── Likert scale ── */
 .likert-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.likert-item {}
 .lk-name { font-size: 12px; font-weight: 600; margin-bottom: 2px; }
-.lk-desc { font-size: 11px; color: var(--text-3); line-height: 1.4; margin-bottom: 6px; }
+.lk-desc { font-size: 11px; color: var(--text-3); line-height: 1.4; margin-bottom: 5px; }
 .lk-anchors { display: flex; justify-content: space-between; font-size: 10px; color: var(--text-3); margin-bottom: 4px; }
-.lk-row { display: flex; gap: 4px; align-items: center; }
+.lk-row { display: flex; gap: 4px; }
 .lk-btn {
   flex: 1; height: 30px; border-radius: var(--r);
   border: 1px solid var(--border-hi);
@@ -210,9 +205,9 @@ video {
 .pref-q { font-size: 13px; font-weight: 500; margin-bottom: .85rem; }
 .pref-opts { display: flex; gap: 8px; flex-wrap: wrap; }
 .pref-btn {
-  padding: 7px 18px; border-radius: 20px;
+  padding: 7px 22px; border-radius: 20px;
   border: 1px solid var(--border-hi); background: var(--surface);
-  font-size: 13px; font-weight: 600; font-family: var(--mono);
+  font-size: 13px; font-weight: 700; font-family: var(--mono);
   cursor: pointer; color: var(--text-2); transition: all .12s;
 }
 .pref-btn:hover { border-color: var(--blue); color: var(--blue); background: var(--blue-lt); }
@@ -240,7 +235,7 @@ video {
 .resp-preview {
   background: var(--surface-alt); border: 1px solid var(--border);
   border-radius: var(--r); padding: 1rem 1.25rem;
-  text-align: left; margin-bottom: 1.25rem; max-width: 420px; margin-left: auto; margin-right: auto;
+  text-align: left; margin: 0 auto 1.25rem; max-width: 380px;
 }
 .resp-preview h4 { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--text-3); margin-bottom: .6rem; }
 .resp-row {
@@ -260,7 +255,8 @@ video {
 .dl-btn:hover { background: var(--blue-lt); border-color: var(--blue); color: var(--blue); }
 
 @media (max-width: 600px) {
-  .info-grid, .form-grid, .vid-grid, .likert-grid { grid-template-columns: 1fr; }
+  .info-grid { grid-template-columns: 1fr 1fr; }
+  .likert-grid { grid-template-columns: 1fr; }
   .btn-row { flex-direction: column-reverse; gap: .5rem; }
 }
 </style>
@@ -288,15 +284,9 @@ video {
       <div class="welcome-sub" id="w-desc">Loading…</div>
       <div class="info-grid" id="w-info"></div>
 
-      <div class="form-grid">
-        <div class="field">
-          <label for="inp-name">Your name</label>
-          <input type="text" id="inp-name" placeholder="e.g. Alex Chen" autocomplete="off">
-        </div>
-        <div class="field">
-          <label for="inp-exp">Area of expertise</label>
-          <select id="inp-exp"><option value="">Select…</option></select>
-        </div>
+      <div class="field" style="margin-bottom:1.5rem">
+        <label for="inp-name">Your name</label>
+        <input type="text" id="inp-name" placeholder="e.g. Alex Chen" autocomplete="off">
       </div>
 
       <div style="display:flex;justify-content:flex-end">
@@ -318,18 +308,11 @@ video {
       </div>
     </div>
 
+    <!-- Single combined video -->
     <div class="card">
-      <div class="sec-label">Video pair</div>
-      <div class="vid-grid">
-        <div>
-          <div class="vid-tag"><span class="dot dot-exp"></span> Expert (reference)</div>
-          <video id="vid-exp" controls muted playsinline preload="metadata"></video>
-        </div>
-        <div>
-          <div class="vid-tag"><span class="dot dot-stu"></span> Student</div>
-          <video id="vid-stu" controls muted playsinline preload="metadata"></video>
-        </div>
-      </div>
+      <div class="sec-label">Video — left: expert (reference) · right: student</div>
+      <video id="vid-main" controls playsinline preload="metadata"></video>
+      <div class="vid-note">The video shows expert on the left and student on the right.</div>
     </div>
 
     <div class="card">
@@ -372,14 +355,12 @@ video {
 </main>
 
 <script>
-/* ── State ── */
 let DATA = null;
 let idx = 0;
-let raterName = '', raterExp = '';
+let raterName = '';
 let responses = [];
-let orders = [];   // shuffled feedback display orders per sample
+let orders = [];
 
-/* ── Load ── */
 async function init() {
   try {
     const r = await fetch('data.json');
@@ -400,19 +381,10 @@ function buildWelcome() {
     <div class="info-cell"><div class="info-label">Video pairs</div><div class="info-val">${n}</div></div>
     <div class="info-cell"><div class="info-label">Metrics per feedback</div><div class="info-val">${DATA.metrics.length}</div></div>
     <div class="info-cell"><div class="info-label">Est. time</div><div class="info-val">${Math.ceil(n*2.5)}–${n*5} min</div></div>
-    <div class="info-cell"><div class="info-label">Feedback labels</div><div class="info-val">Blinded — A / B / C</div></div>
   `;
-
-  const sel = document.getElementById('inp-exp');
-  DATA.rater_info.expertise_options.forEach(o => {
-    const opt = document.createElement('option');
-    opt.value = opt.textContent = o;
-    sel.appendChild(opt);
-  });
 
   document.getElementById('btn-start').onclick = startStudy;
 
-  // Pre-shuffle feedback order per sample
   orders = DATA.samples.map(s => {
     const arr = s.feedbacks.map((_,i) => i);
     for (let i = arr.length-1; i > 0; i--) {
@@ -422,27 +394,23 @@ function buildWelcome() {
     return arr;
   });
 
-  // Init response objects
   responses = DATA.samples.map(s => ({
-    sampleId: s.id,
-    action:   s.action,
-    ratings:  {},   // { feedbackId: { metricId: score } }
+    sampleId:   s.id,
+    action:     s.action,
+    ratings:    {},
     preference: null
   }));
 }
 
 function startStudy() {
   const name = document.getElementById('inp-name').value.trim();
-  const exp  = document.getElementById('inp-exp').value;
-  if (!name || !exp) { alert('Please enter your name and area of expertise.'); return; }
+  if (!name) { alert('Please enter your name.'); return; }
   raterName = name;
-  raterExp  = exp;
   document.getElementById('scr-welcome').classList.add('hidden');
   document.getElementById('hdr-prog').classList.remove('hidden');
   renderSample(0);
 }
 
-/* ── Render one sample ── */
 function renderSample(i) {
   idx = i;
   const s = DATA.samples[i];
@@ -457,8 +425,8 @@ function renderSample(i) {
   document.getElementById('prog-fill').style.width  = `${((i+1)/n)*100}%`;
   document.getElementById('pref-q').textContent     = DATA.preference_question;
 
-  document.getElementById('vid-exp').src = s.teacher_video;
-  document.getElementById('vid-stu').src = s.student_video;
+  // Single combined video
+  document.getElementById('vid-main').src = s.video;
 
   /* Feedback cards */
   const fc = document.getElementById('fb-container');
@@ -471,7 +439,6 @@ function renderSample(i) {
     const card = document.createElement('div');
     card.className = 'fb-card';
 
-    // Likert rows
     let likertHtml = '<div class="likert-grid">';
     DATA.metrics.forEach(m => {
       const saved = responses[i].ratings[fb.id]?.[m.id] || 0;
@@ -500,7 +467,6 @@ function renderSample(i) {
     fc.appendChild(card);
   });
 
-  // Likert click handlers
   fc.querySelectorAll('.lk-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const fbId = btn.dataset.fb;
@@ -508,7 +474,6 @@ function renderSample(i) {
       const v    = parseInt(btn.dataset.v);
       if (!responses[idx].ratings[fbId]) responses[idx].ratings[fbId] = {};
       responses[idx].ratings[fbId][mId] = v;
-
       const row = fc.querySelector(`.lk-row[data-fb="${fbId}"][data-m="${mId}"]`);
       row.querySelectorAll('.lk-btn').forEach(b => b.classList.toggle('sel', parseInt(b.dataset.v)===v));
     });
@@ -534,12 +499,10 @@ function renderSample(i) {
   document.getElementById('btn-prev').style.visibility = i === 0 ? 'hidden' : 'visible';
   document.getElementById('btn-next').textContent = i === n-1 ? 'Finish ✓' : 'Next →';
   document.getElementById('val-msg').classList.remove('show');
-
   document.getElementById('scr-sample').classList.remove('hidden');
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-/* ── Validation ── */
 function validate() {
   const r = responses[idx];
   const s = DATA.samples[idx];
@@ -569,20 +532,14 @@ document.getElementById('btn-prev').addEventListener('click', () => {
   }
 });
 
-/* ── Complete ── */
 function showComplete() {
   document.getElementById('scr-sample').classList.add('hidden');
   document.getElementById('hdr-prog').classList.add('hidden');
   document.getElementById('scr-complete').classList.remove('hidden');
   window.scrollTo({ top: 0, behavior: 'smooth' });
-
-  const totalRatings = responses.reduce((a, r) => {
-    return a + Object.keys(r.ratings).length * DATA.metrics.length;
-  }, 0);
-
+  const totalRatings = responses.reduce((a, r) => a + Object.keys(r.ratings).length * DATA.metrics.length, 0);
   document.getElementById('resp-rows').innerHTML = `
     <div class="resp-row">Rater <strong>${raterName}</strong></div>
-    <div class="resp-row">Expertise <strong>${raterExp}</strong></div>
     <div class="resp-row">Samples rated <strong>${DATA.samples.length}</strong></div>
     <div class="resp-row">Total scores given <strong>${totalRatings}</strong></div>
   `;
@@ -590,7 +547,7 @@ function showComplete() {
 
 document.getElementById('btn-dl').addEventListener('click', () => {
   const out = {
-    rater:     { name: raterName, expertise: raterExp },
+    rater:     { name: raterName },
     timestamp: new Date().toISOString(),
     responses
   };
