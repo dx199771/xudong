@@ -1,109 +1,212 @@
 {
-  "study_title": "BoT-Feedback User Study",
-  "study_description": "Please watch the teacher-student video pair, then rate the three feedback options below.",
+  "study_title": "BoT-Feedback — Human Evaluation",
+  "study_description": "You will watch 8 pairs of sports videos (student vs. expert) and rate three coaching feedback variants on four dimensions. Variants are labelled A / B / C and presented in randomised order. Please do not discuss your ratings with other participants.",
   "rater_info": {
-    "collect_name": true,
-    "collect_expertise": true,
-    "expertise_options": ["Basketball Coach", "Soccer Coach", "Bouldering Coach", "Sports Scientist", "Physical Therapist", "Other"]
+    "expertise_options": [
+      "Sports Science / Biomechanics",
+      "Physical Education / Coaching",
+      "Computer Vision / AI",
+      "Other"
+    ]
   },
   "metrics": [
     {
       "id": "CU",
       "name": "Corrective Utility",
-      "description": "How actionable are the physical corrections? Does this feedback help the student improve?",
-      "scale": [1, 5],
-      "labels": { "1": "Vague / not actionable", "5": "Precise / immediately actionable" }
+      "description": "Does the feedback give a specific, actionable physical correction (not generic advice)?",
+      "anchor_lo": "Completely generic / no clear action",
+      "anchor_hi": "Precise, immediately actionable correction"
     },
     {
       "id": "EA",
       "name": "Expert Alignment",
-      "description": "How consistent is this feedback with what you, as an expert, would say?",
-      "scale": [1, 5],
-      "labels": { "1": "Completely off", "5": "Matches expert judgment" }
+      "description": "Does the feedback support the core intent of what an expert would say? (A specific biomechanically-sound tip should not be penalised even if the ground-truth is vague.)",
+      "anchor_lo": "Contradicts or misses expert intent",
+      "anchor_hi": "Fully aligned with expert intent"
     },
     {
       "id": "HC",
       "name": "Hallucination Check",
-      "description": "Does the feedback contain any physically impossible or biomechanically incorrect statements?",
-      "scale": [1, 5],
-      "labels": { "1": "Physically impossible", "5": "Fully correct" }
+      "description": "Does the feedback contradict observable evidence or suggest physically impossible movements? (5 = no contradiction; 1 = significant biomechanical error.)",
+      "anchor_lo": "Clear biomechanical error / impossible cue",
+      "anchor_hi": "Fully consistent with observed movement"
     },
     {
       "id": "ID",
       "name": "Information Density",
-      "description": "How much professional/technical insight does the feedback contain vs filler words?",
-      "scale": [1, 5],
-      "labels": { "1": "High filler, low insight", "5": "Dense technical insight" }
+      "description": "Does the feedback contain high-value technical insight vs. filler? (1 = high fluff; 5 = dense with professional insights.)",
+      "anchor_lo": "Mostly filler / vague language",
+      "anchor_hi": "Dense with professional sports-science insight"
     }
   ],
-  "preference_question": "Overall, which feedback would you most recommend to a student?",
+  "preference_question": "Overall, which single feedback would you most recommend to the student?",
   "samples": [
     {
-      "id": "sample_001",
-      "action": "Basketball Jump Shot",
-      "teacher_video": "https://www.w3schools.com/html/mov_bbb.mp4",
-      "student_video": "https://www.w3schools.com/html/mov_bbb.mp4",
+      "id": "sample_01",
+      "action": "Basketball Drills — Reverse Layup",
+      "teacher_video": "videos/sample_01_teacher.mp4",
+      "student_video": "videos/sample_01_student.mp4",
+      "gt": "The player's release point and direction do not qualify as a reverse layup.",
       "feedbacks": [
         {
           "id": "A",
-          "label": "Feedback A",
-          "text": "The most critical improvement needed is to improve their coordination and teamwork. The student needs to work on their overall form and technique to become a more effective player."
+          "text": "Keep your elbows tucked and maintain a stable center of mass to enhance your shooting form."
         },
         {
           "id": "B",
-          "label": "Feedback B",
-          "text": "Dip deeper by bending your knees more before your jump shot to generate more power. Your knee angle at take-off is approximately 105° compared to the expert's 145°, resulting in significantly less explosive force transfer through the kinetic chain."
+          "text": "Focus on improving your overall body coordination to perform better in basketball drills."
         },
         {
-          "id": "GT",
-          "label": "Feedback C",
-          "text": "The shooter is not using their legs effectively and has poor form and flow in the shot. The shooter needs to power the shot by bending the knees deeper before jumping."
+          "id": "C",
+          "text": "Drive your lead knee higher during the approach and release the ball at the peak of your jump, extending your wrist fully for a proper reverse layup finish."
         }
       ]
     },
     {
-      "id": "sample_002",
-      "action": "Soccer Penalty Kick",
-      "teacher_video": "https://www.w3schools.com/html/mov_bbb.mp4",
-      "student_video": "https://www.w3schools.com/html/mov_bbb.mp4",
+      "id": "sample_02",
+      "action": "Soccer Drills — Penalty Kick",
+      "teacher_video": "videos/sample_02_teacher.mp4",
+      "student_video": "videos/sample_02_student.mp4",
+      "gt": "The student's hip rotation is insufficient and the plant foot is too far from the ball.",
       "feedbacks": [
         {
           "id": "A",
-          "label": "Feedback A",
-          "text": "The player needs to improve their overall technique and focus on striking the ball with more precision. They should practice more to build consistency."
+          "text": "Try to kick the ball with more power and aim more accurately."
         },
         {
           "id": "B",
-          "label": "Feedback B",
-          "text": "Bend your kicking knee deeper during the backswing to generate more power and keep your torso stable through the strike. Your trunk acceleration is 3.2 m/s² below the expert level, which directly reduces shot velocity."
+          "text": "Plant your non-kicking foot closer to the ball and rotate your hips fully through contact to generate more power."
         },
         {
-          "id": "GT",
-          "label": "Feedback C",
-          "text": "The player's body posture needs improvement, specifically their upright stance and foot positioning, to achieve a more technical stroke."
+          "id": "C",
+          "text": "Increase your hip rotation during the kick to improve the force transmission from your trunk to your foot."
         }
       ]
     },
     {
-      "id": "sample_003",
+      "id": "sample_03",
       "action": "Bouldering",
-      "teacher_video": "https://www.w3schools.com/html/mov_bbb.mp4",
-      "student_video": "https://www.w3schools.com/html/mov_bbb.mp4",
+      "teacher_video": "videos/sample_03_teacher.mp4",
+      "student_video": "videos/sample_03_student.mp4",
+      "gt": "The climber needs to improve their route-reading skills by glancing ahead to plan their next moves.",
       "feedbacks": [
         {
           "id": "A",
-          "label": "Feedback A",
-          "text": "You need to keep your arms straight and close to the wall to save your energy. Focus on efficiency."
+          "text": "Keep your hips closer to the wall and push through your legs rather than pulling with your arms to conserve upper-body strength."
         },
         {
           "id": "B",
-          "label": "Feedback B",
-          "text": "Tighten your core to keep your hips close to the wall and prevent your body from twisting when you reach for the next hold. Your torso yaw deviation of 10° compared to the expert's 2° is causing unnecessary energy expenditure."
+          "text": "Before each move, look two holds ahead to plan your body position and reduce unnecessary arm fatigue."
         },
         {
-          "id": "GT",
-          "label": "Feedback C",
-          "text": "The climber needs to adjust their footwork and engage their hips to gain height and successfully place the hand in the hold."
+          "id": "C",
+          "text": "Try to climb more efficiently by planning your movements in advance."
+        }
+      ]
+    },
+    {
+      "id": "sample_04",
+      "action": "Basketball Drills — Mikan Layup",
+      "teacher_video": "videos/sample_04_teacher.mp4",
+      "student_video": "videos/sample_04_student.mp4",
+      "gt": "The student lacks a consistent alternating footwork pattern and releases too early.",
+      "feedbacks": [
+        {
+          "id": "A",
+          "text": "Work on your timing and footwork to make your Mikan layup more consistent."
+        },
+        {
+          "id": "B",
+          "text": "Focus on alternating your take-off foot on each side of the basket and delay your release until your elbow is above the rim.",
+          "system": "ours"
+        },
+        {
+          "id": "C",
+          "text": "Increase your knee drive on each step and release the ball at the top of your jump arc to establish a rhythmic left-right pattern."
+        }
+      ]
+    },
+    {
+      "id": "sample_05",
+      "action": "Soccer Drills — Dribbling",
+      "teacher_video": "videos/sample_05_teacher.mp4",
+      "student_video": "videos/sample_05_student.mp4",
+      "gt": "The student's touch is too heavy and body posture is too upright, reducing close control.",
+      "feedbacks": [
+        {
+          "id": "A",
+          "text": "Use lighter, more frequent touches and lean slightly forward over the ball to improve your close control at speed."
+        },
+        {
+          "id": "B",
+          "text": "Keep the ball closer to your body and use smaller touches to maintain better control."
+        },
+        {
+          "id": "C",
+          "text": "Improve your dribbling technique by keeping the ball under control at all times."
+        }
+      ]
+    },
+    {
+      "id": "sample_06",
+      "action": "Basketball Drills — Mid-Range Jump Shooting",
+      "teacher_video": "videos/sample_06_teacher.mp4",
+      "student_video": "videos/sample_06_student.mp4",
+      "gt": "The student's elbow flares out and the follow-through is incomplete.",
+      "feedbacks": [
+        {
+          "id": "A",
+          "text": "Snap your wrist fully at release and hold the follow-through position — elbow aligned with the basket — until the ball hits the rim."
+        },
+        {
+          "id": "B",
+          "text": "Keep your elbow directly under the ball and extend your shooting arm fully on release to straighten your shot trajectory."
+        },
+        {
+          "id": "C",
+          "text": "Focus on your shooting form and try to be more consistent with your release."
+        }
+      ]
+    },
+    {
+      "id": "sample_07",
+      "action": "Bouldering",
+      "teacher_video": "videos/sample_07_teacher.mp4",
+      "student_video": "videos/sample_07_student.mp4",
+      "gt": "The student over-grips and fails to use footholds effectively, causing early muscle fatigue.",
+      "feedbacks": [
+        {
+          "id": "A",
+          "text": "Trust your feet more — shift your weight onto your footholds and relax your grip on the holds to reduce forearm fatigue."
+        },
+        {
+          "id": "B",
+          "text": "Try to use your legs more and rely less on your arms when climbing."
+        },
+        {
+          "id": "C",
+          "text": "Engage your lower body more actively by pressing through your feet on each move, which will reduce the load on your fingers and forearms."
+        }
+      ]
+    },
+    {
+      "id": "sample_08",
+      "action": "Basketball Drills — Reverse Layup",
+      "teacher_video": "videos/sample_08_teacher.mp4",
+      "student_video": "videos/sample_08_student.mp4",
+      "gt": "The student approaches from the wrong angle and uses the wrong hand for the reverse finish.",
+      "feedbacks": [
+        {
+          "id": "A",
+          "text": "Approach the basket from the opposite side and use your far hand to lay the ball up off the backboard with a soft touch."
+        },
+        {
+          "id": "B",
+          "text": "Work on using the correct hand and approach angle for the reverse layup."
+        },
+        {
+          "id": "C",
+          "text": "On a reverse layup, attack the baseline, keep your body between the defender and the ball, and release with your outside hand at the peak of your jump."
         }
       ]
     }
