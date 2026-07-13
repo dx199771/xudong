@@ -360,6 +360,12 @@ async function init() {
   try { const r = await fetch('data.json'); DATA = await r.json(); }
   catch(e) { document.getElementById('w-desc').textContent = 'Could not load data.json.'; return; }
 
+  // Randomly pick 5 samples if more than 5 are available
+  if (DATA.samples.length > 5) {
+    const shuffled = [...DATA.samples].sort(() => Math.random() - 0.5);
+    DATA.samples = shuffled.slice(0, 5);
+  }
+
   orders = DATA.samples.map(s => {
     const arr = s.feedbacks.map((_,i) => i);
     for (let i = arr.length-1; i > 0; i--) { const j = Math.floor(Math.random()*(i+1)); [arr[i],arr[j]]=[arr[j],arr[i]]; }
