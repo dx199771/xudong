@@ -419,6 +419,7 @@ function renderSample(i) {
   document.getElementById('btn-next').textContent  = i===n-1 ? t.btn_finish : t.btn_next;
   document.getElementById('overall-desc').textContent = t.overall;
   document.getElementById('vid-main').src = s.video;
+  document.getElementById('vid-main').load();
 
   /* ── Feedback columns ── */
   const fg = document.getElementById('fb-grid');
