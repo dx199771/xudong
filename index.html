@@ -33,32 +33,25 @@ body {
 
 /* ── Header ── */
 .hdr { background: var(--surface); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 50; padding: 0 1.5rem; }
-.hdr-inner { max-width: 860px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 52px; min-width: 0; gap: 12px; }
-.hdr-logo { flex-shrink: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.hdr-right { flex-shrink: 0; }
-.hdr-logo { font-size: 13px; font-weight: 600; letter-spacing: -0.01em; display: flex; align-items: center; gap: 8px; }
+.hdr-inner { max-width: 900px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 52px; gap: 12px; }
+.hdr-logo { font-size: 13px; font-weight: 600; letter-spacing: -0.01em; display: flex; align-items: center; gap: 8px; flex-shrink: 1; min-width: 0; white-space: nowrap; }
 .hdr-badge { font-size: 10px; font-weight: 500; background: var(--blue-lt); color: var(--blue); border: 1px solid var(--blue-bd); border-radius: 3px; padding: 2px 6px; letter-spacing: .04em; text-transform: uppercase; }
-.hdr-right { display: flex !important; align-items: center; gap: 14px; }
-.lang-toggle { display: flex !important; }
+.hdr-right { display: flex !important; align-items: center; gap: 14px; flex-shrink: 0; }
 .hdr-prog { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--text-3); }
 .prog-track { width: 90px; height: 3px; background: var(--border); border-radius: 2px; overflow: hidden; }
 .prog-fill { height: 100%; background: var(--blue); border-radius: 2px; transition: width .35s ease; }
-
-/* ── Lang toggle ── */
-.lang-toggle { display: flex; border: 1px solid var(--border-hi); border-radius: var(--r); overflow: hidden; }
+.lang-toggle { display: flex !important; border: 1px solid var(--border-hi); border-radius: var(--r); overflow: hidden; }
 .lang-btn { padding: 4px 10px; font-size: 12px; font-weight: 500; cursor: pointer; background: var(--surface); color: var(--text-3); border: none; transition: all .12s; }
 .lang-btn.active { background: var(--blue); color: #fff; }
 
 /* ── Page ── */
-.page { max-width: 860px; margin: 0 auto; padding: 1.75rem 1.5rem 5rem; }
+.page { max-width: 900px; margin: 0 auto; padding: 1.75rem 1.5rem 5rem; }
 .hidden { display: none !important; }
-
-/* ── Card ── */
 .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 1.5rem; margin-bottom: 1rem; }
 
 /* ── Welcome ── */
 .welcome-title { font-size: 20px; font-weight: 600; letter-spacing: -.02em; margin-bottom: .4rem; }
-.welcome-sub { color: var(--text-2); margin-bottom: 1.5rem; max-width: 540px; }
+.welcome-sub { color: var(--text-2); margin-bottom: 1.5rem; max-width: 560px; }
 .info-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: .75rem; margin-bottom: 1.5rem; }
 .info-cell { background: var(--surface-alt); border: 1px solid var(--border); border-radius: var(--r); padding: .85rem 1rem; }
 .info-label { font-size: 10px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--text-3); margin-bottom: 3px; }
@@ -83,33 +76,93 @@ body {
 .sec-label { font-size: 10px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--text-3); margin-bottom: .85rem; }
 
 /* ── Video ── */
-video { width: 100%; border-radius: var(--r); border: 1px solid var(--border); background: #000; display: block; max-height: 480px; object-fit: contain; }
-.vid-note { font-size: 12px; color: var(--text-3); margin-top: 8px; text-align: center; }
+video { width: 100%; border-radius: var(--r); border: 1px solid var(--border); background: #000; display: block; object-fit: contain; }
+.vid-note { font-size: 11px; color: var(--text-3); margin-top: 6px; text-align: center; }
 
-/* ── Feedback cards ── */
-.fb-card { border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; margin-bottom: .75rem; }
-.fb-card:last-child { margin-bottom: 0; }
-.fb-card-hdr { background: var(--surface-alt); border-bottom: 1px solid var(--border); padding: 8px 14px; }
-.fb-label { font-size: 11px; font-weight: 700; letter-spacing: .06em; font-family: var(--mono); color: var(--text-2); }
-.fb-body { padding: 14px; }
-.fb-text { font-size: 14px; color: var(--text); line-height: 1.65; padding-bottom: 14px; margin-bottom: 14px; border-bottom: 1px solid var(--border); }
+/* ── Feedback columns ── */
+.fb-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 1px;
+}
+.fb-col {
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  overflow: hidden;
+}
+.fb-col-hdr {
+  background: var(--surface-alt);
+  border-bottom: 1px solid var(--border);
+  padding: 7px 12px;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: .06em; font-family: var(--mono);
+  color: var(--text-2);
+}
+.fb-col-body {
+  padding: 12px;
+  font-size: 13px; color: var(--text); line-height: 1.6;
+}
 
-/* ── Likert ── */
-.likert-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.lk-name { font-size: 12px; font-weight: 600; margin-bottom: 2px; }
-.lk-desc { font-size: 11px; color: var(--text-3); line-height: 1.4; margin-bottom: 5px; }
-.lk-anchors { display: flex; justify-content: space-between; font-size: 10px; color: var(--text-3); margin-bottom: 4px; }
-.lk-row { display: flex; gap: 4px; }
-.lk-btn { flex: 1; height: 30px; border-radius: var(--r); border: 1px solid var(--border-hi); background: var(--surface); cursor: pointer; font-size: 11px; font-weight: 600; font-family: var(--mono); color: var(--text-3); transition: all .12s; display: flex; align-items: center; justify-content: center; }
-.lk-btn:hover { border-color: var(--blue); color: var(--blue); background: var(--blue-lt); }
-.lk-btn.sel { border-color: var(--blue); color: #fff; background: var(--blue); }
+/* ── Questions table ── */
+.q-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.q-table tr { border-bottom: 1px solid var(--border); }
+.q-table tr:last-child { border-bottom: none; }
+.q-table td { padding: 12px 8px; vertical-align: middle; }
+.q-desc {
+  font-size: 13px; color: var(--text);
+  width: 100%;
+}
+.q-opts {
+  display: flex; gap: 6px;
+  white-space: nowrap;
+}
+.q-opt {
+  display: flex; flex-direction: column;
+  align-items: center; gap: 3px;
+  cursor: pointer;
+}
+.q-opt-label {
+  font-size: 10px; font-weight: 700;
+  font-family: var(--mono); color: var(--text-3);
+}
+.q-opt-radio {
+  width: 32px; height: 32px;
+  border-radius: var(--r);
+  border: 1px solid var(--border-hi);
+  background: var(--surface);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: all .12s;
+  font-size: 11px; font-weight: 700;
+  font-family: var(--mono); color: var(--text-3);
+}
+.q-opt-radio:hover { border-color: var(--blue); color: var(--blue); background: var(--blue-lt); }
+.q-opt-radio.sel { border-color: var(--blue); background: var(--blue); color: #fff; }
 
-/* ── Preference ── */
-.pref-q { font-size: 13px; font-weight: 500; margin-bottom: .85rem; }
-.pref-opts { display: flex; gap: 8px; flex-wrap: wrap; }
-.pref-btn { padding: 7px 22px; border-radius: 20px; border: 1px solid var(--border-hi); background: var(--surface); font-size: 13px; font-weight: 700; font-family: var(--mono); cursor: pointer; color: var(--text-2); transition: all .12s; }
+/* ── Overall preference ── */
+.overall-row {
+  display: flex; align-items: center;
+  justify-content: space-between;
+  gap: 1rem; flex-wrap: wrap;
+  padding: 14px 0 2px;
+  border-top: 2px solid var(--border);
+  margin-top: 4px;
+}
+.overall-desc { font-size: 13px; font-weight: 500; color: var(--text); }
+.overall-opts { display: flex; gap: 6px; }
+.pref-btn {
+  width: 40px; height: 34px;
+  border-radius: var(--r); border: 1px solid var(--border-hi);
+  background: var(--surface); font-size: 12px; font-weight: 700;
+  font-family: var(--mono); cursor: pointer; color: var(--text-2);
+  transition: all .12s;
+  display: flex; align-items: center; justify-content: center;
+}
 .pref-btn:hover { border-color: var(--blue); color: var(--blue); background: var(--blue-lt); }
-.pref-btn.sel { border-color: var(--blue); color: #fff; background: var(--blue); }
+.pref-btn.sel { border-color: var(--blue); background: var(--blue); color: #fff; }
 
 /* ── Validation ── */
 .val-msg { font-size: 12px; color: #991B1B; background: #FEF2F2; border: 1px solid #FECACA; border-radius: var(--r); padding: 9px 13px; margin-top: .85rem; display: none; }
@@ -128,10 +181,11 @@ video { width: 100%; border-radius: var(--r); border: 1px solid var(--border); b
 .dl-btn { background: var(--surface); border: 1px solid var(--border-hi); border-radius: var(--r); padding: 9px 18px; font-size: 13px; font-weight: 500; cursor: pointer; color: var(--text); transition: all .13s; display: inline-flex; align-items: center; gap: 5px; }
 .dl-btn:hover { background: var(--blue-lt); border-color: var(--blue); color: var(--blue); }
 
-@media (max-width: 600px) {
+@media (max-width: 640px) {
+  .fb-grid { grid-template-columns: 1fr; }
   .info-grid { grid-template-columns: 1fr 1fr; }
-  .likert-grid { grid-template-columns: 1fr; }
   .btn-row { flex-direction: column-reverse; gap: .5rem; }
+  .q-table td:last-child { padding-left: 0; }
 }
 </style>
 </head>
@@ -175,6 +229,7 @@ video { width: 100%; border-radius: var(--r); border: 1px solid var(--border); b
 
   <!-- Sample -->
   <div id="scr-sample" class="hidden">
+
     <div class="card" style="margin-bottom:.85rem">
       <div class="smp-hdr">
         <div>
@@ -185,20 +240,28 @@ video { width: 100%; border-radius: var(--r); border: 1px solid var(--border); b
       </div>
     </div>
 
+    <!-- Video -->
     <div class="card">
       <div class="sec-label" id="sec-video"></div>
       <video id="vid-main" controls playsinline preload="metadata"></video>
       <div class="vid-note" id="vid-note"></div>
     </div>
 
+    <!-- Feedback columns + Questions -->
     <div class="card">
       <div class="sec-label" id="sec-rate"></div>
-      <div id="fb-container"></div>
-    </div>
 
-    <div class="card">
-      <div class="pref-q"   id="pref-q"></div>
-      <div class="pref-opts" id="pref-opts"></div>
+      <!-- Three feedback columns -->
+      <div class="fb-grid" id="fb-grid"></div>
+
+      <!-- Questions -->
+      <table class="q-table" id="q-table" style="margin-top:16px"></table>
+
+      <!-- Overall preference -->
+      <div class="overall-row">
+        <div class="overall-desc" id="overall-desc"></div>
+        <div class="overall-opts" id="overall-opts"></div>
+      </div>
     </div>
 
     <div class="val-msg" id="val-msg"></div>
@@ -231,244 +294,187 @@ video { width: 100%; border-radius: var(--r); border: 1px solid var(--border); b
 /* ── i18n ── */
 const T = {
   en: {
-    badge:        'Human Eval',
-    title:        'BoT-Feedback — Human Evaluation',
-    desc:         'You will watch 8 pairs of sports videos (student vs. expert) and rate three coaching feedback variants on four dimensions. Variants are labelled A / B / C and presented in randomised order. Please do not discuss your ratings with other participants.',
-    info_pairs:   'Video pairs',
-    info_metrics: 'Metrics per feedback',
-    info_time:    'Est. time',
-    info_blind:   'Blinded — A / B / C',
-    lbl_name:     'Your name',
-    name_ph:      'e.g. Alex Chen',
-    btn_start:    'Begin evaluation →',
-    sec_video:    'Video — left: expert (reference) · right: student',
-    vid_note:     'The video shows expert on the left and student on the right.',
-    sec_rate:     'Rate each feedback (blinded — A / B / C)',
-    pref_q:       'Overall, which feedback would you most recommend to the student?',
-    feedback:     'Feedback',
-    val_msg:      'Please complete all ratings and select an overall preference before continuing.',
-    btn_prev:     '← Back',
-    btn_next:     'Next →',
-    btn_finish:   'Finish ✓',
-    sample_of:    (i,n) => `Sample ${i} of ${n}`,
-    done_h:       'All done — thank you!',
-    done_sub:     'Your ratings have been saved. Please download the JSON file and send it to the study coordinator.',
-    done_summary: 'Summary',
-    resp_rater:   'Rater',
-    resp_samples: 'Samples rated',
-    resp_total:   'Total scores given',
-    btn_dl:       '↓ Download responses (JSON)',
-    alert_name:   'Please enter your name.',
+    title:       'BoT-Feedback — Human Evaluation',
+    desc:        'You will watch 8 pairs of sports videos and evaluate three coaching feedback variants. Variants are labelled A / B / C in randomised order. Please rate each question independently.',
+    info_pairs:  'Video pairs', info_metrics: 'Questions', info_time: 'Est. time',
+    lbl_name:    'Your name', name_ph: 'e.g. Alex Chen', btn_start: 'Begin evaluation →',
+    sec_video:   'Video — left: expert (reference) · right: student',
+    vid_note:    'Expert is on the left, student is on the right.',
+    sec_rate:    'Feedback & Questions',
+    feedback:    'Feedback',
+    questions: [
+      'Which feedback provides the most specific and actionable physical correction?',
+      'Which feedback best aligns with what an expert coach would say?',
+      'Which feedback is most consistent with the movement observed in the video (no hallucination)?',
+      'Which feedback contains the highest-value technical insight with least filler?',
+    ],
+    overall:     'Overall, which single feedback would you most recommend to the student?',
+    val_msg:     'Please answer all questions and select an overall preference before continuing.',
+    btn_prev: '← Back', btn_next: 'Next →', btn_finish: 'Finish ✓',
+    sample_of:   (i,n) => `Sample ${i} of ${n}`,
+    done_h:      'All done — thank you!',
+    done_sub:    'Please download the JSON file and send it to the study coordinator.',
+    done_summary:'Summary', resp_rater: 'Rater',
+    resp_samples:'Samples rated', resp_total: 'Answers given',
+    btn_dl:      '↓ Download responses (JSON)', alert_name: 'Please enter your name.',
   },
   zh: {
-    badge:        '人工评估',
-    title:        'BoT-Feedback — 人工评估',
-    desc:         '您将观看 8 对运动视频（学生 vs. 专家），并从四个维度对三条运动反馈进行评分。反馈以 A / B / C 随机顺序呈现，评估过程为盲评。请勿与其他参与者讨论您的评分。',
-    info_pairs:   '视频对数',
-    info_metrics: '每条反馈指标数',
-    info_time:    '预计时长',
-    info_blind:   '盲评 — A / B / C',
-    lbl_name:     '您的姓名',
-    name_ph:      '例：张三',
-    btn_start:    '开始评估 →',
-    sec_video:    '视频 — 左：专家（参考）· 右：学生',
-    vid_note:     '视频左侧为专家示范，右侧为学生动作。',
-    sec_rate:     '对每条反馈评分（盲评 — A / B / C）',
-    pref_q:       '综合来看，您最推荐将哪条反馈提供给学生？',
-    feedback:     '反馈',
-    val_msg:      '请完成所有评分并选择总体偏好后再继续。',
-    btn_prev:     '← 上一条',
-    btn_next:     '下一条 →',
-    btn_finish:   '完成 ✓',
-    sample_of:    (i,n) => `第 ${i} / ${n} 组`,
-    done_h:       '全部完成，感谢您的参与！',
-    done_sub:     '您的评分已记录。请下载 JSON 文件并发送给研究负责人。',
-    done_summary: '评估摘要',
-    resp_rater:   '评估者',
-    resp_samples: '已评估组数',
-    resp_total:   '总评分数',
-    btn_dl:       '↓ 下载评分结果 (JSON)',
-    alert_name:   '请输入您的姓名。',
+    title:       'BoT-Feedback — 人工评估',
+    desc:        '您将观看 8 对运动视频，并对三条运动反馈进行评估。反馈以 A / B / C 随机顺序呈现，请独立回答每个问题。',
+    info_pairs:  '视频对数', info_metrics: '问题数', info_time: '预计时长',
+    lbl_name:    '您的姓名', name_ph: '例：张三', btn_start: '开始评估 →',
+    sec_video:   '视频 — 左：专家（参考）· 右：学生',
+    vid_note:    '视频左侧为专家示范，右侧为学生动作。',
+    sec_rate:    '反馈与问题',
+    feedback:    '反馈',
+    questions: [
+      '哪条反馈提供了最具体、最可操作的身体纠正建议？',
+      '哪条反馈最符合专业教练会给出的意见？',
+      '哪条反馈与视频中观察到的动作最一致（无幻觉或错误描述）？',
+      '哪条反馈包含最高价值的专业洞见，冗余内容最少？',
+    ],
+    overall:     '综合来看，您最推荐将哪条反馈提供给学生？',
+    val_msg:     '请回答所有问题并选择总体偏好后再继续。',
+    btn_prev: '← 上一条', btn_next: '下一条 →', btn_finish: '完成 ✓',
+    sample_of:   (i,n) => `第 ${i} / ${n} 组`,
+    done_h:      '全部完成，感谢您的参与！',
+    done_sub:    '请下载 JSON 文件并发送给研究负责人。',
+    done_summary:'评估摘要', resp_rater: '评估者',
+    resp_samples:'已评估组数', resp_total: '已回答问题数',
+    btn_dl:      '↓ 下载评分结果 (JSON)', alert_name: '请输入您的姓名。',
   }
 };
 
-/* ── Metrics i18n ── */
-const METRICS = {
-  en: [
-    { id:'CU', name:'Corrective Utility',  description:'Does the feedback give a specific, actionable physical correction (not generic advice)?', anchor_lo:'Completely generic', anchor_hi:'Precise & actionable' },
-    { id:'EA', name:'Expert Alignment',    description:'Does the feedback align with what an expert would say? (Biomechanically sound tips should not be penalised even if GT is vague.)', anchor_lo:'Contradicts expert intent', anchor_hi:'Fully aligned' },
-    { id:'HC', name:'Hallucination Check', description:'Does the feedback contradict observable evidence or suggest physically impossible movements? (5 = no error; 1 = clear biomechanical error.)', anchor_lo:'Clear biomechanical error', anchor_hi:'Fully consistent' },
-    { id:'ID', name:'Information Density', description:'Does the feedback contain high-value technical insight vs. filler? (1 = high fluff; 5 = professional insights.)', anchor_lo:'Mostly filler', anchor_hi:'Dense professional insight' },
-  ],
-  zh: [
-    { id:'CU', name:'纠正实用性',   description:'该反馈是否提供了具体、可操作的身体纠正建议（而非泛泛而谈）？', anchor_lo:'完全泛泛', anchor_hi:'精准且可操作' },
-    { id:'EA', name:'专家一致性',   description:'该反馈是否与专家意见一致？（生物力学合理的建议不应因参考答案模糊而被扣分。）', anchor_lo:'与专家意图相悖', anchor_hi:'完全一致' },
-    { id:'HC', name:'幻觉检测',     description:'该反馈是否与可观察证据相悖，或提出了物理上不可能的动作？（5 = 无错误；1 = 明显生物力学错误。）', anchor_lo:'明显生物力学错误', anchor_hi:'完全一致' },
-    { id:'ID', name:'信息密度',     description:'该反馈是否包含高价值专业洞见（而非冗余内容）？（1 = 大量废话；5 = 专业洞见密集。）', anchor_lo:'大量冗余', anchor_hi:'专业洞见密集' },
-  ]
-};
-
 /* ── State ── */
-let DATA  = null;
-let lang  = 'en';
-let idx   = 0;
-let raterName = '';
-let responses = [];
-let orders    = [];
-let studyStarted = false;
+let DATA = null, lang = 'en', idx = 0, raterName = '';
+let responses = [], orders = [], studyStarted = false;
 
-/* ── Lang switch ── */
 function setLang(l) {
   lang = l;
   document.getElementById('lang-en').classList.toggle('active', l==='en');
   document.getElementById('lang-zh').classList.toggle('active', l==='zh');
-  if (!studyStarted) renderWelcome();
-  else renderSample(idx);
+  if (!studyStarted) renderWelcome(); else renderSample(idx);
 }
 
-/* ── Load ── */
 async function init() {
-  try {
-    const r = await fetch('data.json');
-    DATA = await r.json();
-  } catch(e) {
-    document.getElementById('w-desc').textContent = 'Could not load data.json.';
-    return;
-  }
+  try { const r = await fetch('data.json'); DATA = await r.json(); }
+  catch(e) { document.getElementById('w-desc').textContent = 'Could not load data.json.'; return; }
 
   orders = DATA.samples.map(s => {
     const arr = s.feedbacks.map((_,i) => i);
-    for (let i = arr.length-1; i > 0; i--) {
-      const j = Math.floor(Math.random()*(i+1));
-      [arr[i],arr[j]] = [arr[j],arr[i]];
-    }
+    for (let i = arr.length-1; i > 0; i--) { const j = Math.floor(Math.random()*(i+1)); [arr[i],arr[j]]=[arr[j],arr[i]]; }
     return arr;
   });
 
-  responses = DATA.samples.map(s => ({
-    sampleId: s.id, action: s.action,
-    ratings: {}, preference: null
-  }));
-
+  // responses[i].answers[qIdx] = feedbackId chosen
+  responses = DATA.samples.map(s => ({ sampleId: s.id, action: s.action, answers: {}, preference: null }));
   renderWelcome();
 }
 
 function renderWelcome() {
-  const t = T[lang];
-  const n = DATA.samples.length;
-  const minT = Math.ceil(n*2.5), maxT = n*5;
-
-  document.getElementById('w-title').textContent  = t.title;
-  document.getElementById('w-desc').textContent   = t.desc;
-  document.getElementById('lbl-name').textContent = t.lbl_name;
-  document.getElementById('inp-name').placeholder = t.name_ph;
+  const t = T[lang], n = DATA.samples.length;
+  document.getElementById('w-title').textContent   = t.title;
+  document.getElementById('w-desc').textContent    = t.desc;
+  document.getElementById('lbl-name').textContent  = t.lbl_name;
+  document.getElementById('inp-name').placeholder  = t.name_ph;
   document.getElementById('btn-start').textContent = t.btn_start;
-
   document.getElementById('w-info').innerHTML = `
     <div class="info-cell"><div class="info-label">${t.info_pairs}</div><div class="info-val">${n}</div></div>
-    <div class="info-cell"><div class="info-label">${t.info_metrics}</div><div class="info-val">${METRICS[lang].length}</div></div>
-    <div class="info-cell"><div class="info-label">${t.info_time}</div><div class="info-val">${minT}–${maxT} min</div></div>
+    <div class="info-cell"><div class="info-label">${t.info_metrics}</div><div class="info-val">${t.questions.length + 1}</div></div>
+    <div class="info-cell"><div class="info-label">${t.info_time}</div><div class="info-val">${Math.ceil(n*2)}–${n*4} min</div></div>
   `;
-
   document.getElementById('btn-start').onclick = startStudy;
 }
 
 function startStudy() {
   const name = document.getElementById('inp-name').value.trim();
   if (!name) { alert(T[lang].alert_name); return; }
-  raterName = name;
-  studyStarted = true;
+  raterName = name; studyStarted = true;
   document.getElementById('scr-welcome').classList.add('hidden');
   document.getElementById('hdr-prog').classList.remove('hidden');
   renderSample(0);
 }
 
-/* ── Render sample ── */
 function renderSample(i) {
   idx = i;
-  const t = T[lang];
-  const metrics = METRICS[lang];
-  const s = DATA.samples[i];
-  const order = orders[i];
-  const n = DATA.samples.length;
+  const t = T[lang], s = DATA.samples[i], order = orders[i], n = DATA.samples.length;
   const labels = ['A','B','C','D','E'];
 
-  document.getElementById('smp-num').textContent    = t.sample_of(i+1, n);
-  document.getElementById('smp-action').textContent = s.action;
-  document.getElementById('smp-pill').textContent   = s.action;
-  document.getElementById('prog-text').textContent  = `${i+1} / ${n}`;
-  document.getElementById('prog-fill').style.width  = `${((i+1)/n)*100}%`;
-  document.getElementById('sec-video').textContent  = t.sec_video;
-  document.getElementById('vid-note').textContent   = t.vid_note;
-  document.getElementById('sec-rate').textContent   = t.sec_rate;
-  document.getElementById('pref-q').textContent     = t.pref_q;
-  document.getElementById('val-msg').textContent    = t.val_msg;
-  document.getElementById('btn-prev').textContent   = t.btn_prev;
-  document.getElementById('btn-next').textContent   = i === n-1 ? t.btn_finish : t.btn_next;
-
+  document.getElementById('smp-num').textContent   = t.sample_of(i+1, n);
+  document.getElementById('smp-action').textContent= s.action;
+  document.getElementById('smp-pill').textContent  = s.action;
+  document.getElementById('prog-text').textContent = `${i+1} / ${n}`;
+  document.getElementById('prog-fill').style.width = `${((i+1)/n)*100}%`;
+  document.getElementById('sec-video').textContent = t.sec_video;
+  document.getElementById('vid-note').textContent  = t.vid_note;
+  document.getElementById('sec-rate').textContent  = t.sec_rate;
+  document.getElementById('val-msg').textContent   = t.val_msg;
+  document.getElementById('btn-prev').textContent  = t.btn_prev;
+  document.getElementById('btn-next').textContent  = i===n-1 ? t.btn_finish : t.btn_next;
+  document.getElementById('overall-desc').textContent = t.overall;
   document.getElementById('vid-main').src = s.video;
 
-  /* Feedback cards */
-  const fc = document.getElementById('fb-container');
-  fc.innerHTML = '';
-
+  /* ── Feedback columns ── */
+  const fg = document.getElementById('fb-grid');
+  fg.innerHTML = '';
   order.forEach((fbIdx, dispIdx) => {
-    const fb    = s.feedbacks[fbIdx];
-    const label = labels[dispIdx];
-    const card  = document.createElement('div');
-    card.className = 'fb-card';
+    const fb = s.feedbacks[fbIdx], label = labels[dispIdx];
+    const col = document.createElement('div');
+    col.className = 'fb-col';
+    col.innerHTML = `
+      <div class="fb-col-hdr">${t.feedback} ${label}</div>
+      <div class="fb-col-body">${fb.text}</div>`;
+    fg.appendChild(col);
+  });
 
-    let likertHtml = '<div class="likert-grid">';
-    metrics.forEach(m => {
-      const saved = responses[i].ratings[fb.id]?.[m.id] || 0;
-      let btns = '';
-      for (let v = 1; v <= 5; v++) {
-        btns += `<button class="lk-btn${saved===v?' sel':''}" data-fb="${fb.id}" data-m="${m.id}" data-v="${v}">${v}</button>`;
-      }
-      likertHtml += `
-        <div class="likert-item">
-          <div class="lk-name">${m.name}</div>
-          <div class="lk-desc">${m.description}</div>
-          <div class="lk-anchors"><span>${m.anchor_lo}</span><span>${m.anchor_hi}</span></div>
-          <div class="lk-row" data-fb="${fb.id}" data-m="${m.id}">${btns}</div>
+  /* ── Questions ── */
+  const qt = document.getElementById('q-table');
+  qt.innerHTML = '';
+  t.questions.forEach((qText, qIdx) => {
+    const saved = responses[i].answers[qIdx];
+    const tr = document.createElement('tr');
+
+    let optHtml = '<div class="q-opts">';
+    order.forEach((fbIdx, dispIdx) => {
+      const fb = s.feedbacks[fbIdx], label = labels[dispIdx];
+      optHtml += `
+        <div class="q-opt">
+          <div class="q-opt-label">${label}</div>
+          <div class="q-opt-radio${saved===fb.id?' sel':''}"
+               data-q="${qIdx}" data-fb="${fb.id}">${label}</div>
         </div>`;
     });
-    likertHtml += '</div>';
+    optHtml += '</div>';
 
-    card.innerHTML = `
-      <div class="fb-card-hdr"><span class="fb-label">${t.feedback} ${label}</span></div>
-      <div class="fb-body">
-        <div class="fb-text">${fb.text}</div>
-        ${likertHtml}
-      </div>`;
-    fc.appendChild(card);
+    tr.innerHTML = `
+      <td class="q-desc">${qText}</td>
+      <td style="padding-left:16px">${optHtml}</td>`;
+    qt.appendChild(tr);
   });
 
-  fc.querySelectorAll('.lk-btn').forEach(btn => {
+  // Question click handlers
+  qt.querySelectorAll('.q-opt-radio').forEach(btn => {
     btn.addEventListener('click', () => {
-      const fbId = btn.dataset.fb, mId = btn.dataset.m, v = parseInt(btn.dataset.v);
-      if (!responses[idx].ratings[fbId]) responses[idx].ratings[fbId] = {};
-      responses[idx].ratings[fbId][mId] = v;
-      const row = fc.querySelector(`.lk-row[data-fb="${fbId}"][data-m="${mId}"]`);
-      row.querySelectorAll('.lk-btn').forEach(b => b.classList.toggle('sel', parseInt(b.dataset.v)===v));
+      const qIdx = parseInt(btn.dataset.q), fbId = btn.dataset.fb;
+      responses[idx].answers[qIdx] = fbId;
+      qt.querySelectorAll(`.q-opt-radio[data-q="${qIdx}"]`).forEach(b => b.classList.toggle('sel', b.dataset.fb===fbId));
     });
   });
 
-  /* Preference */
-  const po = document.getElementById('pref-opts');
-  po.innerHTML = '';
+  /* ── Overall preference ── */
+  const oo = document.getElementById('overall-opts');
+  oo.innerHTML = '';
   order.forEach((fbIdx, dispIdx) => {
-    const fb  = s.feedbacks[fbIdx];
-    const lbl = labels[dispIdx];
+    const fb = s.feedbacks[fbIdx], label = labels[dispIdx];
     const btn = document.createElement('button');
     btn.className = 'pref-btn' + (responses[i].preference===fb.id?' sel':'');
-    btn.textContent = `${t.feedback} ${lbl}`;
+    btn.textContent = label;
     btn.addEventListener('click', () => {
       responses[idx].preference = fb.id;
-      po.querySelectorAll('.pref-btn').forEach(b => b.classList.remove('sel'));
+      oo.querySelectorAll('.pref-btn').forEach(b => b.classList.remove('sel'));
       btn.classList.add('sel');
     });
-    po.appendChild(btn);
+    oo.appendChild(btn);
   });
 
   document.getElementById('btn-prev').style.visibility = i===0 ? 'hidden' : 'visible';
@@ -477,61 +483,48 @@ function renderSample(i) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-/* ── Validate ── */
 function validate() {
-  const r = responses[idx], s = DATA.samples[idx];
-  for (const fb of s.feedbacks)
-    for (const m of METRICS[lang])
-      if (!r.ratings[fb.id]?.[m.id]) return false;
+  const r = responses[idx], s = DATA.samples[idx], t = T[lang];
+  for (let q = 0; q < t.questions.length; q++) if (!r.answers[q]) return false;
   return !!r.preference;
 }
 
 document.getElementById('btn-next').addEventListener('click', () => {
   if (!validate()) { document.getElementById('val-msg').classList.add('show'); return; }
   const n = DATA.samples.length;
-  if (idx < n-1) {
-    document.getElementById('scr-sample').classList.add('hidden');
-    renderSample(idx+1);
-  } else showComplete();
+  if (idx < n-1) { document.getElementById('scr-sample').classList.add('hidden'); renderSample(idx+1); }
+  else showComplete();
 });
 
 document.getElementById('btn-prev').addEventListener('click', () => {
-  if (idx > 0) {
-    document.getElementById('scr-sample').classList.add('hidden');
-    renderSample(idx-1);
-  }
+  if (idx > 0) { document.getElementById('scr-sample').classList.add('hidden'); renderSample(idx-1); }
 });
 
-/* ── Complete ── */
 function showComplete() {
   const t = T[lang];
   document.getElementById('scr-sample').classList.add('hidden');
   document.getElementById('hdr-prog').classList.add('hidden');
   document.getElementById('scr-complete').classList.remove('hidden');
   window.scrollTo({ top: 0, behavior: 'smooth' });
-
   document.getElementById('done-h').textContent       = t.done_h;
   document.getElementById('done-sub').textContent     = t.done_sub;
   document.getElementById('done-summary').textContent = t.done_summary;
   document.getElementById('btn-dl').textContent       = t.btn_dl;
-
-  const totalRatings = responses.reduce((a,r) => a + Object.keys(r.ratings).length * METRICS[lang].length, 0);
+  const totalAns = responses.reduce((a,r) => a + Object.keys(r.answers).length + (r.preference?1:0), 0);
   document.getElementById('resp-rows').innerHTML = `
-    <div class="resp-row">${t.resp_rater}  <strong>${raterName}</strong></div>
+    <div class="resp-row">${t.resp_rater}   <strong>${raterName}</strong></div>
     <div class="resp-row">${t.resp_samples} <strong>${DATA.samples.length}</strong></div>
-    <div class="resp-row">${t.resp_total}   <strong>${totalRatings}</strong></div>
+    <div class="resp-row">${t.resp_total}   <strong>${totalAns}</strong></div>
   `;
 }
 
 document.getElementById('btn-dl').addEventListener('click', () => {
-  const out = { rater: { name: raterName }, lang, timestamp: new Date().toISOString(), responses };
-  const blob = new Blob([JSON.stringify(out, null, 2)], { type: 'application/json' });
+  const out = { rater:{name:raterName}, lang, timestamp:new Date().toISOString(), responses };
+  const blob = new Blob([JSON.stringify(out,null,2)], {type:'application/json'});
   const url  = URL.createObjectURL(blob);
   const a    = document.createElement('a');
-  a.href = url;
-  a.download = `eval_${raterName.replace(/\s+/g,'_')}_${Date.now()}.json`;
-  a.click();
-  URL.revokeObjectURL(url);
+  a.href=url; a.download=`eval_${raterName.replace(/\s+/g,'_')}_${Date.now()}.json`;
+  a.click(); URL.revokeObjectURL(url);
 });
 
 init();
