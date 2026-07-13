@@ -26,27 +26,6 @@
       ]
     },
     {
-      "id": "sample_02",
-      "pair_id": "sfu_basketball012_4-----12-----uniandes_basketball_001_25-----16-----Head",
-      "action": "Basketball Drills - Mid-Range Jump Shooting",
-      "video": "videos/sample_02.mp4",
-      "gt": "He has good weight forward and follow-through, but needs to focus his eyes directly on the target.",
-      "feedbacks": [
-        {
-          "id": "baseline_video",
-          "text": "The student should focus on maintaining a consistent follow-through motion after releasing the ball to ensure better accuracy and control in the drill."
-        },
-        {
-          "id": "baseline_bot_no_bdp",
-          "text": "\"Engage your core and rotate your trunk to generate power and improve shot accuracy.\""
-        },
-        {
-          "id": "ours",
-          "text": "Keep your elbows straighter and maintain a stable trunk position to improve efficiency."
-        }
-      ]
-    },
-    {
       "id": "sample_03",
       "pair_id": "sfu_basketball012_7-----4-----unc_basketball_03-16-23_01_26-----42-----Jump",
       "action": "Basketball Drills - Reverse Layup",
@@ -277,48 +256,8 @@
         }
       ]
     },
-    {
-      "id": "sample_14",
-      "pair_id": "uniandes_bouldering_034_29-----3-----uniandes_bouldering_032_2-----0-----Head",
-      "action": "bouldering",
-      "video": "videos/sample_14.mp4",
-      "gt": "The climber is using the \"jump off jump on\" technique, but needs to glance down at their feet, especially when performing a foot switch, to ensure accurate foot placement.",
-      "feedbacks": [
-        {
-          "id": "baseline_video",
-          "text": "The student should focus on maintaining better balance and core stability during the climb to prevent unnecessary falls and improve overall performance."
-        },
-        {
-          "id": "baseline_bot_no_bdp",
-          "text": "\"Tuck your elbows closer to your body to improve trunk flexibility and hand-trunk coordination.\""
-        },
-        {
-          "id": "ours",
-          "text": "Keep your core engaged and maintain a balanced posture to improve efficiency and stability."
-        }
-      ]
-    },
-    {
-      "id": "sample_15",
-      "pair_id": "iiith_soccer_031_6-----8-----iiith_soccer_031_6-----59-----Shoulder",
-      "action": "Soccer Drills - Penalty Kick",
-      "video": "videos/sample_15.mp4",
-      "gt": "The player's contact point with the ball is low and in front of their body, resulting in an upward trajectory, but they are not utilizing their upper body for balance, control, power, or momentum.",
-      "feedbacks": [
-        {
-          "id": "baseline_video",
-          "text": "The student should focus on maintaining better balance and control while dribbling around the cones to improve accuracy and efficiency in the drill."
-        },
-        {
-          "id": "baseline_bot_no_bdp",
-          "text": "Keep your core engaged and maintain an upright posture to improve power transfer during the kick."
-        },
-        {
-          "id": "ours",
-          "text": "Maintain a steady gaze and focus on the ball during your shots."
-        }
-      ]
-    },
+
+    
     {
       "id": "sample_16",
       "pair_id": "sfu_basketball012_7-----25-----unc_basketball_03-16-23_01_26-----40-----Head",
@@ -340,27 +279,7 @@
         }
       ]
     },
-    {
-      "id": "sample_17",
-      "pair_id": "iiith_soccer_002_6-----0-----iiith_soccer_002_6-----13-----Head",
-      "action": "Soccer Drills - Penalty Kick",
-      "video": "videos/sample_17.mp4",
-      "gt": "The player's angle of approach and foot positioning at the moment of contact are causing errors in their kick.",
-      "feedbacks": [
-        {
-          "id": "baseline_video",
-          "text": "The student should focus on maintaining better balance and control while dribbling around the cones, as seen by the expert in the second video."
-        },
-        {
-          "id": "baseline_bot_no_bdp",
-          "text": "\"Improve your core stability and ensure your knees and trunk move together for better efficiency.\""
-        },
-        {
-          "id": "ours",
-          "text": "Keep your body aligned and maintain a stable base to improve your kicking technique."
-        }
-      ]
-    },
+
     {
       "id": "sample_18",
       "pair_id": "sfu_basketball012_7-----9-----unc_basketball_03-16-23_01_26-----35-----Jump",
