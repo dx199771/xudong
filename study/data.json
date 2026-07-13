@@ -6,136 +6,115 @@
   "samples": [
     {
       "id": "sample_01",
-      "pair_id": "uniandes_bouldering_035_36-----32-----uniandes_bouldering_032_2-----7-----Legs",
-      "action": "bouldering",
+      "pair_id": "sfu_basketball012_7-----12-----unc_basketball_03-30-23_02_9-----32-----Head",
+      "action": "Basketball Drills - Reverse Layup",
       "video": "videos/sample_01.mp4",
-      "gt": "The climber managed to hop into the hold, but then struggled to find a foothold, which was taxing.",
+      "gt": "The player needs to keep their head up and eyes on the target while dribbling.",
       "feedbacks": [
         {
           "id": "baseline_video",
-          "text": "The student should focus on maintaining better balance and core stability during the climb to prevent falling off the wall."
+          "text": "The student should focus on maintaining better balance and control while dribbling, as seen by the expert in the second video."
         },
         {
           "id": "baseline_bot_no_bdp",
-          "text": "\"Tuck your elbows closer to your body to improve trunk flexibility and better coordinate hand movements.\""
+          "text": "\"Tuck your elbows and lean forward to generate power for a more explosive shot.\""
         },
         {
           "id": "ours",
-          "text": "Keep your trunk stable and use smooth, controlled movements to maintain better coordination with your hands."
+          "text": "Keep your trunk stable and use your core to maintain balance and control during the movement."
         }
       ]
     },
     {
       "id": "sample_02",
-      "pair_id": "uniandes_bouldering_028_14-----2-----uniandes_bouldering_034_87-----7-----Shoulder",
-      "action": "bouldering",
+      "pair_id": "sfu_basketball012_4-----12-----uniandes_basketball_001_25-----16-----Head",
+      "action": "Basketball Drills - Mid-Range Jump Shooting",
       "video": "videos/sample_02.mp4",
-      "gt": "The climber is struggling to apply pressure with her toe due to leaning to the right side, making it hard to sustain pressure on the left foot.",
+      "gt": "He has good weight forward and follow-through, but needs to focus his eyes directly on the target.",
       "feedbacks": [
         {
           "id": "baseline_video",
-          "text": "The student should focus on maintaining better balance and core stability while reaching for the next hold, as seen by the expert in the second video."
+          "text": "The student should focus on maintaining a consistent follow-through motion after releasing the ball to ensure better accuracy and control in the drill."
         },
         {
           "id": "baseline_bot_no_bdp",
-          "text": "\"Focus on engaging your core to maintain a stable base of support and improve hand-trunk coordination.\""
+          "text": "\"Engage your core and rotate your trunk to generate power and improve shot accuracy.\""
         },
         {
           "id": "ours",
-          "text": "Focus on keeping your trunk more engaged and your wrists moving faster to generate better forward momentum."
+          "text": "Keep your elbows straighter and maintain a stable trunk position to improve efficiency."
         }
       ]
     },
     {
       "id": "sample_03",
-      "pair_id": "iiith_soccer_031_6-----15-----iiith_soccer_031_6-----3-----Arms",
-      "action": "Soccer Drills - Penalty Kick",
+      "pair_id": "sfu_basketball012_7-----4-----unc_basketball_03-16-23_01_26-----42-----Jump",
+      "action": "Basketball Drills - Reverse Layup",
       "video": "videos/sample_03.mp4",
-      "gt": "The player's ball control is limited due to incorrect foot striking and lack of upper body involvement.",
+      "gt": "The player's release point and direction do not qualify as a reverse layup.",
       "feedbacks": [
         {
           "id": "baseline_video",
-          "text": "The student should focus on maintaining a lower center of gravity and quicker footwork to improve agility and control during the drill."
+          "text": "The student should focus on maintaining a more consistent rhythm in their dribbling and shooting motion to improve accuracy and efficiency."
         },
         {
           "id": "baseline_bot_no_bdp",
-          "text": "Keep your core engaged and maintain a higher knee angle to generate more power in your kicks."
+          "text": "\"Engage your core and rotate your trunk to generate power for a more efficient shot.\""
         },
         {
           "id": "ours",
-          "text": "Keep your knees relaxed and avoid unnecessary force to improve efficiency."
+          "text": "Keep your elbows tucked and maintain a stable center of mass to enhance your shooting form."
         }
       ]
     },
     {
       "id": "sample_04",
-      "pair_id": "uniandes_bouldering_029_45-----39-----uniandes_bouldering_034_87-----17-----Head",
-      "action": "bouldering",
+      "pair_id": "iiith_soccer_031_6-----7-----iiith_soccer_031_6-----45-----Head",
+      "action": "Soccer Drills - Penalty Kick",
       "video": "videos/sample_04.mp4",
-      "gt": "The climber successfully navigated the hold sequence, but struggled to remember the route on the spray wall.",
+      "gt": "The player's kicking technique has several errors, including improper plant foot positioning and upper body alignment, which affects the direction and trajectory of the ball.",
       "feedbacks": [
         {
           "id": "baseline_video",
-          "text": "The student should focus on maintaining better balance and core engagement while transitioning between holds to prevent unnecessary movements and conserve energy."
+          "text": "The student should focus on maintaining a consistent and controlled pace while dribbling around the cones to improve accuracy and efficiency in the drill."
         },
         {
           "id": "baseline_bot_no_bdp",
-          "text": "\"Engage your core and maintain a flexible trunk to improve energy transfer and coordination.\""
+          "text": "\"Maintain an upright posture and ensure your knees and trunk move in harmony to generate more power.\""
         },
         {
           "id": "ours",
-          "text": "Keep your core engaged and focus on generating forward momentum with each step."
+          "text": "Focus on maintaining a stable trunk and full knee extension to improve efficiency and reduce strain."
         }
       ]
     },
     {
       "id": "sample_05",
-      "pair_id": "uniandes_bouldering_029_45-----25-----uniandes_bouldering_034_23-----0-----Legs",
-      "action": "bouldering",
+      "pair_id": "iiith_soccer_031_6-----8-----iiith_soccer_031_6-----1-----Arms",
+      "action": "Soccer Drills - Penalty Kick",
       "video": "videos/sample_05.mp4",
-      "gt": "The climber successfully made the next move by bringing their left hand up and rotating their left side of the hip closer to the wall, but still needs to work on keeping their flagging foot close to the wall.",
+      "gt": "The player's contact point with the ball is low and in front of their body, resulting in an upward trajectory, but they are not utilizing their upper body for balance, control, power, or momentum.",
       "feedbacks": [
         {
           "id": "baseline_video",
-          "text": "The student should focus on maintaining better balance and core stability while reaching for the next hold, as seen by the expert in the second video."
+          "text": "The student should focus on maintaining better balance and control while dribbling around the cones, as seen by the expert in the second video."
         },
         {
           "id": "baseline_bot_no_bdp",
-          "text": "\"Engage your core and maintain a flexible trunk to improve force transmission and climbing efficiency.\""
+          "text": "\"Maintain a stable trunk position and synchronize your knee extension with your trunk stability for more efficient kicking.\""
         },
         {
           "id": "ours",
-          "text": "\"Focus on synchronizing your trunk and hand movements to improve efficiency and coordination.\""
+          "text": "**Focus on maintaining a stable trunk and extending your knees more fully to improve your movement efficiency.**"
         }
       ]
     },
     {
       "id": "sample_06",
-      "pair_id": "uniandes_bouldering_029_45-----16-----uniandes_bouldering_033_45-----14-----Legs",
+      "pair_id": "uniandes_bouldering_035_13-----6-----uniandes_bouldering_034_23-----0-----Legs",
       "action": "bouldering",
       "video": "videos/sample_06.mp4",
-      "gt": "The climber's right foot has dropped back, moving the center of gravity away from the wall, and needs to recover by pressing onto the left toe placement.",
-      "feedbacks": [
-        {
-          "id": "baseline_video",
-          "text": "The student should focus on maintaining a more stable and controlled body position while climbing, similar to the expert's form, to improve balance and efficiency."
-        },
-        {
-          "id": "baseline_bot_no_bdp",
-          "text": "Keep your core engaged and maintain an upright posture to improve stability and efficiency."
-        },
-        {
-          "id": "ours",
-          "text": "Keep your trunk centered and use your core to generate power for your hand movements."
-        }
-      ]
-    },
-    {
-      "id": "sample_07",
-      "pair_id": "uniandes_bouldering_028_15-----31-----uniandes_bouldering_034_23-----0-----Legs",
-      "action": "bouldering",
-      "video": "videos/sample_07.mp4",
-      "gt": "The climber successfully brought their left hand into the next hole, but their flagging foot is not being utilized, causing their body weight to swing and putting more strain on their hands.",
+      "gt": "The climber is not effectively using the heel hook, only placing it instead of loading into it and tensioning it to pull his hips higher.",
       "feedbacks": [
         {
           "id": "baseline_video",
@@ -143,74 +122,347 @@
         },
         {
           "id": "baseline_bot_no_bdp",
-          "text": "\"Engage your core and maintain a stable trunk to improve force transmission and efficiency.\""
+          "text": "Keep your trunk upright and maintain a stable base of support to improve your climbing efficiency."
         },
         {
           "id": "ours",
-          "text": "\"Focus on synchronizing your trunk and hand movements to generate more powerful and efficient hand actions.\""
+          "text": "\"Focus on engaging your hands more actively to generate force and stabilize your movements.\""
+        }
+      ]
+    },
+    {
+      "id": "sample_07",
+      "pair_id": "sfu_basketball012_12-----12-----uniandes_basketball_001_25-----15-----Jump",
+      "action": "Basketball Drills - Mid-Range Jump Shooting",
+      "video": "videos/sample_07.mp4",
+      "gt": "The player needs to jump on the release of the shot to generate more power and accuracy.",
+      "feedbacks": [
+        {
+          "id": "baseline_video",
+          "text": "The student should focus on maintaining a balanced stance and using their core to generate power in their shot, as seen by the expert."
+        },
+        {
+          "id": "baseline_bot_no_bdp",
+          "text": "\"Engage your core and rotate your trunk to generate power and improve shot accuracy.\""
+        },
+        {
+          "id": "ours",
+          "text": "Keep your elbows close to your body and maintain a stable center of mass to improve efficiency."
         }
       ]
     },
     {
       "id": "sample_08",
-      "pair_id": "uniandes_bouldering_028_14-----17-----uniandes_bouldering_034_23-----8-----Arms",
-      "action": "bouldering",
+      "pair_id": "iiith_soccer_031_2-----38-----iiith_soccer_015_2-----46-----Head",
+      "action": "Soccer Drills - Dribbling",
       "video": "videos/sample_08.mp4",
-      "gt": "The climber's arm positioning is incorrect, causing her to flex her arms and pull herself into the hold instead of driving her toes into the wall.",
+      "gt": "The player is using the inside of their left foot to control the ball, but is not utilizing their body properly, resulting in loss of control, balance, and speed.",
       "feedbacks": [
         {
           "id": "baseline_video",
-          "text": "The student should focus on maintaining better balance and core engagement while reaching for the next hold, as seen by the expert in the second video."
+          "text": "The student should focus on maintaining better balance and control while dribbling around the cones, as seen by the expert in the second video."
         },
         {
           "id": "baseline_bot_no_bdp",
-          "text": "\"Tuck your elbows closer to your body to improve trunk flexibility and better control your weight distribution.\""
+          "text": "Keep your core engaged and maintain a stable base of support to improve balance and reduce knee strain."
         },
         {
           "id": "ours",
-          "text": "Keep your wrists relaxed and focus on transferring force smoothly from your hands to your core for better efficiency."
+          "text": "Keep your torso upright and maintain a balanced knee flexion to enhance your movement efficiency."
         }
       ]
     },
     {
       "id": "sample_09",
-      "pair_id": "uniandes_bouldering_035_38-----4-----uniandes_bouldering_032_2-----8-----Legs",
-      "action": "bouldering",
+      "pair_id": "unc_basketball_02-24-23_01_36-----13-----uniandes_basketball_001_25-----16-----Head",
+      "action": "Basketball Drills - Mid-Range Jump Shooting",
       "video": "videos/sample_09.mp4",
-      "gt": "The climber's left foot placement was not ideal, using the bottom side and outer edge of the shoe instead of the toe box area.",
+      "gt": "The expert is unsure of the player's intention, whether it's a layup or a reverse layup, and suggests clarifying the concept before proceeding.",
       "feedbacks": [
         {
           "id": "baseline_video",
-          "text": "The student should focus on maintaining better balance and core stability while reaching for the next hold, as seen by the expert in the second video."
+          "text": "The student should focus on maintaining a consistent follow-through after releasing the ball to ensure better accuracy and control in their shots."
         },
         {
           "id": "baseline_bot_no_bdp",
-          "text": "\"Engage your core and maintain a flexible trunk to improve balance and efficiency.\""
+          "text": "Focus on engaging your core and rotating your trunk to generate power and improve the synchronization of your arm swing."
         },
         {
           "id": "ours",
-          "text": "\"Focus on keeping your core engaged and using your trunk to stabilize your movements, especially when reaching with your hands.\""
+          "text": "\"Tuck your elbows closer to your body to improve arm extension and force transmission.\""
         }
       ]
     },
     {
       "id": "sample_10",
-      "pair_id": "uniandes_bouldering_034_94-----10-----uniandes_bouldering_032_2-----2-----Hands",
-      "action": "bouldering",
+      "pair_id": "sfu_basketball012_2-----9-----unc_basketball_03-16-23_01_25-----16-----Head",
+      "action": "Basketball Drills - Mikan Layup",
       "video": "videos/sample_10.mp4",
-      "gt": "The climber is struggling with a hand-foot match on a left hand puffy pinch hold that is difficult to hand heel due to its shape.",
+      "gt": "The shooter is not aiming properly, resulting in negative results.",
       "feedbacks": [
         {
           "id": "baseline_video",
-          "text": "The student should focus on maintaining better balance and core stability while descending from the wall to ensure a safer landing."
+          "text": "The student should focus on maintaining a consistent follow-through motion after releasing the ball to ensure better accuracy and control in their shots."
         },
         {
           "id": "baseline_bot_no_bdp",
-          "text": "\"Focus on engaging your core to maintain a stable base and improve your balance.\""
+          "text": "\"Tuck your elbows and engage your core to improve force transmission and shot accuracy.\""
         },
         {
           "id": "ours",
-          "text": "\"Focus on maintaining a stable trunk and dynamic hand movements to improve force transmission.\""
+          "text": "\"Focus on maintaining a stable base of support and keeping your elbows slightly bent to reduce unnecessary muscular effort.\""
+        }
+      ]
+    },
+    {
+      "id": "sample_11",
+      "pair_id": "uniandes_bouldering_035_66-----0-----uniandes_bouldering_033_45-----14-----Legs",
+      "action": "bouldering",
+      "video": "videos/sample_11.mp4",
+      "gt": "The climber needs to adjust their footwork and engage their hips to gain height and successfully place their hand in the hold.",
+      "feedbacks": [
+        {
+          "id": "baseline_video",
+          "text": "The student should focus on maintaining better balance and core stability while reaching for the holds, as seen by the expert in the second video."
+        },
+        {
+          "id": "baseline_bot_no_bdp",
+          "text": "Keep your core engaged and maintain an upright posture to improve stability and efficiency."
+        },
+        {
+          "id": "ours",
+          "text": "Keep your core engaged and maintain a neutral spine to improve balance and efficiency."
+        }
+      ]
+    },
+    {
+      "id": "sample_12",
+      "pair_id": "unc_basketball_02-24-23_02_12-----19-----unc_basketball_02-24-23_01_19-----10-----Head",
+      "action": "Basketball Drills - Mid-Range Jump Shooting",
+      "video": "videos/sample_12.mp4",
+      "gt": "She's dribbling the ball instead of catching and shooting, and her eyes are dropping down to look at the ball instead of focusing on the rim.",
+      "feedbacks": [
+        {
+          "id": "baseline_video",
+          "text": "The student should focus on maintaining a consistent follow-through motion after releasing the ball to ensure better accuracy and control in their shots."
+        },
+        {
+          "id": "baseline_bot_no_bdp",
+          "text": "\"Engage your core and rotate your trunk to improve the power and accuracy of your throw.\""
+        },
+        {
+          "id": "ours",
+          "text": "Focus on coordinating your arm movements with your trunk to reduce unnecessary force and improve efficiency."
+        }
+      ]
+    },
+    {
+      "id": "sample_13",
+      "pair_id": "unc_basketball_02-24-23_01_36-----39-----unc_basketball_03-30-23_02_4-----35-----Shoulder",
+      "action": "Basketball Drills - Mid-Range Jump Shooting",
+      "video": "videos/sample_13.mp4",
+      "gt": "The player's shoulders are pointed towards the baseline, reducing the chance of a successful finish, and need to be adjusted to point towards the sideline.",
+      "feedbacks": [
+        {
+          "id": "baseline_video",
+          "text": "The student should focus on maintaining a balanced stance and using proper arm extension when shooting the basketball to improve accuracy and consistency."
+        },
+        {
+          "id": "baseline_bot_no_bdp",
+          "text": "\"Tuck your elbows and rotate your trunk to generate more power and control in your shot.\""
+        },
+        {
+          "id": "ours",
+          "text": "\"Focus on keeping your elbows close to your body and maintaining a stable base to improve your shooting form.\""
+        }
+      ]
+    },
+    {
+      "id": "sample_14",
+      "pair_id": "uniandes_bouldering_034_29-----3-----uniandes_bouldering_032_2-----0-----Head",
+      "action": "bouldering",
+      "video": "videos/sample_14.mp4",
+      "gt": "The climber is using the \"jump off jump on\" technique, but needs to glance down at their feet, especially when performing a foot switch, to ensure accurate foot placement.",
+      "feedbacks": [
+        {
+          "id": "baseline_video",
+          "text": "The student should focus on maintaining better balance and core stability during the climb to prevent unnecessary falls and improve overall performance."
+        },
+        {
+          "id": "baseline_bot_no_bdp",
+          "text": "\"Tuck your elbows closer to your body to improve trunk flexibility and hand-trunk coordination.\""
+        },
+        {
+          "id": "ours",
+          "text": "Keep your core engaged and maintain a balanced posture to improve efficiency and stability."
+        }
+      ]
+    },
+    {
+      "id": "sample_15",
+      "pair_id": "iiith_soccer_031_6-----8-----iiith_soccer_031_6-----59-----Shoulder",
+      "action": "Soccer Drills - Penalty Kick",
+      "video": "videos/sample_15.mp4",
+      "gt": "The player's contact point with the ball is low and in front of their body, resulting in an upward trajectory, but they are not utilizing their upper body for balance, control, power, or momentum.",
+      "feedbacks": [
+        {
+          "id": "baseline_video",
+          "text": "The student should focus on maintaining better balance and control while dribbling around the cones to improve accuracy and efficiency in the drill."
+        },
+        {
+          "id": "baseline_bot_no_bdp",
+          "text": "Keep your core engaged and maintain an upright posture to improve power transfer during the kick."
+        },
+        {
+          "id": "ours",
+          "text": "Maintain a steady gaze and focus on the ball during your shots."
+        }
+      ]
+    },
+    {
+      "id": "sample_16",
+      "pair_id": "sfu_basketball012_7-----25-----unc_basketball_03-16-23_01_26-----40-----Head",
+      "action": "Basketball Drills - Reverse Layup",
+      "video": "videos/sample_16.mp4",
+      "gt": "He has a high dribble, but needs to keep his head up to be aware of his surroundings.",
+      "feedbacks": [
+        {
+          "id": "baseline_video",
+          "text": "The student should focus on maintaining a more consistent rhythm in their dribbling and shooting motion to improve accuracy and efficiency."
+        },
+        {
+          "id": "baseline_bot_no_bdp",
+          "text": "\"Engage your core and synchronize your trunk and elbow movements for a more powerful shot.\""
+        },
+        {
+          "id": "ours",
+          "text": "Keep your elbows tucked and extend them fully to maintain balance and efficiency."
+        }
+      ]
+    },
+    {
+      "id": "sample_17",
+      "pair_id": "iiith_soccer_002_6-----0-----iiith_soccer_002_6-----13-----Head",
+      "action": "Soccer Drills - Penalty Kick",
+      "video": "videos/sample_17.mp4",
+      "gt": "The player's angle of approach and foot positioning at the moment of contact are causing errors in their kick.",
+      "feedbacks": [
+        {
+          "id": "baseline_video",
+          "text": "The student should focus on maintaining better balance and control while dribbling around the cones, as seen by the expert in the second video."
+        },
+        {
+          "id": "baseline_bot_no_bdp",
+          "text": "\"Improve your core stability and ensure your knees and trunk move together for better efficiency.\""
+        },
+        {
+          "id": "ours",
+          "text": "Keep your body aligned and maintain a stable base to improve your kicking technique."
+        }
+      ]
+    },
+    {
+      "id": "sample_18",
+      "pair_id": "sfu_basketball012_7-----9-----unc_basketball_03-16-23_01_26-----35-----Jump",
+      "action": "Basketball Drills - Reverse Layup",
+      "video": "videos/sample_18.mp4",
+      "gt": "He's not coming up high enough, which affects his shooting angle and causes him to stop in front of the rim.",
+      "feedbacks": [
+        {
+          "id": "baseline_video",
+          "text": "The student should focus on maintaining a more consistent follow-through motion after releasing the ball to ensure better accuracy and control in their shots."
+        },
+        {
+          "id": "baseline_bot_no_bdp",
+          "text": "\"Focus on engaging your core and rotating your torso to generate power for a more efficient shot.\""
+        },
+        {
+          "id": "ours",
+          "text": "Keep your elbows close to your body and maintain a stable center of mass to improve efficiency and reduce energy expenditure."
+        }
+      ]
+    },
+    {
+      "id": "sample_19",
+      "pair_id": "iiith_soccer_031_6-----24-----iiith_soccer_031_6-----1-----Arms",
+      "action": "Soccer Drills - Penalty Kick",
+      "video": "videos/sample_19.mp4",
+      "gt": "The player's foot position and lack of body momentum are affecting the control and power of their shot.",
+      "feedbacks": [
+        {
+          "id": "baseline_video",
+          "text": "The student should focus on maintaining better balance and control while dribbling around the cones, as seen by the expert in the second video."
+        },
+        {
+          "id": "baseline_bot_no_bdp",
+          "text": "Keep your back straight and knees slightly bent to maintain balance and control while practicing the drill."
+        },
+        {
+          "id": "ours",
+          "text": "Keep your knees slightly bent and maintain a balanced posture to improve stability and control."
+        }
+      ]
+    },
+    {
+      "id": "sample_20",
+      "pair_id": "uniandes_bouldering_028_15-----10-----uniandes_bouldering_034_87-----17-----Head",
+      "action": "bouldering",
+      "video": "videos/sample_20.mp4",
+      "gt": "The climber successfully stabilized the swing by engaging her arms in a pull-up and executing a foot switch technique.",
+      "feedbacks": [
+        {
+          "id": "baseline_video",
+          "text": "The student should focus on maintaining better balance and core stability while reaching for the holds, as seen in the expert's more controlled movements."
+        },
+        {
+          "id": "baseline_bot_no_bdp",
+          "text": "\"Engage your core and keep your trunk stable to transfer power more efficiently.\""
+        },
+        {
+          "id": "ours",
+          "text": "Keep your core engaged and maintain a narrower stance to improve balance and efficiency."
+        }
+      ]
+    },
+    {
+      "id": "sample_21",
+      "pair_id": "sfu_basketball012_7-----19-----unc_basketball_03-16-23_01_26-----20-----Shoulder",
+      "action": "Basketball Drills - Reverse Layup",
+      "video": "videos/sample_21.mp4",
+      "gt": "He's using both hands correctly, but dipping his right shoulder and extending his left elbow to shoot over the rim, making it a tough shot.",
+      "feedbacks": [
+        {
+          "id": "baseline_video",
+          "text": "The student should focus on maintaining a more consistent follow-through motion after releasing the ball to ensure better accuracy and control in their shots."
+        },
+        {
+          "id": "baseline_bot_no_bdp",
+          "text": "\"Focus on engaging your core and synchronizing your trunk rotation with your elbow extension for a more efficient shot.\""
+        },
+        {
+          "id": "ours",
+          "text": "\"Focus on maintaining a stable trunk and coordinating your arm movements more dynamically to improve efficiency.\""
+        }
+      ]
+    },
+    {
+      "id": "sample_22",
+      "pair_id": "uniandes_bouldering_034_29-----19-----uniandes_bouldering_032_2-----1-----Arms",
+      "action": "bouldering",
+      "video": "videos/sample_22.mp4",
+      "gt": "The climber successfully executed a heel hook and pulled their body weight over, but could improve by conserving energy by straightening their arms.",
+      "feedbacks": [
+        {
+          "id": "baseline_video",
+          "text": "The student should focus on maintaining better balance and core stability during the climb to prevent unnecessary falls and improve overall efficiency."
+        },
+        {
+          "id": "baseline_bot_no_bdp",
+          "text": "\"Tuck your elbows and engage your core to stabilize your trunk and improve hand-trunk coordination.\""
+        },
+        {
+          "id": "ours",
+          "text": "Keep your trunk more posterior and maintain smooth hand movements to improve force transmission and efficiency."
         }
       ]
     }
