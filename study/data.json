@@ -1,0 +1,218 @@
+{
+  "study_title": "BoT-Feedback — Human Evaluation",
+  "study_description": "You will watch video pairs (student vs. expert) and evaluate three coaching feedback variants by answering four questions. Variants are labelled A / B / C in randomised order.",
+  "rater_info": {},
+  "preference_question": "Overall, which single feedback would you most recommend to the student?",
+  "samples": [
+    {
+      "id": "sample_01",
+      "pair_id": "uniandes_bouldering_035_36-----32-----uniandes_bouldering_032_2-----7-----Legs",
+      "action": "bouldering",
+      "video": "videos/sample_01.mp4",
+      "gt": "The climber managed to hop into the hold, but then struggled to find a foothold, which was taxing.",
+      "feedbacks": [
+        {
+          "id": "baseline_video",
+          "text": "The student should focus on maintaining better balance and core stability during the climb to prevent falling off the wall."
+        },
+        {
+          "id": "baseline_bot_no_bdp",
+          "text": "\"Tuck your elbows closer to your body to improve trunk flexibility and better coordinate hand movements.\""
+        },
+        {
+          "id": "ours",
+          "text": "Keep your trunk stable and use smooth, controlled movements to maintain better coordination with your hands."
+        }
+      ]
+    },
+    {
+      "id": "sample_02",
+      "pair_id": "uniandes_bouldering_028_14-----2-----uniandes_bouldering_034_87-----7-----Shoulder",
+      "action": "bouldering",
+      "video": "videos/sample_02.mp4",
+      "gt": "The climber is struggling to apply pressure with her toe due to leaning to the right side, making it hard to sustain pressure on the left foot.",
+      "feedbacks": [
+        {
+          "id": "baseline_video",
+          "text": "The student should focus on maintaining better balance and core stability while reaching for the next hold, as seen by the expert in the second video."
+        },
+        {
+          "id": "baseline_bot_no_bdp",
+          "text": "\"Focus on engaging your core to maintain a stable base of support and improve hand-trunk coordination.\""
+        },
+        {
+          "id": "ours",
+          "text": "Focus on keeping your trunk more engaged and your wrists moving faster to generate better forward momentum."
+        }
+      ]
+    },
+    {
+      "id": "sample_03",
+      "pair_id": "iiith_soccer_031_6-----15-----iiith_soccer_031_6-----3-----Arms",
+      "action": "Soccer Drills - Penalty Kick",
+      "video": "videos/sample_03.mp4",
+      "gt": "The player's ball control is limited due to incorrect foot striking and lack of upper body involvement.",
+      "feedbacks": [
+        {
+          "id": "baseline_video",
+          "text": "The student should focus on maintaining a lower center of gravity and quicker footwork to improve agility and control during the drill."
+        },
+        {
+          "id": "baseline_bot_no_bdp",
+          "text": "Keep your core engaged and maintain a higher knee angle to generate more power in your kicks."
+        },
+        {
+          "id": "ours",
+          "text": "Keep your knees relaxed and avoid unnecessary force to improve efficiency."
+        }
+      ]
+    },
+    {
+      "id": "sample_04",
+      "pair_id": "uniandes_bouldering_029_45-----39-----uniandes_bouldering_034_87-----17-----Head",
+      "action": "bouldering",
+      "video": "videos/sample_04.mp4",
+      "gt": "The climber successfully navigated the hold sequence, but struggled to remember the route on the spray wall.",
+      "feedbacks": [
+        {
+          "id": "baseline_video",
+          "text": "The student should focus on maintaining better balance and core engagement while transitioning between holds to prevent unnecessary movements and conserve energy."
+        },
+        {
+          "id": "baseline_bot_no_bdp",
+          "text": "\"Engage your core and maintain a flexible trunk to improve energy transfer and coordination.\""
+        },
+        {
+          "id": "ours",
+          "text": "Keep your core engaged and focus on generating forward momentum with each step."
+        }
+      ]
+    },
+    {
+      "id": "sample_05",
+      "pair_id": "uniandes_bouldering_029_45-----25-----uniandes_bouldering_034_23-----0-----Legs",
+      "action": "bouldering",
+      "video": "videos/sample_05.mp4",
+      "gt": "The climber successfully made the next move by bringing their left hand up and rotating their left side of the hip closer to the wall, but still needs to work on keeping their flagging foot close to the wall.",
+      "feedbacks": [
+        {
+          "id": "baseline_video",
+          "text": "The student should focus on maintaining better balance and core stability while reaching for the next hold, as seen by the expert in the second video."
+        },
+        {
+          "id": "baseline_bot_no_bdp",
+          "text": "\"Engage your core and maintain a flexible trunk to improve force transmission and climbing efficiency.\""
+        },
+        {
+          "id": "ours",
+          "text": "\"Focus on synchronizing your trunk and hand movements to improve efficiency and coordination.\""
+        }
+      ]
+    },
+    {
+      "id": "sample_06",
+      "pair_id": "uniandes_bouldering_029_45-----16-----uniandes_bouldering_033_45-----14-----Legs",
+      "action": "bouldering",
+      "video": "videos/sample_06.mp4",
+      "gt": "The climber's right foot has dropped back, moving the center of gravity away from the wall, and needs to recover by pressing onto the left toe placement.",
+      "feedbacks": [
+        {
+          "id": "baseline_video",
+          "text": "The student should focus on maintaining a more stable and controlled body position while climbing, similar to the expert's form, to improve balance and efficiency."
+        },
+        {
+          "id": "baseline_bot_no_bdp",
+          "text": "Keep your core engaged and maintain an upright posture to improve stability and efficiency."
+        },
+        {
+          "id": "ours",
+          "text": "Keep your trunk centered and use your core to generate power for your hand movements."
+        }
+      ]
+    },
+    {
+      "id": "sample_07",
+      "pair_id": "uniandes_bouldering_028_15-----31-----uniandes_bouldering_034_23-----0-----Legs",
+      "action": "bouldering",
+      "video": "videos/sample_07.mp4",
+      "gt": "The climber successfully brought their left hand into the next hole, but their flagging foot is not being utilized, causing their body weight to swing and putting more strain on their hands.",
+      "feedbacks": [
+        {
+          "id": "baseline_video",
+          "text": "The student should focus on maintaining better balance and core stability while reaching for the holds, as seen by the expert in the second video."
+        },
+        {
+          "id": "baseline_bot_no_bdp",
+          "text": "\"Engage your core and maintain a stable trunk to improve force transmission and efficiency.\""
+        },
+        {
+          "id": "ours",
+          "text": "\"Focus on synchronizing your trunk and hand movements to generate more powerful and efficient hand actions.\""
+        }
+      ]
+    },
+    {
+      "id": "sample_08",
+      "pair_id": "uniandes_bouldering_028_14-----17-----uniandes_bouldering_034_23-----8-----Arms",
+      "action": "bouldering",
+      "video": "videos/sample_08.mp4",
+      "gt": "The climber's arm positioning is incorrect, causing her to flex her arms and pull herself into the hold instead of driving her toes into the wall.",
+      "feedbacks": [
+        {
+          "id": "baseline_video",
+          "text": "The student should focus on maintaining better balance and core engagement while reaching for the next hold, as seen by the expert in the second video."
+        },
+        {
+          "id": "baseline_bot_no_bdp",
+          "text": "\"Tuck your elbows closer to your body to improve trunk flexibility and better control your weight distribution.\""
+        },
+        {
+          "id": "ours",
+          "text": "Keep your wrists relaxed and focus on transferring force smoothly from your hands to your core for better efficiency."
+        }
+      ]
+    },
+    {
+      "id": "sample_09",
+      "pair_id": "uniandes_bouldering_035_38-----4-----uniandes_bouldering_032_2-----8-----Legs",
+      "action": "bouldering",
+      "video": "videos/sample_09.mp4",
+      "gt": "The climber's left foot placement was not ideal, using the bottom side and outer edge of the shoe instead of the toe box area.",
+      "feedbacks": [
+        {
+          "id": "baseline_video",
+          "text": "The student should focus on maintaining better balance and core stability while reaching for the next hold, as seen by the expert in the second video."
+        },
+        {
+          "id": "baseline_bot_no_bdp",
+          "text": "\"Engage your core and maintain a flexible trunk to improve balance and efficiency.\""
+        },
+        {
+          "id": "ours",
+          "text": "\"Focus on keeping your core engaged and using your trunk to stabilize your movements, especially when reaching with your hands.\""
+        }
+      ]
+    },
+    {
+      "id": "sample_10",
+      "pair_id": "uniandes_bouldering_034_94-----10-----uniandes_bouldering_032_2-----2-----Hands",
+      "action": "bouldering",
+      "video": "videos/sample_10.mp4",
+      "gt": "The climber is struggling with a hand-foot match on a left hand puffy pinch hold that is difficult to hand heel due to its shape.",
+      "feedbacks": [
+        {
+          "id": "baseline_video",
+          "text": "The student should focus on maintaining better balance and core stability while descending from the wall to ensure a safer landing."
+        },
+        {
+          "id": "baseline_bot_no_bdp",
+          "text": "\"Focus on engaging your core to maintain a stable base and improve your balance.\""
+        },
+        {
+          "id": "ours",
+          "text": "\"Focus on maintaining a stable trunk and dynamic hand movements to improve force transmission.\""
+        }
+      ]
+    }
+  ]
+}
