@@ -49,11 +49,18 @@
 
   section{padding:36px 0;}
   section + section{border-top:1px solid var(--border);}
+  .section-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:0 0 20px;}
   h2.label{
     font-size:12px;letter-spacing:0.1em;text-transform:uppercase;
     font-family:'Inter',sans-serif;font-weight:600;color:var(--text-3);
-    margin:0 0 20px;
+    margin:0;
   }
+  .full-pub-link{font-size:13px;font-weight:500;white-space:nowrap;}
+
+  .pub-body h3 a{color:inherit;border-bottom-color:rgba(26,26,26,0.15);}
+  .pub-body h3 a:hover{color:var(--link);border-bottom-color:var(--link);}
+  .pub-thumb-link{display:flex;width:100%;height:100%;}
+  .under-review{font-style:italic;color:var(--text-3);font-weight:500;}
 
   .bio p{margin:0 0 16px;color:var(--text-2);}
   .bio p:last-child{margin-bottom:0;}
@@ -95,7 +102,7 @@
       <h1>Xu Dong</h1>
       <p class="role">PhD Candidate, Innovative Media Technology &middot; University of Surrey</p>
       <p class="hero-links">
-        <a href="mailto:xd00101@surrey.ac.uk">Email</a><span class="sep">/</span><a href="https://uk.linkedin.com/in/xudong-442302166/en" target="_blank" rel="noopener">LinkedIn</a><span class="sep">/</span><a href="https://scholar.google.com/citations?hl=en&view_op=search_authors&mauthors=Xu+Dong+University+of+Surrey" target="_blank" rel="noopener">Google Scholar</a><span class="sep">/</span><a href="https://github.com/dx199771" target="_blank" rel="noopener">GitHub</a>
+        <a href="mailto:xd00101@surrey.ac.uk">Email</a><span class="sep">/</span><a href="https://uk.linkedin.com/in/xudong-442302166/en" target="_blank" rel="noopener">LinkedIn</a><span class="sep">/</span><a href="https://scholar.google.com/citations?hl=en&user=Zl6ISTMAAAAJ" target="_blank" rel="noopener">Google Scholar</a><span class="sep">/</span><a href="https://github.com/dx199771" target="_blank" rel="noopener">GitHub</a>
       </p>
     </div>
   </div>
@@ -127,55 +134,72 @@
   </section>
 
   <section id="publications">
-    <h2 class="label">Selected Publications</h2>
+    <div class="section-head">
+      <h2 class="label">Selected Publications</h2>
+      <a class="full-pub-link" href="https://scholar.google.com/citations?hl=en&user=Zl6ISTMAAAAJ" target="_blank" rel="noopener">Full publications &rarr;</a>
+    </div>
     <div class="pub-list">
 
       <article class="pub">
         <div class="pub-thumb empty">Figure coming soon</div>
         <div class="pub-body">
-          <div class="venue">ECCV 2026</div>
-          <h3>Moving Beyond More Views: Redundancy-Aware Ego&ndash;Exo Fusion for Proficiency Estimation</h3>
+          <div class="venue"><span class="under-review">Under Review</span> &middot; AAAI 2027</div>
+          <h3>VBEST: Video Benchmark of Multi-Expertise Sporting Tasks</h3>
+          <p class="authors"><span class="me">X. Dong</span>, S. Rahmaniboldaji, W. Binning, et al.</p>
+        </div>
+      </article>
+
+      <article class="pub">
+        <div class="pub-thumb empty">Figure coming soon</div>
+        <div class="pub-body">
+          <div class="venue"><span class="under-review">Under Review</span> &middot; AAAI 2027</div>
+          <h3>BoT-Feedback: Biomechanical Reasoning for Explainable Human Action Feedback</h3>
           <p class="authors"><span class="me">X. Dong</span>, W. Li, A. Adeyemi-Ejeye, A. Gilbert</p>
         </div>
       </article>
 
       <article class="pub">
-        <div class="pub-thumb"><img src="assets/papers/bmvc_ijcv.jpg" alt="UIL-AQA figure"></div>
+        <div class="pub-thumb empty">Figure coming soon</div>
+        <div class="pub-body">
+          <div class="venue">ECCV 2026</div>
+          <h3><a href="https://andrewjohngilbert.github.io/RedundEgoExo/" target="_blank" rel="noopener">Moving Beyond More Views: Redundancy-Aware Ego&ndash;Exo Fusion for Proficiency Estimation</a></h3>
+          <p class="authors"><span class="me">X. Dong</span>, W. Li, A. Adeyemi-Ejeye, A. Gilbert</p>
+        </div>
+      </article>
+
+      <article class="pub">
+        <div class="pub-thumb"><a class="pub-thumb-link" href="https://andrewjohngilbert.github.io/UILAQA/" target="_blank" rel="noopener"><img src="assets/papers/bmvc_ijcv.jpg" alt="UIL-AQA figure"></a></div>
         <div class="pub-body">
           <div class="venue">IJCV 2025</div>
-          <h3>UIL-AQA: Uncertainty-aware Clip-level Interpretable Action Quality Assessment</h3>
+          <h3><a href="https://andrewjohngilbert.github.io/UILAQA/" target="_blank" rel="noopener">UIL-AQA: Uncertainty-aware Clip-level Interpretable Action Quality Assessment</a></h3>
           <p class="authors"><span class="me">X. Dong</span>, X. Liu, W. Li, A. Adeyemi-Ejeye, A. Gilbert</p>
-          <p class="pub-links"><a href="https://doi.org/10.1007/s11263-025-02638-6" target="_blank" rel="noopener">Paper</a></p>
         </div>
       </article>
 
       <article class="pub">
-        <div class="pub-thumb"><img src="assets/papers/fg.jpg" alt="Generative Data Augmentation figure"></div>
+        <div class="pub-thumb"><a class="pub-thumb-link" href="https://andrewjohngilbert.github.io/SkelActRec" target="_blank" rel="noopener"><img src="assets/papers/fg.jpg" alt="Generative Data Augmentation figure"></a></div>
         <div class="pub-body">
           <div class="venue">IEEE FG 2025 &middot; Oral</div>
-          <h3>Generative Data Augmentation for Skeleton Action Recognition</h3>
+          <h3><a href="https://andrewjohngilbert.github.io/SkelActRec" target="_blank" rel="noopener">Generative Data Augmentation for Skeleton Action Recognition</a></h3>
           <p class="authors"><span class="me">X. Dong</span>, W. Li, A. Adeyemi-Ejeye, A. Gilbert</p>
-          <p class="pub-links"><a href="https://arxiv.org/abs/2604.14933" target="_blank" rel="noopener">arXiv</a></p>
         </div>
       </article>
 
       <article class="pub">
-        <div class="pub-thumb"><img src="assets/papers/bmvc_ijcv.jpg" alt="Interpretable Long-term AQA figure"></div>
+        <div class="pub-thumb"><a class="pub-thumb-link" href="https://andrewjohngilbert.github.io/InterpretAQA/" target="_blank" rel="noopener"><img src="assets/papers/bmvc_ijcv.jpg" alt="Interpretable Long-term AQA figure"></a></div>
         <div class="pub-body">
           <div class="venue">BMVC 2024 &middot; Oral</div>
-          <h3>Interpretable Long-term Action Quality Assessment</h3>
+          <h3><a href="https://andrewjohngilbert.github.io/InterpretAQA/" target="_blank" rel="noopener">Interpretable Long-term Action Quality Assessment</a></h3>
           <p class="authors"><span class="me">X. Dong</span>, X. Liu, W. Li, A. Adeyemi-Ejeye, A. Gilbert</p>
-          <p class="pub-links"><a href="https://arxiv.org/abs/2408.11687" target="_blank" rel="noopener">arXiv</a></p>
         </div>
       </article>
 
       <article class="pub">
-        <div class="pub-thumb"><img src="assets/papers/tmm_gcdance.jpg" alt="GCDance figure"></div>
+        <div class="pub-thumb"><a class="pub-thumb-link" href="https://arxiv.org/abs/2502.18309" target="_blank" rel="noopener"><img src="assets/papers/tmm_gcdance.jpg" alt="GCDance figure"></a></div>
         <div class="pub-body">
           <div class="venue">TMM &middot; Submitted 2025</div>
-          <h3>GCDance: Genre-Controlled Music-Driven 3D Full Body Dance Generation</h3>
+          <h3><a href="https://arxiv.org/abs/2502.18309" target="_blank" rel="noopener">GCDance: Genre-Controlled Music-Driven 3D Full Body Dance Generation</a></h3>
           <p class="authors">X. Liu, <span class="me">X. Dong</span>, S. Qian, D. Kanojia, W. Wang, Z. Feng</p>
-          <p class="pub-links"><a href="https://arxiv.org/abs/2502.18309" target="_blank" rel="noopener">arXiv</a></p>
         </div>
       </article>
 
@@ -183,9 +207,8 @@
         <div class="pub-thumb empty">Figure coming soon</div>
         <div class="pub-body">
           <div class="venue">CVPRW 2025</div>
-          <h3>Short-term 3D Human Mesh Recovery with Virtual Markers Disentanglement</h3>
+          <h3><a href="https://openaccess.thecvf.com/content/CVPR2025W/RHOBIN/html/Kang_Short-term_3D_Human_Mesh_Recovery_with_Virtual_Markers_Disentanglement_CVPRW_2025_paper.html" target="_blank" rel="noopener">Short-term 3D Human Mesh Recovery with Virtual Markers Disentanglement</a></h3>
           <p class="authors">X. Kang, Y. Yuan, <span class="me">X. Dong</span>, M. Awais, L. Tang, J. Kittler, Z. Feng</p>
-          <p class="pub-links"><a href="https://openaccess.thecvf.com/content/CVPR2025W/RHOBIN/html/Kang_Short-term_3D_Human_Mesh_Recovery_with_Virtual_Markers_Disentanglement_CVPRW_2025_paper.html" target="_blank" rel="noopener">Paper</a></p>
         </div>
       </article>
 
