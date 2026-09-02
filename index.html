@@ -7,270 +7,195 @@
 <meta name="description" content="Xu Dong — PhD candidate in Innovative Media Technology, University of Surrey.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#fbfaf8;
-    --surface:#ffffff;
-    --border:#e6e2da;
-    --text:#1c1a17;
-    --text-2:#57534a;
-    --text-3:#8a8478;
-    --accent:#8a3324;
-    --accent-2:#2f5233;
+    --bg:#ffffff;
+    --text:#1a1a1a;
+    --text-2:#4a4a4a;
+    --text-3:#8a8a8a;
+    --border:#e8e6e2;
     --link:#8a3324;
-    --shadow: 0 1px 2px rgba(28,26,23,0.04), 0 6px 20px rgba(28,26,23,0.05);
   }
   *,*::before,*::after{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
   body{
     margin:0;
     background:var(--bg);
     color:var(--text);
     font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-    line-height:1.6;
+    font-size:16px;
+    line-height:1.7;
     -webkit-font-smoothing:antialiased;
   }
-  a{color:var(--link);text-decoration:none;}
-  a:hover{text-decoration:underline;}
-  h1,h2,h3{font-family:'Source Serif 4', Georgia, serif; font-weight:600; color:var(--text);}
-  .wrap{max-width:920px;margin:0 auto;padding:0 24px;}
-
-  /* NAV */
-  header.site{
-    position:sticky; top:0; z-index:20;
-    background:rgba(251,250,248,0.86);
-    backdrop-filter:blur(8px);
-    border-bottom:1px solid var(--border);
-  }
-  nav.wrap{
-    display:flex;align-items:center;justify-content:space-between;
-    height:56px;
-  }
-  nav .brand{font-family:'Source Serif 4',serif;font-weight:600;font-size:17px;color:var(--text);}
-  nav .links{display:flex;gap:22px;}
-  nav .links a{font-size:14px;color:var(--text-2);font-weight:500;}
-  nav .links a:hover{color:var(--accent);text-decoration:none;}
+  a{color:var(--link);text-decoration:none;border-bottom:1px solid rgba(138,51,36,0.3);}
+  a:hover{border-bottom-color:var(--link);}
+  h1,h2{font-family:'Source Serif 4', Georgia, serif; font-weight:600; color:var(--text);}
+  .wrap{max-width:680px;margin:0 auto;padding:0 24px;}
 
   /* HERO */
-  .hero{padding:64px 0 40px;}
-  .hero-inner{display:flex;gap:36px;align-items:flex-start;flex-wrap:wrap;}
+  .hero{padding:72px 0 8px;display:flex;gap:28px;align-items:flex-start;flex-wrap:wrap;}
   .hero-photo{
-    width:148px;height:148px;border-radius:50%;
-    flex:none;
-    background:linear-gradient(140deg,#d9cfc0,#efe9df);
+    width:112px;height:112px;border-radius:50%;flex:none;
+    object-fit:cover;
+    background:#efece7;
     border:1px solid var(--border);
-    display:flex;align-items:center;justify-content:center;
-    font-family:'Source Serif 4',serif;font-size:52px;color:var(--accent);
-    box-shadow:var(--shadow);
   }
-  .hero-text{flex:1;min-width:280px;}
-  .hero-text h1{font-size:34px;margin:0 0 4px;letter-spacing:-0.01em;}
-  .hero-role{font-size:16px;color:var(--text-2);margin:0 0 16px;}
-  .hero-role .dot{margin:0 8px;color:var(--border);}
-  .hero-desc{font-size:15.5px;color:var(--text-2);max-width:620px;margin:0 0 18px;}
-  .hero-links{display:flex;flex-wrap:wrap;gap:10px 16px;font-size:14px;}
-  .hero-links a{color:var(--text-2);font-weight:500;}
-  .hero-links a:hover{color:var(--accent);}
-  .hero-links span.sep{color:var(--border);}
+  .hero-text h1{font-size:30px;margin:0 0 4px;letter-spacing:-0.01em;}
+  .hero-text .role{font-size:15px;color:var(--text-2);margin:0 0 10px;}
+  .hero-links{font-size:14px;color:var(--text-2);}
+  .hero-links a{color:var(--text-2);border-bottom-color:var(--border);}
+  .hero-links a:hover{color:var(--link);border-bottom-color:var(--link);}
+  .hero-links span.sep{color:var(--text-3);margin:0 8px;}
 
-  /* SECTION HEADINGS */
-  section{padding:8px 0 56px;}
-  .section-head{display:flex;align-items:baseline;gap:14px;margin-bottom:22px;}
-  .section-head h2{font-size:22px;margin:0;}
-  .section-head .rule{flex:1;height:1px;background:var(--border);}
-  .kicker{font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);font-weight:600;margin:0 0 6px;}
+  section{padding:36px 0;}
+  section + section{border-top:1px solid var(--border);}
+  h2.label{
+    font-size:12px;letter-spacing:0.1em;text-transform:uppercase;
+    font-family:'Inter',sans-serif;font-weight:600;color:var(--text-3);
+    margin:0 0 20px;
+  }
 
-  /* ABOUT */
-  .about-card{
-    background:var(--surface);border:1px solid var(--border);border-radius:12px;
-    padding:26px 28px;box-shadow:var(--shadow);
-  }
-  .about-card p{margin:0 0 14px;color:var(--text-2);font-size:15.5px;}
-  .about-card p:last-child{margin-bottom:0;}
-  .supervisors{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:10px;}
-  .supervisors li{
-    display:flex;align-items:baseline;gap:8px;
-    padding:12px 14px;background:var(--bg);border:1px solid var(--border);border-radius:8px;
-    font-size:14.5px;
-  }
-  .supervisors li .role{color:var(--text-3);font-size:12.5px;min-width:78px;flex:none;text-transform:uppercase;letter-spacing:0.04em;padding-top:2px;}
-  .supervisors li a{font-weight:600;color:var(--text);}
-  .supervisors li a:hover{color:var(--accent);}
-
-  .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
-  .tags span{
-    font-size:12.5px;color:var(--accent-2);background:#eef3ea;border:1px solid #dbe6d3;
-    padding:5px 11px;border-radius:999px;font-weight:500;
-  }
+  .bio p{margin:0 0 16px;color:var(--text-2);}
+  .bio p:last-child{margin-bottom:0;}
 
   /* PUBLICATIONS */
-  .pub-grid{display:grid;gap:20px;}
-  .pub{
-    display:grid;grid-template-columns:220px 1fr;gap:22px;
-    background:var(--surface);border:1px solid var(--border);border-radius:12px;
-    padding:18px;box-shadow:var(--shadow);
-    align-items:center;
-  }
+  .pub-list{display:flex;flex-direction:column;gap:28px;}
+  .pub{display:flex;gap:18px;align-items:flex-start;}
   .pub-thumb{
-    width:100%;aspect-ratio:16/10;border-radius:8px;overflow:hidden;
-    background:var(--bg);border:1px solid var(--border);
+    width:160px;height:100px;flex:none;border-radius:6px;overflow:hidden;
+    background:#f4f2ee;border:1px solid var(--border);
     display:flex;align-items:center;justify-content:center;
   }
   .pub-thumb img{width:100%;height:100%;object-fit:cover;display:block;}
-  .pub-thumb.empty{color:var(--text-3);font-size:12px;font-family:'Source Serif 4',serif;font-style:italic;text-align:center;padding:8px;}
-  .pub-body .venue{
-    display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:0.05em;
-    color:var(--accent);background:#f6ece8;border:1px solid #ecd9d1;
-    padding:3px 9px;border-radius:5px;margin-bottom:9px;text-transform:uppercase;
-  }
-  .pub-body h3{font-size:17px;line-height:1.35;margin:0 0 8px;}
-  .pub-body .authors{font-size:13.5px;color:var(--text-2);margin:0 0 10px;}
-  .pub-body .authors .me{color:var(--text);font-weight:700;}
-  .pub-body .pub-links{font-size:13px;display:flex;gap:14px;}
-  .pub-body .pub-links a{font-weight:600;color:var(--text-2);}
-  .pub-body .pub-links a:hover{color:var(--accent);}
+  .pub-thumb.empty{color:var(--text-3);font-size:11px;font-style:italic;text-align:center;padding:6px;}
+  .pub-body .venue{font-size:12.5px;color:var(--link);font-weight:600;}
+  .pub-body h3{font-family:'Inter',sans-serif;font-weight:600;font-size:15.5px;line-height:1.4;margin:3px 0 5px;color:var(--text);}
+  .pub-body .authors{font-size:13.5px;color:var(--text-3);margin:0 0 6px;}
+  .pub-body .authors .me{color:var(--text-2);}
+  .pub-body .pub-links a{font-size:13px;font-weight:500;}
 
-  @media (max-width:640px){
-    .pub{grid-template-columns:1fr;}
-    .hero-inner{flex-direction:column;align-items:center;text-align:center;}
-    .hero-links{justify-content:center;}
-    nav .links{gap:14px;}
+  @media (max-width:520px){
+    .hero{flex-direction:column;align-items:flex-start;}
+    .pub{flex-direction:column;}
+    .pub-thumb{width:100%;height:auto;aspect-ratio:16/9;}
   }
 
   footer{
-    border-top:1px solid var(--border);
-    padding:30px 0 50px;
-    color:var(--text-3);font-size:13px;text-align:center;
+    padding:30px 0 60px;color:var(--text-3);font-size:13px;
   }
 </style>
 </head>
 <body>
 
-<header class="site">
-  <nav class="wrap">
-    <div class="brand">Xu Dong</div>
-    <div class="links">
-      <a href="#about">About</a>
-      <a href="#publications">Publications</a>
-    </div>
-  </nav>
-</header>
-
 <div class="wrap">
-  <section class="hero" id="about">
-    <div class="hero-inner">
-      <div class="hero-photo">XD</div>
-      <div class="hero-text">
-        <h1>Xu Dong</h1>
-        <p class="hero-role">Third-year PhD Candidate<span class="dot">·</span>Innovative Media Technology<span class="dot">·</span>University of Surrey</p>
-        <p class="hero-desc">
-          My research spans image and video analysis, action recognition and quality assessment,
-          generative AI for action and motion synthesis, and multimodal learning. Before my PhD,
-          I worked as an algorithm engineer building deep learning systems for intelligent retail
-          and transportation.
-        </p>
-        <div class="hero-links">
-          <a href="mailto:xd00101@surrey.ac.uk">Email</a>
-          <span class="sep">/</span>
-          <a href="https://uk.linkedin.com/in/xudong-442302166/en" target="_blank" rel="noopener">LinkedIn</a>
-          <span class="sep">/</span>
-          <a href="https://scholar.google.com/citations?hl=en&user=&view_op=search_authors&mauthors=Xu+Dong+University+of+Surrey" target="_blank" rel="noopener">Google Scholar</a>
-          <span class="sep">/</span>
-          <a href="https://github.com/dx199771" target="_blank" rel="noopener">GitHub</a>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section id="supervision">
-    <div class="section-head"><h2>Supervisors</h2><div class="rule"></div></div>
-    <div class="about-card">
-      <p>I am supervised by a team spanning computer vision, human-centred media, and video communications:</p>
-      <ul class="supervisors">
-        <li><span class="role">Supervisor</span> <a href="https://andrewjohngilbert.github.io/" target="_blank" rel="noopener">Dr Andrew Gilbert</a></li>
-        <li><span class="role">Supervisor</span> <a href="https://www.surrey.ac.uk/people/femi-adeyemi-ejeye" target="_blank" rel="noopener">Dr Femi Adeyemi-Ejeye</a></li>
-        <li><span class="role">Supervisor</span> <a href="https://sites.google.com/view/wanqingli/home-news" target="_blank" rel="noopener">Prof Wanqing Li</a></li>
-      </ul>
-      <div class="tags">
-        <span>Image &amp; Video Analysis</span>
-        <span>Action Quality Assessment</span>
-        <span>Generative AI for Motion</span>
-        <span>Language Models &amp; Reasoning</span>
-        <span>Multimodal Learning</span>
-      </div>
+  <div class="hero">
+    <img class="hero-photo" src="assets/xu-dong.jpg" alt="Xu Dong" onerror="this.style.display='none'">
+    <div class="hero-text">
+      <h1>Xu Dong</h1>
+      <p class="role">PhD Candidate, Innovative Media Technology &middot; University of Surrey</p>
+      <p class="hero-links">
+        <a href="mailto:xd00101@surrey.ac.uk">Email</a><span class="sep">/</span><a href="https://uk.linkedin.com/in/xudong-442302166/en" target="_blank" rel="noopener">LinkedIn</a><span class="sep">/</span><a href="https://scholar.google.com/citations?hl=en&view_op=search_authors&mauthors=Xu+Dong+University+of+Surrey" target="_blank" rel="noopener">Google Scholar</a><span class="sep">/</span><a href="https://github.com/dx199771" target="_blank" rel="noopener">GitHub</a>
+      </p>
     </div>
+  </div>
+
+  <section class="bio">
+    <p>
+      I am a third-year PhD candidate in Innovative Media Technology at the
+      <a href="https://www.surrey.ac.uk/" target="_blank" rel="noopener">University of Surrey</a>,
+      advised by <a href="https://andrewjohngilbert.github.io/" target="_blank" rel="noopener">Dr Andrew Gilbert</a>,
+      <a href="https://www.surrey.ac.uk/people/femi-adeyemi-ejeye" target="_blank" rel="noopener">Dr Femi Adeyemi-Ejeye</a>,
+      and <a href="https://sites.google.com/view/wanqingli/home-news" target="_blank" rel="noopener">Prof Wanqing Li</a>.
+      My research explores image and video analysis, action recognition and quality assessment,
+      generative AI for action and motion synthesis, and multimodal learning.
+    </p>
+    <p>
+      Before starting my PhD, I spent 1.5&nbsp;years as an Algorithm Engineer at
+      <a href="https://www.aibee.com/" target="_blank" rel="noopener">Aibee Inc.</a>, developing and
+      optimising deep learning models for intelligent retail and transportation, including event
+      detection and multi-camera vehicle tracking. Since December 2024, I have also worked
+      part-time as a Research Assistant at the University of Surrey, investigating the impact of
+      network packet loss on user experience in VR-based video conferencing platforms.
+    </p>
+    <p>
+      Previously, I completed my M.Sc. in Media and Arts Technology (Distinction) at
+      <a href="https://www.qmul.ac.uk/" target="_blank" rel="noopener">Queen Mary University of London</a>,
+      supervised by Prof. Ebroul Izquierdo, and my B.Sc. in Artificial Intelligence and Computer
+      Science at the <a href="https://www.sheffield.ac.uk/" target="_blank" rel="noopener">University of Sheffield</a>.
+    </p>
   </section>
 
   <section id="publications">
-    <div class="section-head"><h2>Selected Publications</h2><div class="rule"></div></div>
-    <div class="pub-grid">
+    <h2 class="label">Selected Publications</h2>
+    <div class="pub-list">
 
       <article class="pub">
         <div class="pub-thumb empty">Figure coming soon</div>
         <div class="pub-body">
-          <span class="venue">ECCV 2026</span>
+          <div class="venue">ECCV 2026</div>
           <h3>Moving Beyond More Views: Redundancy-Aware Ego&ndash;Exo Fusion for Proficiency Estimation</h3>
           <p class="authors"><span class="me">X. Dong</span>, W. Li, A. Adeyemi-Ejeye, A. Gilbert</p>
         </div>
       </article>
 
       <article class="pub">
-        <div class="pub-thumb"><img src="assets/papers/bmvc_ijcv.jpg" alt="Interpretable AQA figure"></div>
+        <div class="pub-thumb"><img src="assets/papers/bmvc_ijcv.jpg" alt="UIL-AQA figure"></div>
         <div class="pub-body">
-          <span class="venue">IJCV 2025</span>
+          <div class="venue">IJCV 2025</div>
           <h3>UIL-AQA: Uncertainty-aware Clip-level Interpretable Action Quality Assessment</h3>
           <p class="authors"><span class="me">X. Dong</span>, X. Liu, W. Li, A. Adeyemi-Ejeye, A. Gilbert</p>
-          <div class="pub-links"><a href="https://doi.org/10.1007/s11263-025-02638-6" target="_blank" rel="noopener">Paper</a></div>
+          <p class="pub-links"><a href="https://doi.org/10.1007/s11263-025-02638-6" target="_blank" rel="noopener">Paper</a></p>
         </div>
       </article>
 
       <article class="pub">
-        <div class="pub-thumb"><img src="assets/papers/fg.jpg" alt="Generative Data Augmentation for Skeleton Action Recognition figure"></div>
+        <div class="pub-thumb"><img src="assets/papers/fg.jpg" alt="Generative Data Augmentation figure"></div>
         <div class="pub-body">
-          <span class="venue">IEEE FG 2025 &middot; Oral</span>
+          <div class="venue">IEEE FG 2025 &middot; Oral</div>
           <h3>Generative Data Augmentation for Skeleton Action Recognition</h3>
           <p class="authors"><span class="me">X. Dong</span>, W. Li, A. Adeyemi-Ejeye, A. Gilbert</p>
-          <div class="pub-links"><a href="https://arxiv.org/abs/2604.14933" target="_blank" rel="noopener">arXiv</a></div>
+          <p class="pub-links"><a href="https://arxiv.org/abs/2604.14933" target="_blank" rel="noopener">arXiv</a></p>
         </div>
       </article>
 
       <article class="pub">
         <div class="pub-thumb"><img src="assets/papers/bmvc_ijcv.jpg" alt="Interpretable Long-term AQA figure"></div>
         <div class="pub-body">
-          <span class="venue">BMVC 2024 &middot; Oral</span>
+          <div class="venue">BMVC 2024 &middot; Oral</div>
           <h3>Interpretable Long-term Action Quality Assessment</h3>
           <p class="authors"><span class="me">X. Dong</span>, X. Liu, W. Li, A. Adeyemi-Ejeye, A. Gilbert</p>
-          <div class="pub-links"><a href="https://arxiv.org/abs/2408.11687" target="_blank" rel="noopener">arXiv</a></div>
+          <p class="pub-links"><a href="https://arxiv.org/abs/2408.11687" target="_blank" rel="noopener">arXiv</a></p>
         </div>
       </article>
 
       <article class="pub">
         <div class="pub-thumb"><img src="assets/papers/tmm_gcdance.jpg" alt="GCDance figure"></div>
         <div class="pub-body">
-          <span class="venue">TMM &middot; Submitted 2025</span>
+          <div class="venue">TMM &middot; Submitted 2025</div>
           <h3>GCDance: Genre-Controlled Music-Driven 3D Full Body Dance Generation</h3>
           <p class="authors">X. Liu, <span class="me">X. Dong</span>, S. Qian, D. Kanojia, W. Wang, Z. Feng</p>
-          <div class="pub-links"><a href="https://arxiv.org/abs/2502.18309" target="_blank" rel="noopener">arXiv</a></div>
+          <p class="pub-links"><a href="https://arxiv.org/abs/2502.18309" target="_blank" rel="noopener">arXiv</a></p>
         </div>
       </article>
 
       <article class="pub">
         <div class="pub-thumb empty">Figure coming soon</div>
         <div class="pub-body">
-          <span class="venue">CVPRW 2025</span>
+          <div class="venue">CVPRW 2025</div>
           <h3>Short-term 3D Human Mesh Recovery with Virtual Markers Disentanglement</h3>
           <p class="authors">X. Kang, Y. Yuan, <span class="me">X. Dong</span>, M. Awais, L. Tang, J. Kittler, Z. Feng</p>
-          <div class="pub-links"><a href="https://openaccess.thecvf.com/content/CVPR2025W/RHOBIN/html/Kang_Short-term_3D_Human_Mesh_Recovery_with_Virtual_Markers_Disentanglement_CVPRW_2025_paper.html" target="_blank" rel="noopener">Paper</a></div>
+          <p class="pub-links"><a href="https://openaccess.thecvf.com/content/CVPR2025W/RHOBIN/html/Kang_Short-term_3D_Human_Mesh_Recovery_with_Virtual_Markers_Disentanglement_CVPRW_2025_paper.html" target="_blank" rel="noopener">Paper</a></p>
         </div>
       </article>
 
     </div>
   </section>
+
 </div>
 
 <footer>
-  &copy; 2026 Xu Dong &middot; University of Surrey
+  <div class="wrap">&copy; 2026 Xu Dong</div>
 </footer>
 
 </body>
