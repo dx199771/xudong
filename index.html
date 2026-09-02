@@ -65,6 +65,19 @@
   .bio p{margin:0 0 16px;color:var(--text-2);}
   .bio p:last-child{margin-bottom:0;}
 
+  .seeking{
+    font-size:17px;font-weight:600;color:var(--link);
+    margin:18px 0 0;
+  }
+
+  .news-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;}
+  .news-list li{display:flex;gap:14px;font-size:14.5px;color:var(--text-2);}
+  .news-list .when{flex:none;width:92px;color:var(--text-3);font-variant-numeric:tabular-nums;}
+
+  .contact-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;}
+  .contact-list li{display:flex;gap:14px;font-size:14.5px;color:var(--text-2);}
+  .contact-list .k{flex:none;width:92px;color:var(--text-3);}
+
   /* PUBLICATIONS */
   .pub-list{display:flex;flex-direction:column;gap:28px;}
   .pub{display:flex;gap:18px;align-items:flex-start;}
@@ -104,8 +117,20 @@
       <p class="hero-links">
         <a href="mailto:xd00101@surrey.ac.uk">Email</a><span class="sep">/</span><a href="https://uk.linkedin.com/in/xudong-442302166/en" target="_blank" rel="noopener">LinkedIn</a><span class="sep">/</span><a href="https://scholar.google.com/citations?hl=en&user=Zl6ISTMAAAAJ" target="_blank" rel="noopener">Google Scholar</a><span class="sep">/</span><a href="https://github.com/dx199771" target="_blank" rel="noopener">GitHub</a>
       </p>
+      <p class="seeking">I am currently looking for research scientist / postdoctoral opportunities.</p>
     </div>
   </div>
+
+  <section id="news">
+    <h2 class="label">News</h2>
+    <ul class="news-list">
+      <li><span class="when">2026-06</span><span>Paper accepted to <strong>ECCV 2026</strong>.</span></li>
+      <li><span class="when">2026-05</span><span>Paper accepted (Oral) to <strong>IEEE FG</strong>.</span></li>
+      <li><span class="when">2025-12</span><span>Paper accepted to <strong>IJCV</strong>.</span></li>
+      <li><span class="when">2024-11</span><span>Paper accepted (Oral) to <strong>BMVC 2024</strong>.</span></li>
+      <li><span class="when">2023-09</span><span>Started PhD in Innovative Media Technology at the University of Surrey.</span></li>
+    </ul>
+  </section>
 
   <section class="bio">
     <p>
@@ -131,6 +156,15 @@
       supervised by Prof. Ebroul Izquierdo, and my B.Sc. in Artificial Intelligence and Computer
       Science at the <a href="https://www.sheffield.ac.uk/" target="_blank" rel="noopener">University of Sheffield</a>.
     </p>
+  </section>
+
+  <section id="contact">
+    <h2 class="label">Contact</h2>
+    <ul class="contact-list">
+      <li><span class="k">Email</span><a href="mailto:xd00101@surrey.ac.uk">xd00101@surrey.ac.uk</a></li>
+      <li><span class="k">WeChat</span><span>254111215</span></li>
+      <li><span class="k">Address</span><span>Department of Music and Media, Faculty of Arts and Social Sciences, University of Surrey</span></li>
+    </ul>
   </section>
 
   <section id="publications">
